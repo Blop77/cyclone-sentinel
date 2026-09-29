@@ -100,7 +100,8 @@ LEVEL_COLOR = {"RED": "#d03b3b", "ORANGE": "#ec835a", "YELLOW": "#fab219"}
 @app.get("/inbox", response_class=HTMLResponse)
 def inbox():
     rows = []
-    for i in INBOX:
+    rank = {"RED": 0, "ORANGE": 1, "YELLOW": 2}
+    for i in sorted(INBOX, key=lambda x: rank.get(x.get("level"), 3)):  # most severe first (stable: newest first within a level)
         color = LEVEL_COLOR.get(i.get("level", ""), "#898781")
         ai = i.get("ai") or {}
         local = f"<p class='local'>{html.escape(ai.get('message_local', ''))}</p>" if ai.get("message_local") else ""
