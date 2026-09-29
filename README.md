@@ -106,7 +106,7 @@ In every case the highest risk falls in the district that was actually hit harde
 * **The infrastructure inventory is synthetic**, generated deterministically around 34 real coastal towns (real names, locations, populations and districts). Replacing it with OSM, Bhuvan, discom or GEE-derived data is the first production step.
 * Fragility parameters are indicative (HAZUS-MH and post-event reports) and need local calibration.
 * Advisories are model output and are marked `Exercise` in CAP by default. Operational use requires IMD bulletins and human sign-off.
-* Gemini output is shown with the model name and timestamp. Cached responses (`data/ai/`) are labelled "Cached".
+* Gemini output is shown with the model name and timestamp. Cached responses (`data/ai/`) are labelled "Cached". The app always asks `gemini-3.7-flash` first. The saved demo analyses were answered by the automatic fallback, `gemini-3.5-flash`, because 3.7 Flash was at capacity (HTTP 503) when they were generated. Re-run `scripts/generate_ai_cache.py` to refresh them.
 
 ## Credits & licenses
 

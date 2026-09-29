@@ -76,7 +76,8 @@ Tasks:
 - Cross-check the imagery against the model's hotspots and say plainly where they agree or disagree.
 - Identify the most important rainfall damage pathways (rain → waterlogging → road/power/facility failure) with a concrete mitigation each.
 - Write one advisory per district for the top ${Math.min(4, ctx.model_advisories.length)} districts in model_advisories: SMS-ready (≤ 320 characters), action-first, naming towns and facilities from the data, with the same message translated into the given local language (native script).
-- Never invent numbers that are not in the data. Output JSON only, following the schema.
+- Never invent numbers that are not in the data. "residents_to_evacuate" and "residents in kutcha housing" count PEOPLE, not houses.
+- Output JSON only, following the schema.
 
 MODEL OUTPUT:
 ${JSON.stringify(ctx)}`;
