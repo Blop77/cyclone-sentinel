@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CycloneSentinel — Cyclone Impact Forecaster</title>
-  <meta name="description" content="Forecast cyclone hazards, infrastructure damage and cascading service disruption for India's east coast." />
+  <meta name="description" content="AI-powered cyclone risk platform: satellite feeds, real-time weather, Gemini multimodal analysis, storm-surge and rainfall damage pathways, infrastructure exposure and automated early-warning dispatch." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌀</text></svg>" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
   <link rel="stylesheet" href="css/style.css" />
@@ -15,13 +15,15 @@
       <span class="logo" aria-hidden="true">🌀</span>
       <div>
         <h1>CycloneSentinel</h1>
-        <p>Cyclone Impact &amp; Infrastructure Vulnerability Forecaster</p>
+        <p>AI-powered cyclone impact &amp; infrastructure vulnerability forecaster</p>
       </div>
     </div>
     <div class="topbar-meta">
-      <span class="pill">Bay of Bengal · Odisha · Andhra Pradesh · West Bengal</span>
+      <span class="pill" id="ai-pill" title="Google AI status">✦ Gemini: not connected</span>
+      <span class="pill">Odisha · Andhra Pradesh · West Bengal</span>
       <a class="pill link" href="https://github.com/Blop77/cyclone-sentinel/blob/main/docs/METHODOLOGY.md" target="_blank" rel="noopener">Methodology</a>
       <a class="pill link" href="https://github.com/Blop77/cyclone-sentinel" target="_blank" rel="noopener">GitHub</a>
+      <button class="pill link" id="open-settings" type="button">⚙ Settings</button>
     </div>
   </header>
 
@@ -31,7 +33,7 @@
       <section>
         <h2>1 · Scenario</h2>
         <label class="field">
-          <span>Cyclone</span>
+          <span>Cyclone / feed</span>
           <select id="scenario"></select>
         </label>
         <p class="hint" id="scenario-info"></p>
@@ -56,7 +58,7 @@
         </div>
       </section>
 
-      <section>
+      <section id="forecast-settings">
         <h2>2 · Forecast settings</h2>
         <label class="field">
           <span>Forecast lead time before landfall</span>
@@ -75,15 +77,21 @@
             <option value="80">80 (precise)</option>
           </select>
         </label>
+      </section>
+      <section class="run-section">
         <button id="run" class="btn-primary" type="button">Run impact forecast</button>
         <p class="status" id="status" role="status" aria-live="polite"></p>
       </section>
 
       <section>
         <h2>3 · Map layers</h2>
+        <label class="check"><input type="checkbox" id="l-sat" /> Satellite true colour <span class="muted">(NASA VIIRS)</span></label>
+        <label class="check"><input type="checkbox" id="l-imerg" /> Satellite rainfall <span class="muted">(NASA GPM IMERG)</span></label>
         <label class="check"><input type="checkbox" id="l-swath" checked /> Peak-wind swath</label>
         <label class="check"><input type="checkbox" id="l-ens" checked /> Ensemble track spread</label>
+        <label class="check"><input type="checkbox" id="l-roads" checked /> Arterial roads</label>
         <label class="check"><input type="checkbox" id="l-assets" checked /> Infrastructure risk</label>
+        <p class="hint" id="sat-date"></p>
         <div class="chips" id="type-filter" aria-label="Filter by asset type"></div>
       </section>
 
@@ -93,6 +101,7 @@
         <ul id="legend-wind" class="legend-list"></ul>
         <p class="legend-title">Service disruption risk</p>
         <ul id="legend-risk" class="legend-list"></ul>
+        <p class="hint" id="exposure-source"></p>
       </section>
     </aside>
 
@@ -109,53 +118,138 @@
           <input type="range" id="t-slider" min="0" max="0" value="0" aria-label="Storm time" />
         </div>
       </div>
-      <div class="map-busy" id="busy" hidden><span class="spinner"></span> Running ensemble…</div>
+      <div class="map-busy" id="busy" hidden><span class="spinner"></span> <span id="busy-text">Running ensemble…</span></div>
     </section>
 
-    <!-- ============ Impact ============ -->
+    <!-- ============ Right panel ============ -->
     <aside class="panel impact" aria-label="Impact forecast">
       <div class="impact-head">
-        <p class="eyebrow">Impact forecast</p>
+        <p class="eyebrow" id="impact-eyebrow">Impact forecast</p>
         <h2 id="impact-title">—</h2>
         <p class="hint" id="impact-sub"></p>
       </div>
 
-      <div class="kpis" id="kpis"></div>
+      <div class="tabs" role="tablist">
+        <button role="tab" class="tab" data-tab="impact" aria-selected="true">Impact</button>
+        <button role="tab" class="tab" data-tab="advisories" aria-selected="false">Advisories <span class="count" id="adv-count"></span></button>
+        <button role="tab" class="tab" data-tab="ai" aria-selected="false">✦ AI Analyst</button>
+      </div>
 
-      <section class="card">
-        <h3>Expected assets damaged, by type</h3>
-        <p class="hint">Bar = expected number damaged (ensemble mean). Track = assets of that type in the region.</p>
-        <div id="type-chart" class="hbar"></div>
-      </section>
+      <!-- Impact tab -->
+      <div class="tabpanel" data-panel="impact">
+        <div class="kpis" id="kpis"></div>
 
-      <section class="card">
-        <h3>Priority response actions</h3>
-        <p class="hint">Ranked by disruption probability × criticality × people served. Click to locate.</p>
-        <ol id="actions" class="actions"></ol>
-      </section>
+        <section class="card" id="live-card" hidden>
+          <h3>Live conditions (real-time forecast)</h3>
+          <p class="hint"></p>
+          <div class="table-wrap"><table class="wx-table">
+            <thead><tr><th>Town</th><th>Rain 72 h</th><th>Wind km/h</th><th>Gust km/h</th></tr></thead><tbody></tbody>
+          </table></div>
+        </section>
 
-      <section class="card" id="observed-card" hidden>
-        <h3>What actually happened <span class="muted">(reported, approx.)</span></h3>
-        <p id="observed"></p>
-      </section>
+        <section class="card">
+          <h3>Rainfall damage pathways</h3>
+          <p class="hint">Rain / surge → flooded arterial road → hospital or shelter cut off. Click to locate.</p>
+          <ol id="pathways" class="pathways"></ol>
+        </section>
 
-      <details class="card">
-        <summary>All assets (table view)</summary>
-        <div class="table-wrap">
-          <table id="asset-table">
-            <thead><tr><th>Asset</th><th>Peak wind</th><th>Flood</th><th>Damage</th><th>Disruption</th></tr></thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </details>
+        <section class="card">
+          <h3>Expected assets damaged, by type</h3>
+          <p class="hint">Bar = expected number damaged (ensemble mean). Track = assets of that type in the region.</p>
+          <div id="type-chart" class="hbar"></div>
+        </section>
+
+        <section class="card">
+          <h3>Priority response actions</h3>
+          <p class="hint">Ranked by disruption probability × criticality × people served. Click to locate.</p>
+          <ol id="actions" class="actions"></ol>
+        </section>
+
+        <section class="card" id="observed-card" hidden>
+          <h3>What actually happened <span class="muted">(reported, approx.)</span></h3>
+          <p id="observed"></p>
+        </section>
+
+        <details class="card">
+          <summary>All assets (table view)</summary>
+          <div class="table-wrap">
+            <table id="asset-table">
+              <thead><tr><th>Asset</th><th>Peak wind</th><th>Flood</th><th>Damage</th><th>Disruption</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+
+      <!-- Advisories tab -->
+      <div class="tabpanel" data-panel="advisories" hidden>
+        <section class="card dispatch-bar">
+          <div>
+            <h3>Early-warning dispatch</h3>
+            <p class="hint" id="dispatch-target">—</p>
+          </div>
+          <div class="dispatch-actions">
+            <label class="check small"><input type="checkbox" id="auto-dispatch" /> Auto-dispatch ≥ <span id="auto-level">Orange</span></label>
+            <button class="btn-secondary" id="dispatch-all" type="button">Dispatch all Red &amp; Orange</button>
+          </div>
+        </section>
+        <ol id="advisories" class="advisories"></ol>
+        <section class="card">
+          <h3>Dispatch log</h3>
+          <ol id="dispatch-log" class="log"><li class="muted">Nothing dispatched yet.</li></ol>
+        </section>
+      </div>
+
+      <!-- AI tab -->
+      <div class="tabpanel" data-panel="ai" hidden>
+        <section class="card ai-intro">
+          <h3>✦ Gemini multimodal analyst</h3>
+          <p class="hint">Gemini reads the <b>NASA satellite image</b> of the storm together with the impact model's output, cross-checks them, explains rainfall damage pathways and drafts district advisories in <b>English + Odia / Telugu / Bengali</b>.</p>
+          <button class="btn-primary" id="ai-run" type="button">Analyse with Gemini</button>
+          <p class="status" id="ai-status" role="status" aria-live="polite"></p>
+        </section>
+        <div id="ai-output"></div>
+      </div>
     </aside>
   </main>
+
+  <!-- Settings -->
+  <dialog id="settings" class="dialog">
+    <form method="dialog">
+      <h2>Settings</h2>
+      <fieldset>
+        <legend>Google AI — Gemini</legend>
+        <label class="field"><span>Gemini API key <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">get one free</a></span>
+          <input type="password" id="s-key" autocomplete="off" placeholder="Stored only in this browser" /></label>
+        <p class="hint">Stored in this browser's local storage only; sent directly to Google. Or deploy <code>server/</code> on Cloud Run and set <code>aiProxy</code> in <code>js/config.js</code> so viewers need no key.</p>
+      </fieldset>
+      <fieldset>
+        <legend>Advisory dispatch</legend>
+        <label class="field"><span>Webhook URL (Cloud Run relay, Google Chat, control-room system)</span>
+          <input type="url" id="s-webhook" placeholder="https://…/api/dispatch" /></label>
+        <label class="field"><span>E-mail recipients (comma-separated)</span>
+          <input type="text" id="s-emails" placeholder="ddma-puri@example.gov.in, eoc@example.gov.in" /></label>
+        <label class="field"><span>Auto-dispatch minimum level</span>
+          <select id="s-level"><option value="red">Red only</option><option value="orange" selected>Orange and above</option><option value="yellow">Yellow and above</option></select></label>
+        <label class="field"><span>CAP message status</span>
+          <select id="s-cap"><option value="Exercise" selected>Exercise (drills / replays)</option><option value="Actual">Actual</option><option value="Test">Test</option></select></label>
+      </fieldset>
+      <div class="dialog-actions">
+        <button value="cancel" class="btn-secondary" type="submit">Cancel</button>
+        <button value="save" id="s-save" class="btn-primary" type="submit">Save</button>
+      </div>
+    </form>
+  </dialog>
 
   <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="js/config.js"></script>
   <script src="js/data.js"></script>
   <script src="js/model.js"></script>
+  <script src="js/feeds.js"></script>
+  <script src="js/ai.js"></script>
+  <script src="js/dispatch.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

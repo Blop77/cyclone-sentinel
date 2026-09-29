@@ -65,3 +65,65 @@ test("stronger synthetic storm causes more expected loss", () => {
   };
   assert.ok(go(220) > go(120));
 });
+
+// ---------- v2: roads, access, pathways, advisories, CAP, live mode ----------
+const fani = run("fani-2019");
+
+test("every town has a district and roads connect real town pairs within ~120 km", () => {
+  for (const t of D.TOWNS) assert.ok(t.district, t.name);
+  const roads = assets.filter((a) => a.type === "road");
+  assert.ok(roads.length >= 30);
+  for (const r of roads) {
+    const [a, b] = r.towns.map((n) => D.TOWNS.find((t) => t.name === n));
+    assert.ok(M.haversine(a.lat, a.lon, b.lat, b.lon) < 160, r.name);
+  }
+});
+
+test("hospitals and shelters are cut off exactly when their access road is impassable", () => {
+  const byId = new Map(fani.assets.map((a) => [a.id, a]));
+  for (const a of fani.assets.filter((a) => a.access)) assert.equal(a.pIsolated, byId.get(a.access).pDamage);
+  assert.ok(fani.summary.rainPathways.length > 0, "Fani produces rain → road → facility pathways");
+  assert.match(fani.summary.rainPathways[0].chain.join(" "), /mm rain.*arterial road.*impassable.*cut off/);
+});
+
+test("every asset gets an ordered damage pathway ending in its service outcome", () => {
+  for (const a of fani.assets) assert.equal(a.pathway.at(-1).kind, "outcome");
+});
+
+test("advisories: Fani's worst district (Puri) is RED and routed to district, municipal and state authorities", () => {
+  const puri = fani.advisories.find((a) => a.district === "Puri");
+  assert.equal(puri.level, "red");
+  assert.equal(fani.advisories[0].level, "red");
+  assert.ok(puri.recipients.some((r) => /District Collector/.test(r)));
+  assert.ok(puri.recipients.some((r) => /urban local body/.test(r)));
+  assert.ok(puri.recipients.some((r) => /OSDMA/.test(r)));
+  assert.ok(puri.instructions.length > 0);
+});
+
+test("CAP 1.2 export is well-formed and carries severity and area", () => {
+  const xml = M.toCAP(fani.advisories[0], { sent: new Date("2019-05-02T03:00:00Z") });
+  assert.match(xml, /<alert xmlns="urn:oasis:names:tc:emergency:cap:1\.2">/);
+  assert.match(xml, /<severity>Extreme<\/severity>/);
+  assert.match(xml, /<status>Exercise<\/status>/);
+  assert.match(xml, /<circle>-?\d+\.\d+,-?\d+\.\d+ \d+<\/circle>/);
+  assert.equal((xml.match(/<info>/g) || []).length, (xml.match(/<\/info>/g) || []).length);
+  assert.doesNotMatch(xml.replace(/<[^>]+>/g, ""), /[<>]/, "text content is escaped");
+});
+
+test("live mode: heavy real-time rain floods low roads and cuts off facilities; calm weather issues nothing", () => {
+  const calm = Object.fromEntries(D.TOWNS.map((t) => [t.name, { windMax: 20, gustMax: 35, rain72: 5 }]));
+  const quiet = M.runLive(assets, D.ASSET_TYPES, D.TOWNS, calm);
+  assert.equal(quiet.advisories.length, 0);
+  const wet = { ...calm, Puri: { windMax: 60, gustMax: 90, rain72: 420 }, Konark: { windMax: 55, gustMax: 85, rain72: 400 } };
+  const flood = M.runLive(assets, D.ASSET_TYPES, D.TOWNS, wet);
+  const road = flood.assets.find((a) => a.name === "Puri–Konark arterial road");
+  assert.ok(road.pDamage > 0.5 && road.driver === "rain", `road P=${road.pDamage}`);
+  assert.ok(flood.advisories.some((a) => a.district === "Puri"));
+});
+
+test("wind asymmetry flips in the southern hemisphere (cross-border use)", () => {
+  const step = { lat: -20, lon: 40, v: 180, heading: 180, speed: 25 };
+  // Moving south: right of motion is west. In the S. hemisphere the stronger side is the LEFT (east).
+  const [el, eo] = M.offset(-20, 40, 90, 40), [wl, wo] = M.offset(-20, 40, 270, 40);
+  assert.ok(M.windAt(step, el, eo) > M.windAt(step, wl, wo));
+});
