@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CycloneSentinel — Cyclone Impact Forecaster</title>
+  <meta name="description" content="Forecast cyclone hazards, infrastructure damage and cascading service disruption for India's east coast." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌀</text></svg>" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">🌀</span>
+      <div>
+        <h1>CycloneSentinel</h1>
+        <p>Cyclone Impact &amp; Infrastructure Vulnerability Forecaster</p>
+      </div>
+    </div>
+    <div class="topbar-meta">
+      <span class="pill">Bay of Bengal · Odisha · Andhra Pradesh · West Bengal</span>
+      <a class="pill link" href="https://github.com/Blop77/cyclone-sentinel/blob/main/docs/METHODOLOGY.md" target="_blank" rel="noopener">Methodology</a>
+      <a class="pill link" href="https://github.com/Blop77/cyclone-sentinel" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </header>
+
+  <main class="layout">
+    <!-- ============ Controls ============ -->
+    <aside class="panel controls" aria-label="Scenario controls">
+      <section>
+        <h2>1 · Scenario</h2>
+        <label class="field">
+          <span>Cyclone</span>
+          <select id="scenario"></select>
+        </label>
+        <p class="hint" id="scenario-info"></p>
+
+        <div id="custom-fields" hidden>
+          <label class="field">
+            <span>Landfall near</span>
+            <select id="c-town"></select>
+          </label>
+          <label class="field">
+            <span>Intensity at landfall <output id="c-vmax-out"></output></span>
+            <input type="range" id="c-vmax" min="62" max="260" step="1" value="185" />
+          </label>
+          <label class="field">
+            <span>Direction of motion <output id="c-heading-out"></output></span>
+            <input type="range" id="c-heading" min="270" max="400" step="5" value="330" />
+          </label>
+          <label class="field">
+            <span>Forward speed <output id="c-speed-out"></output></span>
+            <input type="range" id="c-speed" min="6" max="30" step="1" value="15" />
+          </label>
+        </div>
+      </section>
+
+      <section>
+        <h2>2 · Forecast settings</h2>
+        <label class="field">
+          <span>Forecast lead time before landfall</span>
+          <select id="lead">
+            <option value="12">12 hours</option>
+            <option value="24" selected>24 hours</option>
+            <option value="48">48 hours</option>
+            <option value="72">72 hours</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Ensemble members</span>
+          <select id="members">
+            <option value="20">20 (fast)</option>
+            <option value="40" selected>40</option>
+            <option value="80">80 (precise)</option>
+          </select>
+        </label>
+        <button id="run" class="btn-primary" type="button">Run impact forecast</button>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </section>
+
+      <section>
+        <h2>3 · Map layers</h2>
+        <label class="check"><input type="checkbox" id="l-swath" checked /> Peak-wind swath</label>
+        <label class="check"><input type="checkbox" id="l-ens" checked /> Ensemble track spread</label>
+        <label class="check"><input type="checkbox" id="l-assets" checked /> Infrastructure risk</label>
+        <div class="chips" id="type-filter" aria-label="Filter by asset type"></div>
+      </section>
+
+      <section class="legend">
+        <h2>Legend</h2>
+        <p class="legend-title">Peak wind (IMD class)</p>
+        <ul id="legend-wind" class="legend-list"></ul>
+        <p class="legend-title">Service disruption risk</p>
+        <ul id="legend-risk" class="legend-list"></ul>
+      </section>
+    </aside>
+
+    <!-- ============ Map ============ -->
+    <section class="map-wrap" aria-label="Map">
+      <div id="map"></div>
+      <div class="timeline" id="timeline">
+        <button id="play" class="btn-round" type="button" aria-label="Play storm animation">▶</button>
+        <div class="timeline-body">
+          <div class="timeline-head">
+            <span id="t-label">—</span>
+            <span id="t-storm" class="muted">—</span>
+          </div>
+          <input type="range" id="t-slider" min="0" max="0" value="0" aria-label="Storm time" />
+        </div>
+      </div>
+      <div class="map-busy" id="busy" hidden><span class="spinner"></span> Running ensemble…</div>
+    </section>
+
+    <!-- ============ Impact ============ -->
+    <aside class="panel impact" aria-label="Impact forecast">
+      <div class="impact-head">
+        <p class="eyebrow">Impact forecast</p>
+        <h2 id="impact-title">—</h2>
+        <p class="hint" id="impact-sub"></p>
+      </div>
+
+      <div class="kpis" id="kpis"></div>
+
+      <section class="card">
+        <h3>Expected assets damaged, by type</h3>
+        <p class="hint">Bar = expected number damaged (ensemble mean). Track = assets of that type in the region.</p>
+        <div id="type-chart" class="hbar"></div>
+      </section>
+
+      <section class="card">
+        <h3>Priority response actions</h3>
+        <p class="hint">Ranked by disruption probability × criticality × people served. Click to locate.</p>
+        <ol id="actions" class="actions"></ol>
+      </section>
+
+      <section class="card" id="observed-card" hidden>
+        <h3>What actually happened <span class="muted">(reported, approx.)</span></h3>
+        <p id="observed"></p>
+      </section>
+
+      <details class="card">
+        <summary>All assets (table view)</summary>
+        <div class="table-wrap">
+          <table id="asset-table">
+            <thead><tr><th>Asset</th><th>Peak wind</th><th>Flood</th><th>Damage</th><th>Disruption</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </details>
+    </aside>
+  </main>
+
+  <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/model.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

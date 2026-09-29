@@ -1,0 +1,6 @@
+node_modules/
+__pycache__/
+*.webm
+*.mp4
+video/
+.DS_Store
