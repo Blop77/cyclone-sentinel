@@ -9,66 +9,69 @@
           --crit: #d03b3b; --ser: #ec835a; --warn: #fab219; --good: #0ca30c; }
   * { box-sizing: border-box; }
   body { margin: 0; background: #000; font-family: system-ui, "Segoe UI", sans-serif; color: var(--t); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .slide { width: 1920px; height: 1080px; padding: 90px 120px; position: relative; overflow: hidden; page-break-after: always;
+  .slide { width: 1920px; height: 1080px; padding: 80px 110px; position: relative; overflow: hidden; page-break-after: always;
            background: radial-gradient(circle at 85% 10%, #16233a 0, var(--bg) 55%); display: flex; flex-direction: column; }
-  .eyebrow { color: var(--a); text-transform: uppercase; letter-spacing: 3px; font-size: 22px; font-weight: 600; margin: 0 0 14px; }
+  .eyebrow { color: var(--a); text-transform: uppercase; letter-spacing: 3px; font-size: 22px; font-weight: 600; margin: 0 0 12px; }
   h1 { font-size: 72px; margin: 0 0 24px; line-height: 1.08; }
-  h2 { font-size: 58px; margin: 0 0 36px; line-height: 1.1; }
-  p, li { font-size: 30px; line-height: 1.45; color: var(--t2); }
+  h2 { font-size: 54px; margin: 0 0 30px; line-height: 1.1; }
+  p, li { font-size: 28px; line-height: 1.42; color: var(--t2); }
   b, strong { color: var(--t); }
-  .foot { position: absolute; left: 120px; right: 120px; bottom: 44px; display: flex; justify-content: space-between; color: var(--m); font-size: 18px; }
-  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
-  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-  .card { background: var(--s1); border: 1px solid var(--b); border-radius: 18px; padding: 30px 32px; }
-  .card h3 { margin: 0 0 10px; font-size: 30px; }
-  .card p { font-size: 24px; margin: 0; }
-  .big { font-size: 64px; font-weight: 700; color: var(--t); line-height: 1; }
-  .shot { width: 100%; border-radius: 14px; border: 1px solid var(--b); box-shadow: 0 20px 60px rgba(0,0,0,.6); }
-  ul { margin: 0; padding-left: 34px; }
-  li { margin-bottom: 14px; }
-  .pipe { display: flex; align-items: stretch; gap: 16px; margin-top: 20px; }
-  .pipe .step { flex: 1; background: var(--s1); border: 1px solid var(--b); border-radius: 16px; padding: 24px 20px; }
-  .pipe .step h3 { font-size: 26px; margin: 0 0 10px; color: var(--t); }
-  .pipe .step p { font-size: 21px; margin: 0; }
-  .pipe .arrow { align-self: center; color: var(--a); font-size: 40px; }
-  table { border-collapse: collapse; width: 100%; font-size: 26px; }
-  th, td { text-align: left; padding: 16px 18px; border-bottom: 1px solid #2c2c2a; }
-  th { color: var(--m); font-weight: 500; font-size: 22px; }
+  .foot { position: absolute; left: 110px; right: 110px; bottom: 40px; display: flex; justify-content: space-between; color: var(--m); font-size: 18px; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: start; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .card { background: var(--s1); border: 1px solid var(--b); border-radius: 18px; padding: 26px 28px; }
+  .card h3 { margin: 0 0 8px; font-size: 28px; }
+  .card p { font-size: 22px; margin: 0; }
+  .big { font-size: 58px; font-weight: 700; color: var(--t); line-height: 1; }
+  .shot { width: 100%; border-radius: 14px; border: 1px solid var(--b); box-shadow: 0 20px 60px rgba(0,0,0,.6); display: block; }
+  ul { margin: 0; padding-left: 32px; }
+  li { margin-bottom: 12px; }
+  .pipe { display: flex; align-items: stretch; gap: 14px; }
+  .pipe .step { flex: 1; background: var(--s1); border: 1px solid var(--b); border-radius: 16px; padding: 22px 20px; }
+  .pipe .step h3 { font-size: 25px; margin: 0 0 10px; color: var(--t); }
+  .pipe .step p { font-size: 20px; margin: 0; }
+  .pipe .arrow { align-self: center; color: var(--a); font-size: 38px; }
+  .tag { display: inline-block; font-size: 17px; font-weight: 600; color: #0d0d0d; background: var(--a2); border-radius: 6px; padding: 2px 9px; margin: 0 6px 6px 0; }
+  .tag.g { background: #fff; }
+  table { border-collapse: collapse; width: 100%; font-size: 25px; }
+  th, td { text-align: left; padding: 15px 16px; border-bottom: 1px solid #2c2c2a; }
+  th { color: var(--m); font-weight: 500; font-size: 21px; }
   td { color: var(--t2); }
   td.ok { color: var(--t); font-weight: 600; }
   .tick { color: var(--good); font-weight: 700; }
-  .chain { display: flex; align-items: center; gap: 18px; margin: 30px 0 40px; }
-  .node { background: var(--s1); border: 2px solid var(--b); border-radius: 16px; padding: 22px 26px; font-size: 26px; text-align: center; min-width: 230px; }
-  .node small { display: block; color: var(--m); font-size: 20px; margin-top: 6px; }
-  .node.c { border-color: var(--crit); } .node.s { border-color: var(--ser); }
-  .chain .arrow { color: var(--t2); font-size: 36px; }
-  .dot { display: inline-block; width: 16px; height: 16px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+  .chain { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin: 10px 0 26px; }
+  .node { background: var(--s1); border: 2px solid var(--b); border-radius: 14px; padding: 16px 20px; font-size: 23px; text-align: center; }
+  .node small { display: block; color: var(--m); font-size: 18px; margin-top: 4px; }
+  .node.c { border-color: var(--crit); } .node.s { border-color: var(--ser); } .node.w { border-color: var(--warn); }
+  .chain .arrow { color: var(--t2); font-size: 32px; }
+  .lvl { display: inline-block; font-weight: 700; padding: 2px 10px; border-radius: 6px; color: #0d0d0d; font-size: 20px; }
 </style>
 </head>
 <body>
 
 <!-- 1 Title -->
 <section class="slide" style="justify-content:center">
-  <div style="font-size:120px">🌀</div>
-  <p class="eyebrow">Track 5 · Cyclone Impact &amp; Infrastructure Vulnerability Forecaster</p>
-  <h1 style="font-size:110px">CycloneSentinel</h1>
-  <p style="font-size:40px;max-width:1400px">Know which hospitals, substations, telecom towers and homes will fail — <b>before the cyclone makes landfall.</b></p>
+  <div style="font-size:110px">🌀</div>
+  <p class="eyebrow">Build with AI: Code for Communities · Track 5 · Team Nebula Nomads</p>
+  <h1 style="font-size:104px">CycloneSentinel</h1>
+  <p style="font-size:38px;max-width:1500px">AI-powered cyclone impact &amp; infrastructure vulnerability forecaster: from <b>satellite + real-time weather</b> to <b>Gemini-reasoned, auto-dispatched early warnings</b> before landfall.</p>
+  <div style="margin-top:26px"><span class="tag g">Gemini 3.7 Flash</span><span class="tag g">Google Earth Engine</span><span class="tag g">Cloud Run</span><span class="tag">NASA VIIRS · GPM IMERG</span><span class="tag">Open-Meteo real-time</span><span class="tag">CAP 1.2 / SACHET</span></div>
   <div class="foot"><span>Live: blop77.github.io/cyclone-sentinel</span><span>github.com/Blop77/cyclone-sentinel</span></div>
 </section>
 
 <!-- 2 Problem -->
 <section class="slide">
   <p class="eyebrow">The problem</p>
-  <h2>Forecasts say <i>where</i> the storm goes.<br>Responders need to know <i>what breaks</i>.</h2>
-  <div class="grid3" style="margin-top:10px">
-    <div class="card"><div class="big">Fani 2019</div><p style="margin-top:14px">Puri's power-distribution network largely destroyed; prolonged outages in Puri, Bhubaneswar, Cuttack.</p></div>
-    <div class="card"><div class="big">Hudhud 2014</div><p style="margin-top:14px">Visakhapatnam's power and telecom networks collapsed for days; ~₹21,900 crore estimated losses.</p></div>
-    <div class="card"><div class="big">Amphan 2020</div><p style="margin-top:14px">Sundarbans and Kolkata hit by surge, wind and tree-fall — widespread power and telecom failure.</p></div>
+  <h2>Warnings say <i>where</i> the storm goes.<br>Responders need to know <i>what breaks</i>, before it does.</h2>
+  <div class="grid3">
+    <div class="card"><div class="big">Fani 2019</div><p style="margin-top:12px">Puri's power-distribution network largely destroyed; prolonged outages in Puri, Bhubaneswar and Cuttack.</p></div>
+    <div class="card"><div class="big">Hudhud 2014</div><p style="margin-top:12px">Visakhapatnam's power and telecom networks collapsed for days; about ₹21,900 crore in estimated losses.</p></div>
+    <div class="card"><div class="big">Amphan 2020</div><p style="margin-top:12px">Surge, wind and tree-fall across the Sundarbans and Kolkata; widespread grid and road failure.</p></div>
   </div>
-  <ul style="margin-top:50px">
-    <li>Warnings are issued per <b>district</b>; decisions are made per <b>asset</b> — this hospital, that substation.</li>
-    <li>Failures <b>cascade</b>: an intact hospital goes dark when its feeder substation trips.</li>
-    <li>Pre-positioning generators, crews and shelters needs a ranked list <b>24–72 h ahead</b>, with honest uncertainty.</li>
+  <ul style="margin-top:40px">
+    <li>Warnings are issued per <b>district</b>; decisions are made per <b>asset</b>: this hospital, that substation, this road.</li>
+    <li>Failures <b>cascade</b>: rain floods an arterial road → a standing hospital is <b>cut off</b>; a feeder trips → it goes <b>dark</b>.</li>
+    <li>Shifting from post-landfall recovery to <b>pre-landfall action</b> needs asset-level risk <b>24–72 h ahead</b>, and a way to <b>tell the right authority</b>.</li>
   </ul>
   <div class="foot"><span>CycloneSentinel</span><span>2</span></div>
 </section>
@@ -76,74 +79,117 @@
 <!-- 3 Solution -->
 <section class="slide">
   <p class="eyebrow">The solution</p>
-  <div class="grid2" style="grid-template-columns: 0.85fr 1.15fr">
+  <div class="grid2" style="grid-template-columns: 0.8fr 1.2fr">
     <div>
-      <h2>Track forecast → asset-level risk → action</h2>
+      <h2>One platform, four jobs</h2>
       <ul>
-        <li><b>Hazard</b> at every asset: wind, storm surge, rainfall flood</li>
-        <li><b>40-member ensemble</b> — probabilities, not guesses</li>
-        <li><b>Fragility curves</b> for 9 infrastructure classes</li>
-        <li><b>Cascade</b> through the power-dependency network</li>
-        <li><b>Ranked actions</b>: evacuate, protect, restore, connect</li>
-        <li>Runs in the browser in <b>&lt; 1 s</b> · zero install</li>
+        <li><b>Simulate</b> wind, <b>storm surge</b> and rainfall flooding at 511 assets with a 40-member ensemble</li>
+        <li><b>Map exposure</b> of power grids, <b>arterial roads</b>, hospitals and <b>cyclone shelters</b></li>
+        <li><b>Trace rainfall damage pathways</b>: rain → road flooded → facility cut off</li>
+        <li><b>Reason with Gemini</b> over satellite imagery + model output</li>
+        <li><b>Auto-dispatch</b> multilingual advisories to district, municipal and state authorities</li>
       </ul>
     </div>
-    <img class="shot" src="img/dashboard.jpg" alt="" />
+    <img class="shot" src="img/satellite.jpg" alt="" />
   </div>
-  <div class="foot"><span>CycloneSentinel</span><span>3</span></div>
+  <div class="foot"><span>Fani (2019) replay: real NASA VIIRS imagery under the forecast wind swath</span><span>3</span></div>
 </section>
 
-<!-- 4 How it works -->
+<!-- 4 Architecture -->
 <section class="slide">
   <p class="eyebrow">How it works</p>
-  <h2>A physics-based impact chain</h2>
+  <h2>Satellite + real-time data → physics → Gemini → dispatch</h2>
   <div class="pipe">
-    <div class="step"><h3>1 · Track &amp; ensemble</h3><p>IMD track, hourly. Monte-Carlo members with error σ ≈ 45 km at 24 h, ±12 % intensity. Kaplan–DeMaria decay over land.</p></div>
+    <div class="step"><h3>1 · Data feeds</h3><p><b>Google Earth Engine</b>: Copernicus DEM, JRC water, WorldPop, IMERG per asset. <b>NASA VIIRS/IMERG</b> imagery. <b>Open-Meteo</b> real-time 72 h. IMD tracks.</p></div>
     <div class="arrow">→</div>
-    <div class="step"><h3>2 · Hazards</h3><p>Holland (1980) wind + forward-motion asymmetry + terrain. Shelf-amplified surge. R-CLIPER-style rain → flood depth.</p></div>
+    <div class="step"><h3>2 · Hazard ensemble</h3><p>40 Monte-Carlo tracks. Holland wind, shelf-amplified <b>storm surge</b>, rainfall ponding. Hemisphere-aware.</p></div>
     <div class="arrow">→</div>
-    <div class="step"><h3>3 · Fragility</h3><p>Lognormal wind &amp; flood curves per asset class (HAZUS-MH derived) → P(damage).</p></div>
+    <div class="step"><h3>3 · Vulnerability</h3><p>Fragility curves for 10 asset classes, <b>power cascade</b> and <b>road-access cascade</b> → P(disruption), P(cut off).</p></div>
     <div class="arrow">→</div>
-    <div class="step"><h3>4 · Cascade</h3><p>Substation ← transmission line; hospitals, water, telecom ← substation, net of backup → P(disruption).</p></div>
+    <div class="step"><h3>4 · Gemini 3.7 Flash</h3><p>Satellite image + model JSON → situation, pathways, <b>advisories in Odia / Telugu / Bengali</b>.</p></div>
     <div class="arrow">→</div>
-    <div class="step"><h3>5 · Decisions</h3><p>KPIs + actions ranked by risk × criticality × people served.</p></div>
+    <div class="step"><h3>5 · Dispatch</h3><p>IMD colour-coded district advisories → <b>CAP 1.2</b>, webhook, e-mail, WhatsApp; <b>auto-dispatch</b>.</p></div>
   </div>
-  <div class="grid3" style="margin-top:44px">
-    <div class="card"><div class="big">475</div><p>assets across 34 coastal towns in Odisha, AP, West Bengal</p></div>
-    <div class="card"><div class="big">~0.5 s</div><p>for 40 members × 475 assets × 130 hourly steps, in-browser</p></div>
-    <div class="card"><div class="big">12–72 h</div><p>forecast lead time — uncertainty widens honestly</p></div>
+  <div class="grid3" style="margin-top:36px">
+    <div class="card"><div class="big">511</div><p>assets · 36 arterial roads · 34 towns · 15 districts · 3 states</p></div>
+    <div class="card"><div class="big">&lt; 1 s</div><p>40 members × 511 assets × 130 hourly steps, in the browser</p></div>
+    <div class="card"><div class="big">1 command</div><p>to deploy on <b>Cloud Run</b>; the static app also runs on GitHub Pages</p></div>
   </div>
   <div class="foot"><span>CycloneSentinel</span><span>4</span></div>
 </section>
 
-<!-- 5 Cascade -->
+<!-- 5 AI approach -->
 <section class="slide">
-  <p class="eyebrow">Key insight</p>
-  <h2>Infrastructure fails as a network</h2>
-  <div class="grid2" style="grid-template-columns: 1fr 0.9fr">
+  <p class="eyebrow">AI approach</p>
+  <h2>Gemini 3.7 Flash as the duty analyst</h2>
+  <div class="grid2" style="grid-template-columns: 0.7fr 1.3fr">
     <div>
-      <div class="chain">
-        <div class="node s">Transmission line<small>fails in high wind</small></div><div class="arrow">→</div>
-        <div class="node c">Substation<small>69 % supply loss</small></div><div class="arrow">→</div>
-        <div class="node s">Hospital<small>12 % damage → 36 % disruption</small></div>
-      </div>
+      <img class="shot" src="img/fani-viirs.jpg" alt="" />
+      <p style="font-size:19px;color:var(--m);margin-top:8px">Input: NASA VIIRS image, 2 May 2019, sent with the model output</p>
+    </div>
+    <div>
       <ul>
-        <li>The building survives — the <b>service</b> doesn't.</li>
-        <li>Backup power is modelled explicitly: hospital DG sets 60 %, telecom batteries 50 %, water 30 %.</li>
-        <li>Output is an action, not a map: <b>"Pre-position DG sets + 72 h fuel at 2 hospitals in Puri — grid feeder likely to trip."</b></li>
+        <li><b>Multimodal:</b> reads the eye, cloud organisation and which coast is under the rain bands</li>
+        <li><b>Grounded:</b> gets the model's KPIs, top-risk assets, pathways and advisories as JSON, and is told never to invent numbers</li>
+        <li><b>Cross-checks</b> imagery against model hotspots and states where they disagree</li>
+        <li><b>Structured JSON output:</b> situation, key risks, rainfall damage pathways with mitigations, confidence, caveats</li>
+        <li><b>Multilingual:</b> SMS-ready advisories in English + <b>Odia, Telugu, Bengali</b>, attached to the dispatch</li>
+        <li><b>Reliable:</b> fallback across Flash models, back-off, key kept server-side on Cloud Run</li>
       </ul>
     </div>
-    <img class="shot" src="img/asset-popup.jpg" alt="" />
   </div>
   <div class="foot"><span>CycloneSentinel</span><span>5</span></div>
 </section>
 
-<!-- 6 Validation -->
+<!-- 6 Pathways -->
+<section class="slide">
+  <p class="eyebrow">Rainfall damage pathways</p>
+  <h2>Infrastructure fails as a network</h2>
+  <div class="grid2" style="grid-template-columns: 1.05fr 0.95fr">
+    <div>
+      <div class="chain">
+        <div class="node w">301 mm rain<small>Fani, Puri</small></div><div class="arrow">→</div>
+        <div class="node s">0.27 m water<small>Puri–Konark road</small></div><div class="arrow">→</div>
+        <div class="node c">Road impassable<small>59 %</small></div><div class="arrow">→</div>
+        <div class="node c">Hospital cut off<small>Puri Hospital 1</small></div>
+      </div>
+      <ul>
+        <li><b>Road-access cascade:</b> 20 hospitals and shelters are likely cut off in Fani, even where the buildings survive</li>
+        <li><b>Power cascade:</b> line → substation → hospital / water / telecom, net of backup generators</li>
+        <li>Each asset carries an <b>ordered causal chain</b> the operator can read</li>
+        <li>Output is an action: <b>"Pre-stock 4 hospitals/shelters in Puri for 72 h of isolation"</b></li>
+      </ul>
+    </div>
+    <img class="shot" src="img/asset-popup.jpg" alt="" />
+  </div>
+  <div class="foot"><span>CycloneSentinel</span><span>6</span></div>
+</section>
+
+<!-- 7 Dispatch -->
+<section class="slide">
+  <p class="eyebrow">Automated early warning</p>
+  <h2>From forecast to the right desk, automatically</h2>
+  <div class="grid2" style="grid-template-columns: 0.95fr 1.05fr">
+    <div>
+      <p><span class="lvl" style="background:var(--crit)">RED</span> <span class="lvl" style="background:var(--ser)">ORANGE</span> <span class="lvl" style="background:var(--warn)">YELLOW</span> district advisories on the IMD colour code</p>
+      <ul>
+        <li><b>Routed</b> to the District Collector &amp; DDMA, the <b>municipal body</b> of each affected town, OSDMA / APSDMA / WB DM&amp;CD, the DISCOM and the District Health Officer</li>
+        <li><b>CAP 1.2 XML</b>: the format India's <b>SACHET</b> platform uses</li>
+        <li>Webhook to a Cloud Run relay → control-room inbox, Google Chat, state gateway; plus e-mail and WhatsApp</li>
+        <li><b>Auto-dispatch</b> after every run, once per district and level</li>
+      </ul>
+    </div>
+    <img class="shot" src="img/advisories.jpg" alt="" />
+  </div>
+  <div class="foot"><span>Fani replay: 10 district advisories, 2 RED (Puri, Jagatsinghpur)</span><span>7</span></div>
+</section>
+
+<!-- 8 Validation -->
 <section class="slide">
   <p class="eyebrow">Validation</p>
   <h2>Hindcast: 4 historical cyclones, forecast issued T−24 h</h2>
   <table>
-    <thead><tr><th>Cyclone</th><th>Actual landfall</th><th>Model's top-3 worst-hit towns</th><th>People likely without power</th><th></th></tr></thead>
+    <thead><tr><th>Cyclone</th><th>Actual landfall</th><th>Model's worst-hit towns</th><th>People likely without power</th><th></th></tr></thead>
     <tbody>
       <tr><td class="ok">Fani (2019)</td><td>Puri, Odisha</td><td>Puri, Bhubaneswar, Cuttack</td><td>9.0 lakh</td><td class="tick">✓</td></tr>
       <tr><td class="ok">Amphan (2020)</td><td>Sundarbans, West Bengal</td><td>Sagar Island, Haldia, Kolkata</td><td>7.5 lakh</td><td class="tick">✓</td></tr>
@@ -151,54 +197,79 @@
       <tr><td class="ok">Hudhud (2014)</td><td>Visakhapatnam, AP</td><td>Visakhapatnam, Vizianagaram, Bheemunipatnam</td><td>15.3 lakh</td><td class="tick">✓</td></tr>
     </tbody>
   </table>
-  <p style="margin-top:40px">Automated tests also check the physics: peak wind at the radius of maximum wind, right-of-track bias, monotonic fragility, cascade ≥ damage, and spread growing with lead time.</p>
-  <div class="foot"><span>CycloneSentinel</span><span>6</span></div>
+  <p style="margin-top:34px">15 automated tests cover the physics (peak wind at the eyewall, right-of-track bias, southern-hemisphere flip), hindcasts, power and road cascades, advisory routing, CAP validity and live mode.</p>
+  <div class="foot"><span>CycloneSentinel</span><span>8</span></div>
 </section>
 
-<!-- 7 Users & impact -->
+<!-- 9 Who it serves -->
 <section class="slide">
-  <p class="eyebrow">Who uses it</p>
+  <p class="eyebrow">Who it serves</p>
   <h2>Built for the 72 hours before landfall</h2>
   <div class="grid3">
-    <div class="card"><h3>SDMAs &amp; district collectors</h3><p>Where to evacuate first, which shelters are themselves exposed, how many people to move.</p></div>
-    <div class="card"><h3>Power utilities (discoms)</h3><p>Which substations and line spans will fail → stage crews and mobile transformers in advance.</p></div>
-    <div class="card"><h3>Hospitals &amp; health dept.</h3><p>Which hospitals lose grid power → fuel, generators, patient transfers.</p></div>
-    <div class="card"><h3>Telecom operators</h3><p>Towers likely to fail → cell-on-wheels and satellite phones for first responders.</p></div>
-    <div class="card"><h3>Ports &amp; industry</h3><p>Surge and wind exposure of terminals → suspend operations, secure vessels.</p></div>
-    <div class="card"><h3>Planners &amp; insurers</h3><p>What-if storms to stress-test the coast and prioritise retrofits.</p></div>
+    <div class="card"><h3>District Collectors &amp; DDMAs</h3><p>Who to evacuate, to which shelter, which shelters are themselves exposed or cut off.</p></div>
+    <div class="card"><h3>Municipal bodies (ULBs)</h3><p>Town-level advisories, pumps and tree-clearing on the arterial roads that will flood.</p></div>
+    <div class="card"><h3>State SDMAs &amp; EOCs</h3><p>OSDMA, APSDMA, WB DM&amp;CD: statewide RED/ORANGE picture, CAP feed for SACHET.</p></div>
+    <div class="card"><h3>Power utilities (DISCOMs)</h3><p>Substations and line spans likely to fail → stage crews and mobile transformers.</p></div>
+    <div class="card"><h3>Health departments</h3><p>Hospitals losing grid power or access → fuel, generators, 72 h stock, transfers.</p></div>
+    <div class="card"><h3>Citizens, via authorities</h3><p>Advisories in Odia, Telugu and Bengali, ready for SMS and WhatsApp.</p></div>
   </div>
-  <div class="foot"><span>CycloneSentinel</span><span>7</span></div>
+  <p style="margin-top:34px">Scale of benefit in the Fani replay alone: <b>12.3 lakh</b> people in ≥ 118 km/h winds, <b>9.0 lakh</b> likely without power, <b>4.6 lakh</b> residents flagged for evacuation.</p>
+  <div class="foot"><span>CycloneSentinel</span><span>9</span></div>
 </section>
 
-<!-- 8 Roadmap -->
+<!-- 10 Deployable -->
 <section class="slide">
-  <p class="eyebrow">Roadmap &amp; tech</p>
+  <p class="eyebrow">Why it's deployable</p>
+  <h2>A state could pilot it within weeks</h2>
   <div class="grid2">
     <div>
-      <h2>From prototype to production</h2>
       <ul>
-        <li>Live <b>IMD / JTWC advisories</b> and ECMWF / NCMRWF ensembles</li>
-        <li>Real assets from <b>OpenStreetMap</b>, Bhuvan and discom GIS (prototype inventory is synthetic)</li>
-        <li><b>DEM + coastline</b> for surge and inundation</li>
-        <li>Fragility <b>calibration</b> on Fani, Amphan, Hudhud, Biparjoy, Michaung losses</li>
-        <li><b>SMS / WhatsApp</b> alerts to control rooms</li>
+        <li><b>Zero install:</b> a web app; works on any browser in a control room</li>
+        <li><b>Serverless on Google Cloud:</b> one <code>gcloud run deploy</code>; scales to zero between storms, pay-per-use</li>
+        <li><b>Standards-based:</b> CAP 1.2 output for SACHET; IMD colour codes; district and ULB routing</li>
+        <li><b>Key-safe:</b> Gemini key stays server-side; the static site shows cached AI output</li>
+        <li><b>Open source</b> (MIT) and tested</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Pilot plan: one state, 4 weeks</h3>
+      <p style="margin-top:10px"><b>Week 1:</b> load state assets from OSM / Bhuvan / DISCOM GIS; run the GEE pipeline.<br><br>
+      <b>Week 2:</b> calibrate fragility on the last 2–3 cyclones' damage reports.<br><br>
+      <b>Week 3:</b> connect the dispatch webhook to the state EOC and SACHET test gateway.<br><br>
+      <b>Week 4:</b> shadow mode alongside IMD bulletins; human sign-off before any Actual alert.</p>
+    </div>
+  </div>
+  <div class="foot"><span>CycloneSentinel</span><span>10</span></div>
+</section>
+
+<!-- 11 Scale -->
+<section class="slide">
+  <p class="eyebrow">How it scales across India — and BRICS</p>
+  <div class="grid2">
+    <div>
+      <h2>New coast = new data, same engine</h2>
+      <ul>
+        <li><b>India:</b> add Tamil Nadu, Gujarat, Maharashtra and Kerala by adding towns, tracks and assets. The engine, cascades, advisories and CAP are unchanged.</li>
+        <li><b>Languages:</b> Gemini writes advisories in each state's language (Tamil, Gujarati, Marathi, Malayalam…)</li>
+        <li><b>BRICS:</b> hemisphere-aware physics (tested) serves typhoons in China, the Mozambique Channel (South Africa), the Arabian Gulf (UAE, Iran) and Brazil</li>
+        <li><b>CAP 1.2</b> is the WMO/ITU standard used by national alert systems worldwide</li>
       </ul>
     </div>
     <div>
-      <h2>Stack</h2>
+      <h2>Next</h2>
       <ul>
-        <li>Vanilla JavaScript model — no server, works offline</li>
-        <li>Leaflet map · GitHub Pages hosting</li>
-        <li>Node test runner — physics + hindcast tests</li>
-        <li>Playwright — automated demo recording</li>
+        <li>Real asset registers (OSM, Bhuvan, DISCOM GIS) in BigQuery</li>
+        <li>Live IMD/JTWC advisories + ECMWF ensembles</li>
+        <li>Fragility calibration on Fani, Amphan, Biparjoy, Michaung</li>
+        <li>Parametric-insurance triggers from the same probabilities</li>
       </ul>
-      <div class="card" style="margin-top:40px">
+      <div class="card" style="margin-top:30px">
         <h3>Try it</h3>
-        <p><b>blop77.github.io/cyclone-sentinel</b><br>github.com/Blop77/cyclone-sentinel</p>
+        <p><b>blop77.github.io/cyclone-sentinel</b><br>github.com/Blop77/cyclone-sentinel · youtu.be/l2LTAcgFshg</p>
       </div>
     </div>
   </div>
-  <div class="foot"><span>CycloneSentinel</span><span>8</span></div>
+  <div class="foot"><span>CycloneSentinel · Team Nebula Nomads</span><span>11</span></div>
 </section>
 
 </body>
