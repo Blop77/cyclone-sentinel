@@ -8,7 +8,7 @@ physics-based impact model. It simulates storm surge, traces **rainfall damage p
 **power grids, arterial roads and medical shelters**, and **automatically dispatches early-warning advisories**
 (CAP 1.2, the format India's SACHET platform uses) to district, municipal and state disaster-management authorities.
 
-**▶ Live demo:** https://blop77.github.io/cyclone-sentinel/ · **🎬 Video:** https://youtu.be/l2LTAcgFshg · **📑 Deck:** [`docs/CycloneSentinel-deck.pdf`](docs/CycloneSentinel-deck.pdf)
+**▶ Live demo:** https://blop77.github.io/cyclone-sentinel/ · **🎬 Video:** https://youtu.be/IILFOm8DF-s · **📑 Deck:** [`docs/CycloneSentinel-deck.pdf`](docs/CycloneSentinel-deck.pdf)
 
 ![Dashboard — Cyclone Fani (2019) replayed as a 24 h forecast](docs/img/dashboard.jpg)
 
