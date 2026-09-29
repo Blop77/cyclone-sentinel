@@ -104,11 +104,14 @@ def inbox():
         color = LEVEL_COLOR.get(i.get("level", ""), "#898781")
         ai = i.get("ai") or {}
         local = f"<p class='local'>{html.escape(ai.get('message_local', ''))}</p>" if ai.get("message_local") else ""
+        # body = advisory text without the headline (shown above) and the recipient line (shown below)
+        body_lines = i.get("text", "").split("\n")[1:]
+        text = "\n".join(l for l in body_lines if not l.startswith("To: ")).strip()
         rows.append(f"""<article style="border-left:6px solid {color}">
           <header><b style="color:{color}">{html.escape(i.get('level', ''))}</b> · {html.escape(i.get('district', ''))}, {html.escape(i.get('state', ''))}
           <span>{html.escape(i['received'])} · <a href="/api/dispatch/{i['id']}.xml">CAP XML</a></span></header>
           <h3>{html.escape(i.get('headline', ''))}</h3>
-          <pre>{html.escape(i.get('text', ''))}</pre>{local}
+          <pre>{html.escape(text)}</pre>{local}
           <p class="to">To: {html.escape('; '.join(i.get('recipients', [])))}</p></article>""")
     body = "".join(rows) or "<p>No advisories received yet.</p>"
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="refresh" content="5">
