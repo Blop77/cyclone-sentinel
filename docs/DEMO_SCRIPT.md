@@ -1,7 +1,10 @@
-# Demo video — narration script (~2 min)
+# Demo video — narration script (~3 min)
 
-`scripts/record_demo.py` records the screen with on-screen captions. If you want a voice-over, read
-this script over the recording. Each block lines up with a scene; timings are approximate.
+`scripts/record_demo.py` now narrates the video automatically, using Microsoft's neural text-to-speech
+(`edge-tts`, voice `en-IN-NeerjaNeural`). Every scene waits for its line to finish, and the result
+is muxed into `video/cyclonesentinel-demo.mp4`. The exact narration text lives in the `NARRATION`
+dict in that script. The table below is a human-readable version, useful if you'd rather record
+your own voice.
 
 | Time | On screen | Say |
 |---|---|---|
@@ -23,6 +26,5 @@ this script over the recording. Each block lines up with a scene; timings are ap
 
 ## Uploading
 
-1. Upload `video/cyclonesentinel-demo.webm` to YouTube as **Unlisted** or **Public**. YouTube accepts
-   `.webm` directly. Alternatively, use Google Drive with "Anyone with the link" access.
+1. Upload `video/cyclonesentinel-demo.mp4` to YouTube as **Unlisted** or **Public**. Alternatively, use Google Drive with "Anyone with the link" access.
 2. Paste the link into the submission form and into the README.
