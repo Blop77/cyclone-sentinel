@@ -1,0 +1,87 @@
+{
+ "scenario": "fani-2019",
+ "model": "gemini-3.5-flash",
+ "ms": 31942,
+ "json": {
+  "situation_summary": "Extremely Severe Cyclonic Storm Fani is approaching the Odisha coast, with landfall projected near Puri on 3 May 2019. The State Emergency Operations Centre is on high alert as the system brings extreme winds up to 183 km/h, heavy rainfall exceeding 300 mm, and localized storm surges. Immediate evacuations of kutcha housing residents and pre-positioning of emergency response teams are required across Puri, Jagatsinghpur, Ganjam, and Khordha districts.",
+  "satellite_observations": "The VIIRS true-colour satellite image from 2019-05-02 shows a well-defined, clear eye located in the Bay of Bengal, moving towards the Odisha coast. The storm exhibits highly organized, tight spiral bands with a dense overcast shield covering the entire coastal belt of Odisha, including Puri, Jagatsinghpur, and extending into parts of West Bengal and Andhra Pradesh.",
+  "model_agreement": "The satellite imagery strongly supports the physics-based impact model's hotspots. The dense central dense overcast (CDO) and intense rain-bands are positioned directly over the high-risk districts of Puri and Jagatsinghpur, validating the model's prediction of extreme winds (173-183 km/h) and heavy rainfall (>300 mm) in these areas.",
+  "key_risks": [
+   {
+    "location": "Puri District",
+    "risk": "Widespread destruction of kutcha housing and critical infrastructure",
+    "why": "Wind speeds up to 183 km/h and rainfall up to 315 mm will cause severe structural damage to over 61,000 kutcha houses, down telecom towers, and disrupt power substations."
+   },
+   {
+    "location": "Jagatsinghpur District",
+    "risk": "Storm surge inundation and wind damage",
+    "why": "Winds up to 153 km/h and a storm surge up to 0.5 m above ground threaten coastal settlements, particularly Paradip Kutcha housing cluster 1."
+   }
+  ],
+  "rainfall_damage_pathways": [
+   {
+    "location": "Puri to Konark",
+    "pathway": "301 mm rain → 0.27 m water on Puri–Konark arterial road → road impassable (59 %) → Puri Hospital 1, Puri Hospital 2, and Cyclone shelters 1 & 2 cut off",
+    "mitigation": "Pre-deploy high-clearance rescue vehicles and inflatable boats near Puri-Konark road; clear drainage channels beforehand."
+   },
+   {
+    "location": "Balugaon to Satapada",
+    "pathway": "297 mm rain → 0.26 m water on Balugaon–Satapada arterial road → road impassable (51 %) → Balugaon Hospital, Satapada Hospital, and Balugaon Cyclone shelter cut off",
+    "mitigation": "Establish alternative emergency medical supply routes and pre-position medical teams inside Satapada before road access is compromised."
+   }
+  ],
+  "advisories": [
+   {
+    "district": "Puri",
+    "level": "RED",
+    "message_en": "RED ALERT: Cyclone Fani landfall near Puri on 3 May. Winds up to 183km/h, 315mm rain. Evacuate Kutcha houses to shelters immediately. Puri-Konark & Balugaon-Satapada roads will flood, cutting off Puri & Satapada hospitals. Power/telecom will fail. Stay indoors.",
+    "local_language": "Odia",
+    "message_local": "ଲାଲ୍ ଚେତାବନୀ: ମେ ୩ ରେ ପୁରୀ ନିକଟରେ ବାତ୍ୟା ଫଣିର ଲ୍ୟାଣ୍ଡଫଲ୍। ପବନ ୧୮୩ କିମି/ଘଣ୍ଟା, ବର୍ଷା ୩୧୫ ମିମି। କୁଚା ଘରୁ ବାତ୍ୟା ଆଶ୍ରୟସ୍ଥଳୀକୁ ତୁରନ୍ତ ଯାଆନ୍ତୁ। ପୁରୀ-କୋଣାର୍କ ଏବଂ ବାଲୁଗାଁ-ସାତପଡା ରାସ୍ତା ବନ୍ୟାପ୍ଲାବିତ ହେବ। ଘର ଭିତରେ ରୁହନ୍ତୁ।"
+   },
+   {
+    "district": "Jagatsinghpur",
+    "level": "RED",
+    "message_en": "RED ALERT: Cyclone Fani. Winds up to 153km/h, 270mm rain, 0.5m storm surge. Paradip Kutcha housing at extreme risk. Evacuate to safe shelters now. Avoid coastal areas. Secure property and emergency supplies.",
+    "local_language": "Odia",
+    "message_local": "ଲାଲ୍ ଚେତାବନୀ: ବାତ୍ୟା ଫଣି। ପବନ ୧୫୩ କିମି/ଘଣ୍ଟା, ବର୍ଷା ୨୭୦ ମିମି, ଜୁଆର ୦.୫ ମିଟର। ପାରାଦୀପ କୁଚା ଘର ଅତି ବିପଦରେ ଅଛି। ତୁରନ୍ତ ସୁରକ୍ଷିତ ଆଶ୍ରୟସ୍ଥଳୀକୁ ଯାଆନ୍ତୁ। ଉପକୂଳ ଅଞ୍ଚଳରୁ ଦୂରେଇ ରୁହନ୍ତୁ।"
+   },
+   {
+    "district": "Ganjam",
+    "level": "ORANGE",
+    "message_en": "ORANGE ALERT: Cyclone Fani. Winds up to 144km/h, 304mm rain. Over 44,000 kutcha houses at risk. 2 arterial roads likely impassable, cutting off 8 hospitals/shelters. Move to safe structures. Avoid travel.",
+    "local_language": "Odia",
+    "message_local": "ଅରେଞ୍ଜ ଚେତାବନୀ: ବାତ୍ୟା ଫଣି। ପବନ ୧୪୪ କିମି/ଘଣ୍ଟା, ବର୍ଷା ୩୦୪ ମିମି। ୪୪,୦୦୦ ରୁ ଅଧିକ କୁଚା ଘର ବିପଦରେ। ୨ଟି ମୁଖ୍ୟ ରାସ୍ତା ବନ୍ଦ ହୋଇପାରେ, ୮ଟି ହସ୍ପିଟାଲ/ଆଶ୍ରୟସ୍ଥଳୀ ବିଚ୍ଛିନ୍ନ ହେବ। ସୁରକ୍ଷିତ ସ୍ଥାନକୁ ଯାଆନ୍ତୁ।"
+   },
+   {
+    "district": "Khordha",
+    "level": "ORANGE",
+    "message_en": "ORANGE ALERT: Cyclone Fani. Winds up to 152km/h, 297mm rain. ~1.35 lakh kutcha houses at risk. 4 substations likely to lose power. 2 arterial roads will flood. Secure loose structures, stock essentials, and stay indoors.",
+    "local_language": "Odia",
+    "message_local": "ଅରେଞ୍ଜ ଚେତାବନୀ: ବାତ୍ୟା ଫଣି। ପବନ ୧୫୨ କିମି/ଘଣ୍ଟା, ବର୍ଷା ୨୯୭ ମିମି। ପ୍ରାୟ ୧.୩୫ ଲକ୍ଷ କୁଚା ଘର ବିପଦରେ। ୪ଟି ସବଷ୍ଟେସନ ବିଦ୍ୟୁତ ସେବା ବାଧିତ ହେବ। ସୁରକ୍ଷିତ ରୁହନ୍ତୁ ଏବଂ ଅତ୍ୟାବଶ୍ୟକ ସାମଗ୍ରୀ ମହଜୁଦ ରଖନ୍ତୁ।"
+   }
+  ],
+  "confidence": "high",
+  "caveats": "The impact model is dependent on the forecast track and intensity remaining consistent. Any sudden change in landfall speed or direction will shift the location of maximum wind and rainfall impacts."
+ },
+ "usage": {
+  "promptTokenCount": 3577,
+  "candidatesTokenCount": 1814,
+  "totalTokenCount": 5391,
+  "promptTokensDetails": [
+   {
+    "modality": "TEXT",
+    "tokenCount": 2488
+   },
+   {
+    "modality": "IMAGE",
+    "tokenCount": 1089
+   }
+  ],
+  "serviceTier": "standard"
+ },
+ "satellite": {
+  "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=VIIRS_SNPP_CorrectedReflectance_TrueColor&CRS=EPSG:4326&BBOX=15.956,81.900,23.956,89.900&WIDTH=768&HEIGHT=768&FORMAT=image/jpeg&TIME=2019-05-02",
+  "date": "2019-05-02"
+ },
+ "generatedAt": "2026-09-29T14:52:56.327Z"
+}

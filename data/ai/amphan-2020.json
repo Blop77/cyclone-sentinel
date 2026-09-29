@@ -1,0 +1,80 @@
+{
+ "scenario": "amphan-2020",
+ "model": "gemini-3.5-flash",
+ "ms": 42965,
+ "json": {
+  "situation_summary": "Super Cyclonic Storm Amphan is making landfall near Sagar Island and the Sundarbans region of West Bengal. The system is bringing extreme winds up to 151 km/h, heavy rainfall exceeding 230 mm, and a storm surge up to 0.7 m above ground level. High-risk assets include kutcha housing clusters, power substations, and telecom towers across South 24 Parganas and Purba Medinipur, with severe risk of road inundation cutting off critical facilities.",
+  "satellite_observations": "The satellite image shows a massive, highly organized cyclonic system. While the eye is partially obscured by dense central overcast (CDO), the spiral rain-bands are extremely well-defined, wrapping tightly around the center. The dense overcast completely blankets coastal West Bengal (including Sagar Island and the Sundarbans) and adjoining coastal Odisha and Bangladesh, indicating widespread intense precipitation and high winds.",
+  "model_agreement": "The satellite imagery strongly supports the model's hotspots. The dense central overcast and most intense convective bands are positioned directly over South 24 Parganas and Purba Medinipur, aligning perfectly with the model's prediction of maximum wind damage (up to 151 km/h) and extreme rainfall (over 230 mm) in Sagar Island, Namkhana, and Haldia.",
+  "key_risks": [
+   {
+    "location": "Sagar Island, South 24 Parganas",
+    "risk": "Destruction of Kutcha Housing and Storm Surge Inundation",
+    "why": "Kutcha housing clusters 1, 3, and 4 face wind speeds up to 147 km/h and storm surges up to 0.71 m, leading to damage probabilities up to 75%."
+   },
+   {
+    "location": "Sagar Island and Namkhana, South 24 Parganas",
+    "risk": "Widespread Power and Telecom Blackout",
+    "why": "Multiple substations, transmission lines, and telecom towers face wind speeds up to 147 km/h, with disruption probabilities up to 49%."
+   },
+   {
+    "location": "Haldia, Purba Medinipur",
+    "risk": "Severe Wind Damage to Vulnerable Housing",
+    "why": "Kutcha housing clusters 1 and 3 face wind speeds up to 127 km/h, with a 42% probability of structural damage."
+   }
+  ],
+  "rainfall_damage_pathways": [
+   {
+    "location": "Sagar Island–Namkhana Arterial Road",
+    "pathway": "229 mm rain → 0.11 m waterlogging on arterial road → road impassable (35% probability) → Sagar Island Hospital 1 & 2, Namkhana Hospital, and Sagar Island Cyclone Shelters 1 & 2 cut off",
+    "mitigation": "Pre-deploy high-clearance emergency vehicles and amphibious rescue teams; clear drainage channels along the Sagar Island–Namkhana route immediately."
+   }
+  ],
+  "advisories": [
+   {
+    "district": "South 24 Parganas",
+    "level": "RED",
+    "message_en": "RED ALERT: Move to cyclone shelters immediately. Winds up to 151 km/h, 0.7m storm surge, and 234mm rain expected. Kutcha houses in Sagar Island and Namkhana at extreme risk. Power and telecom outages likely.",
+    "local_language": "Bengali",
+    "message_local": "লাল সতর্কতা: অবিলম্বে সাইক্লোন শেল্টারে আশ্রয় নিন। ১৫১ কিমি/ঘণ্টা বেগে ঝড়ো হাওয়া, ০.৭ মিটার জলোচ্ছ্বাস এবং ২৩৪ মিমি বৃষ্টির সম্ভাবনা। সাগর দ্বীপ ও নামখানার কাঁচা বাড়িগুলি চরম ঝুঁকিতে রয়েছে।"
+   },
+   {
+    "district": "Purba Medinipur",
+    "level": "ORANGE",
+    "message_en": "ORANGE ALERT: Seek safe shelter. Winds up to 130 km/h and 215 mm rain expected. Kutcha houses in Haldia at high risk. Avoid travel and stay indoors.",
+    "local_language": "Bengali",
+    "message_local": "কমলা সতর্কতা: নিরাপদ আশ্রয়ে থাকুন। ১৩০ কিমি/ঘণ্টা বেগে বাতাস এবং ২১৫ মিমি বৃষ্টির সম্ভাবনা। হলদিয়ার কাঁচা বাড়িগুলি উচ্চ ঝুঁকিতে রয়েছে। যাতায়াত এড়িয়ে চলুন।"
+   },
+   {
+    "district": "Kolkata",
+    "level": "YELLOW",
+    "message_en": "YELLOW ALERT: Stay indoors. Winds up to 120 km/h and 208 mm rain expected. Secure loose structures and avoid parking near trees or power lines.",
+    "local_language": "Bengali",
+    "message_local": "হলুদ সতর্কতা: ঘরের ভেতরে থাকুন। ১২০ কিমি/ঘণ্টা বেগে বাতাস এবং ২০৮ মিমি বৃষ্টির সম্ভাবনা। কাঁচা বা দুর্বল কাঠামো সুরক্ষিত করুন এবং গাছ বা বিদ্যুতের লাইনের নিচে দাঁড়াবেন না।"
+   }
+  ],
+  "confidence": "high",
+  "caveats": "The exact landfall point and surge height can fluctuate based on astronomical tide synchronization. Localized waterlogging may exceed model estimates if drainage systems are blocked by debris."
+ },
+ "usage": {
+  "promptTokenCount": 3212,
+  "candidatesTokenCount": 1202,
+  "totalTokenCount": 4414,
+  "promptTokensDetails": [
+   {
+    "modality": "TEXT",
+    "tokenCount": 2123
+   },
+   {
+    "modality": "IMAGE",
+    "tokenCount": 1089
+   }
+  ],
+  "serviceTier": "standard"
+ },
+ "satellite": {
+  "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=VIIRS_SNPP_CorrectedReflectance_TrueColor&CRS=EPSG:4326&BBOX=17.814,84.386,25.814,92.386&WIDTH=768&HEIGHT=768&FORMAT=image/jpeg&TIME=2020-05-20",
+  "date": "2020-05-20"
+ },
+ "generatedAt": "2026-09-29T15:13:16.341Z"
+}

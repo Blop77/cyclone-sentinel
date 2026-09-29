@@ -47,7 +47,7 @@ NARRATION = {
     "advisories": "From risk to warning. CycloneSentinel writes district advisories on the I.M.D. colour code, with Red for Puri and Jagatsinghpur. Each one is routed to the District Collector, the municipal bodies, the state disaster authority, the power utility and the health officer.",
     "dispatch": "With auto-dispatch on, every Red and Orange advisory is sent automatically, as a CAP alert: the format India's SACHET system uses.",
     "inbox": "And here they arrive, in the district control-room inbox served by our Google Cloud Run backend.",
-    "ai": "Now, Google's Gemini 3.7 Flash. We send it the satellite image of the storm together with the model's output.",
+    "ai": "Now, Google Gemini. We send it the real satellite image of the storm, together with the impact model's output.",
     "ai2": "Gemini reads the storm's structure, checks the imagery against our hotspots, explains the rainfall damage pathways, and drafts advisories in English and Odia, ready to dispatch.",
     "live": "It also runs in real time. Live mode pulls the latest seventy-two hour forecast for every coastal town and runs the same chain, from hazard to advisory.",
     "how": "Google Earth Engine layers, NASA satellite feeds, real-time weather, a physics ensemble, Gemini multimodal reasoning, and automated CAP dispatch on Cloud Run, validated against four historical cyclones.",
@@ -280,10 +280,13 @@ async def main():
         if not ARGS.skip_ai:
             await scene("ai")
             await click('[data-tab="ai"]', 500)
-            await cap("<b>Gemini 3.7 Flash</b> · input: NASA satellite image + impact-model output")
-            await click("#ai-run", 500)
-            await page.wait_for_function("!document.getElementById('ai-run').disabled", timeout=420000)
-            await page.wait_for_timeout(800)
+            await cap("<b>Google Gemini</b> multimodal analyst · input: NASA satellite image + impact-model output")
+            if not await page.evaluate("!!(CycloneSentinel.state.ai)"):  # no saved analysis → call Gemini live
+                await click("#ai-run", 500)
+                await page.wait_for_function("!document.getElementById('ai-run').disabled", timeout=420000)
+            await page.wait_for_timeout(2500)
+            await page.evaluate("document.querySelector('.impact').scrollTo({top: 200, behavior: 'smooth'})")
+            await page.wait_for_timeout(3000)
             await scene("ai2")
             await cap("Gemini: satellite reading · imagery-vs-model check · pathways · advisories in English + Odia")
             for top in (300, 900, 1500, 2300):
