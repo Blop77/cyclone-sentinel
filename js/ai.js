@@ -121,7 +121,7 @@ ${JSON.stringify(ctx)}`;
     if (sat) parts.push({ inline_data: { mime_type: sat.mime, data: sat.base64 } });
     const body = {
       contents: [{ role: "user", parts }],
-      generationConfig: { temperature: 0.3, responseMimeType: "application/json", responseSchema: SCHEMA },
+      generationConfig: { temperature: 0.3, responseMimeType: "application/json", responseSchema: SCHEMA, thinkingConfig: { thinkingLevel: "low" } },
     };
     const out = await callGemini(body, key, onStatus);
     return { ...out, satellite: sat ? { url: sat.url, date: sat.date } : null, generatedAt: new Date().toISOString() };

@@ -2,7 +2,7 @@
 Record a captioned, narrated demo video of CycloneSentinel with Playwright.
 
     pip install playwright edge-tts imageio-ffmpeg && python -m playwright install chromium
-    python -m http.server 8000            # in the repo root, separate terminal
+    GEMINI_API_KEY=... uvicorn server.main:app --port 8080   # backend: Gemini proxy + inbox
     python scripts/record_demo.py         # -> video/cyclonesentinel-demo.mp4 (with voice-over)
 
 Options:
@@ -24,9 +24,10 @@ import time
 from playwright.async_api import async_playwright
 
 ap = argparse.ArgumentParser()
-ap.add_argument("--url", default="http://localhost:8000/index.html")
+ap.add_argument("--url", default="http://localhost:8080/")
 ap.add_argument("--voice", default="en-IN-NeerjaNeural")
 ap.add_argument("--silent", action="store_true")
+ap.add_argument("--skip-ai", action="store_true", help="skip the Gemini scene (dry runs)")
 ARGS = ap.parse_args()
 
 URL = ARGS.url
@@ -35,24 +36,22 @@ W, H = 1920, 1080
 GAP = 0.45  # seconds of silence between narration lines
 
 NARRATION = {
-    "title": "This is CycloneSentinel: a cyclone impact and infrastructure vulnerability forecaster.",
-    "problem": "Cyclone warnings tell us where a storm will go. But disaster managers, power utilities and hospitals need to know what will break, and what fails next when the grid goes down.",
-    "fani": "Here we replay Cyclone Fani, from 2019, as if the forecast were issued twenty-four hours before landfall. Forty ensemble tracks and four hundred and seventy-five infrastructure assets are simulated right in the browser, in about half a second.",
-    "swath": "The blue swath is the forecast peak wind, by I.M.D. category. The faint lines show the spread of possible tracks.",
-    "play": "Now let's play the storm. Each asset lights up as the peak winds reach it.",
-    "colors": "Red and orange mark a high probability of losing service.",
-    "kpis": "The dashboard sums it up: expected infrastructure loss, people exposed to very severe winds, people likely to lose power, and residents who need evacuation.",
-    "types": "Kutcha housing, power lines and telecom towers are the first to fail.",
-    "actions": "Most importantly, risk becomes action. Evacuations to named shelters, generators for hospitals, and restoration crews for substations, all ranked by risk, criticality, and the number of people served.",
-    "popup": "Every asset explains itself: peak wind with its uncertainty range, storm surge, rainfall, and its fragility curve.",
-    "cascade": "This hospital will probably stay standing, but its feeder substation is likely to trip. That is a cascading failure, the kind of grid collapse seen in Puri and Visakhapatnam.",
-    "lead": "If we issue the forecast seventy-two hours out instead, the uncertainty grows and the risk spreads along the coast. That's the honest picture a planner needs.",
-    "amphan": "Super Cyclone Amphan, 2020. The shallow head of the Bay amplifies storm surge, and the risk concentrates on Sagar Island and the Hooghly estuary.",
-    "whatif": "In planning mode, we can design our own storm. Here, a two hundred and thirty kilometre per hour super cyclone strikes Paradip port.",
-    "whatif2": "Paradip's port, substations and coastal housing are flagged critical, before the storm even exists.",
-    "filter": "We can also filter down to lifeline infrastructure: hospitals, substations and water supply.",
-    "how": "Under the hood: a Holland wind model, parametric storm surge, rainfall flooding, a Monte Carlo ensemble, fragility curves, and a power-dependency cascade, validated against four historical cyclones.",
-    "outro": "CycloneSentinel. From track forecast to actionable infrastructure risk, in under a second.",
+    "title": "This is CycloneSentinel: an AI-powered platform that forecasts cyclone impact on critical infrastructure, and warns the right authorities before landfall.",
+    "problem": "Warnings tell us where a storm will go. Disaster managers need to know what will break: which hospitals, substations and roads will fail, and who must be warned.",
+    "fani": "Here we replay Cyclone Fani, from 2019, as if the forecast were issued twenty-four hours before landfall. Underneath is the real NASA VIIRS satellite image of Fani that day.",
+    "swath": "Our physics engine runs forty ensemble tracks and simulates wind, storm surge and rainfall at five hundred and eleven assets, in under a second.",
+    "play": "As the storm moves, each asset lights up when the peak hazard reaches it.",
+    "kpis": "The impact dashboard: expected losses, people exposed to very severe winds, about nine lakh people likely to lose power, twenty hospitals and shelters likely cut off, and nine arterial roads likely impassable.",
+    "pathways": "These are rainfall damage pathways. About three hundred millimetres of rain puts water on the Puri to Konark road, the road becomes impassable, and Puri Hospital is cut off, even though the building itself survives.",
+    "popup": "Every asset explains its own causal chain: rainfall, ponding, wind, physical damage, loss of its grid feed, and loss of road access.",
+    "advisories": "From risk to warning. CycloneSentinel writes district advisories on the I.M.D. colour code, with Red for Puri and Jagatsinghpur. Each one is routed to the District Collector, the municipal bodies, the state disaster authority, the power utility and the health officer.",
+    "dispatch": "With auto-dispatch on, every Red and Orange advisory is sent automatically, as a CAP alert: the format India's SACHET system uses.",
+    "inbox": "And here they arrive, in the district control-room inbox served by our Google Cloud Run backend.",
+    "ai": "Now, Google's Gemini 3.7 Flash. We send it the satellite image of the storm together with the model's output.",
+    "ai2": "Gemini reads the storm's structure, checks the imagery against our hotspots, explains the rainfall damage pathways, and drafts advisories in English and Odia, ready to dispatch.",
+    "live": "It also runs in real time. Live mode pulls the latest seventy-two hour forecast for every coastal town and runs the same chain, from hazard to advisory.",
+    "how": "Google Earth Engine layers, NASA satellite feeds, real-time weather, a physics ensemble, Gemini multimodal reasoning, and automated CAP dispatch on Cloud Run, validated against four historical cyclones.",
+    "outro": "CycloneSentinel. From satellite to action, before landfall.",
 }
 
 OVERLAY_JS = """
@@ -134,6 +133,35 @@ def mux(webm, timeline, out):
     subprocess.run(cmd, check=True)
 
 
+def write_srt(timeline, out):
+    """Subtitles timed to the narration clips (≤ 2 lines × 42 chars per cue)."""
+    import textwrap
+    fix = {"I.M.D.": "IMD", "twenty-four hours": "24 hours", "five hundred and eleven": "511",
+           "seventy-two hour": "72-hour", "nine lakh": "9 lakh", "twenty hospitals": "20 hospitals",
+           "nine arterial": "9 arterial", "three hundred millimetres": "300 mm", "forty ensemble": "40 ensemble"}
+    ts = lambda t: "%02d:%02d:%02d,%03d" % (t // 3600, t % 3600 // 60, t % 60, round(t * 1000) % 1000)
+    cues = []
+    for key, start in timeline:
+        text = NARRATION[key]
+        for a, b in fix.items():
+            text = text.replace(a, b)
+        dur = audio_seconds(OUT / "voice" / f"{key}.mp3") - 0.15
+        parts, chunks, cur = re.split(r"(?<=[.:?!,])\s+", text), [], ""
+        for p in parts:
+            if cur and len(cur) + 1 + len(p) > 84:
+                chunks.append(cur); cur = p
+            else:
+                cur = (cur + " " + p).strip()
+        if cur:
+            chunks.append(cur)
+        total, t = sum(len(c) for c in chunks), start
+        for c in chunks:
+            span = dur * len(c) / total
+            cues.append(f"{len(cues) + 1}\n{ts(t)} --> {ts(t + span - 0.05)}\n" + "\n".join(textwrap.wrap(c, 42)) + "\n")
+            t += span
+    out.write_text("\n".join(cues), encoding="utf-8")
+
+
 async def main():
     OUT.mkdir(exist_ok=True)
     durations = {} if ARGS.silent else await synthesize()
@@ -185,107 +213,118 @@ async def main():
             await page.wait_for_timeout(800)
 
         await page.goto(URL)
-        await page.wait_for_function("window.CycloneSentinel && CycloneSentinel.state.result")
+        await page.wait_for_function("window.CycloneSentinel && CycloneSentinel.state.result", timeout=60000)
         await page.evaluate(OVERLAY_JS)
+        await page.evaluate("() => { const s = CIF_DISPATCH.settings(); CIF_DISPATCH.save({ ...s, auto: false }); }")
         await page.mouse.move(W / 2, H / 2)
 
         # 1 — title + problem
         await page.evaluate("""demoCard(`<div class="big">🌀</div><h1>CycloneSentinel</h1>
-            <p>Cyclone Impact &amp; Infrastructure Vulnerability Forecaster</p>
-            <p style="font-size:22px">Know which hospitals, substations, towers and homes will fail — before landfall.</p>`)""")
+            <p>AI-powered cyclone impact &amp; infrastructure vulnerability forecaster</p>
+            <p style="font-size:22px">Gemini 3.7 Flash · Google Earth Engine · Cloud Run · NASA satellite feeds · real-time weather</p>`)""")
         await page.wait_for_timeout(600)
         await scene("title")
-        await page.wait_for_timeout(3500)
+        await page.wait_for_timeout(3000)
         await scene("problem")
         await page.evaluate("""demoCard(`<h1 style="font-size:44px">The problem</h1>
-            <p>Cyclone warnings tell us where the storm goes.<br>Disaster managers need to know <b>what breaks</b> —
-            and what fails next when the grid goes down.</p>`)""")
-        await page.wait_for_timeout(5000)
+            <p>Warnings say <b>where</b> the storm goes.<br>Responders need to know <b>what breaks</b> — and <b>who to warn</b> — before landfall.</p>`)""")
+        await page.wait_for_timeout(4000)
 
-        # 2 — Fani replay
+        # 2 — Fani replay on the real satellite image
         await scene("fani")
         await page.evaluate("demoCard('')")
-        await cap("Replaying <b>Cyclone Fani (2019)</b> as a forecast issued 24 h before landfall<small>40-member ensemble · 475 infrastructure assets · runs entirely in the browser</small>", 5000)
+        await click("#l-sat", 300)
+        await cap("Replaying <b>Cyclone Fani (2019)</b>, forecast issued 24 h before landfall<small>under it: the real NASA VIIRS satellite image, 2 May 2019</small>", 6000)
         await scene("swath")
-        await cap("Blue swath = forecast peak wind by IMD class · faint lines = ensemble track uncertainty", 4500)
+        await click("#l-sat", 300)
+        await cap("40-member ensemble · wind, storm surge &amp; rainfall at 511 assets · &lt; 1 s in the browser", 4000)
         await scene("play")
-        await cap("Press play: assets light up as the storm's peak winds reach them")
-        await page.wait_for_timeout(1500)
-        await play_storm()
-        await scene("colors")
-        await cap("Red / orange = high probability of service disruption", 3000)
-
-        # 3 — impact panel
-        await scene("kpis")
-        await page.mouse.move(1700, 330, steps=30)
-        await cap("Impact dashboard: expected loss, people in ≥118 km/h winds, people losing power, evacuation need", 5000)
-        await scene("types")
-        await page.mouse.move(1700, 700, steps=30)
-        await cap("Damage by infrastructure type — housing and power lines fail first", 3500)
-
-        # 4 — actions + popup (cascade)
-        await scene("actions")
-        await page.evaluate("document.querySelector('.impact').scrollTo({top: 620, behavior: 'smooth'})")
-        await cap("Auto-generated priority actions, ranked by risk × criticality × people served", 4000)
-        hosp = await page.evaluate("""(() => { const a = CycloneSentinel.state.result.actions;
-            const h = a.find(x => x.id.includes('hospital')) || a.find(x => x.id.includes('substation')) || a[0]; return h.id; })()""")
-        await scene("popup")
-        await click(f'#actions li[data-id="{hosp}"]', 1800)
-        await cap("Every asset: peak wind with P10–P90 range, surge, rainfall and its fragility curve", 4000)
-        await scene("cascade")
-        await cap("<b>Cascading failure</b>: a hospital can stay standing and still go dark when its feeder substation trips", 5000)
-
-        # 5 — lead time
-        await scene("lead")
-        await page.keyboard.press("Escape")
-        await page.evaluate("() => { CycloneSentinel.map.closePopup(); }")
-        await page.evaluate("document.querySelector('.impact').scrollTo({top: 0, behavior: 'smooth'})")
-        await cap("Issue the forecast 72 h out instead — uncertainty grows, risk spreads along the coast")
-        await select("#lead", "72")
-        await run_forecast()
-        await page.wait_for_timeout(2000)
-
-        # 6 — Amphan
-        await scene("amphan")
-        await select("#lead", "24", 200)
-        await cap("Switch to <b>Super Cyclone Amphan (2020)</b> — the shallow head of the Bay amplifies storm surge")
-        await select("#scenario", "amphan-2020")
-        await run_forecast()
-        await page.wait_for_timeout(2500)
-
-        # 7 — what-if
-        await scene("whatif")
-        await cap("Planning mode: design a <b>what-if</b> storm — here a 230 km/h super cyclone striking Paradip port")
-        await select("#scenario", "custom", 800)
-        await select("#c-town", "Paradip", 300)
-        await page.evaluate("const s=document.getElementById('c-vmax'); s.value=230; s.dispatchEvent(new Event('input'))")
+        await cap("Assets light up as the storm's peak hazard reaches them")
         await page.wait_for_timeout(800)
-        await run_forecast()
         await play_storm()
-        await scene("whatif2")
-        await cap("Paradip port, substations and coastal housing flagged critical — pre-position crews before the storm", 4000)
 
-        # 8 — filter
-        await scene("filter")
-        await cap("Filter to lifeline infrastructure only: hospitals, substations, water")
-        for t in ["housing", "transmission", "telecom", "bridge", "port", "shelter"]:
-            await click(f'.chip[data-type="{t}"]', 250)
+        # 3 — KPIs, pathways, popup
+        await scene("kpis")
+        await page.mouse.move(1700, 400, steps=30)
+        await cap("Impact: ~9 lakh people likely without power · 20 hospitals &amp; shelters likely cut off · 9 arterial roads impassable", 6000)
+        await scene("pathways")
+        await page.evaluate("document.querySelector('.impact').scrollTo({top: 560, behavior: 'smooth'})")
+        await cap("<b>Rainfall damage pathways</b>: rain → flooded arterial road → hospital cut off", 3500)
+        pid = await page.evaluate("(CycloneSentinel.state.result.summary.rainPathways.find(p => p.id.includes('hospital')) || CycloneSentinel.state.result.summary.rainPathways[0]).id")
+        await scene("popup")
+        await click(f'#pathways li[data-id="{pid}"]', 2200)
+        await cap("Each asset's causal chain: hazard → damage → grid feed → road access → service outcome", 5000)
+        await page.evaluate("() => { CycloneSentinel.map.closePopup(); }")
+
+        # 4 — advisories + dispatch + inbox
+        await scene("advisories")
+        await page.evaluate("document.querySelector('.impact').scrollTo({top: 0, behavior: 'smooth'})")
+        await click('[data-tab="advisories"]', 600)
+        await cap("District advisories on the IMD colour code · routed to DDMA, municipal bodies, SDMA, DISCOM, health", 3000)
+        await click('#advisories .adv summary', 2500)
+        await scene("dispatch")
+        await click("#auto-dispatch", 500)
+        await cap("Auto-dispatch ON · every Red &amp; Orange advisory sent as CAP 1.2 (SACHET format)")
+        await click("#dispatch-all", 2500)
+        await page.evaluate("document.querySelector('.impact').scrollTo({top: 99999, behavior: 'smooth'})")
         await page.wait_for_timeout(2500)
+        await scene("inbox")
+        await cap("")
+        await page.evaluate("""demoCard(`<iframe src="inbox" style="width:1200px;height:860px;border:1px solid rgba(255,255,255,.2);border-radius:14px;background:#0d0d0d"></iframe>
+            <p style="font-size:20px">District control-room inbox · Google Cloud Run backend</p>`)""")
+        await page.wait_for_timeout(6500)
+        await page.evaluate("demoCard('')")
+        await page.evaluate("document.querySelector('.impact').scrollTo({top: 0})")
 
-        # 9 — outro
+        # 5 — Gemini multimodal analyst
+        if not ARGS.skip_ai:
+            await scene("ai")
+            await click('[data-tab="ai"]', 500)
+            await cap("<b>Gemini 3.7 Flash</b> · input: NASA satellite image + impact-model output")
+            await click("#ai-run", 500)
+            await page.wait_for_function("!document.getElementById('ai-run').disabled", timeout=420000)
+            await page.wait_for_timeout(800)
+            await scene("ai2")
+            await cap("Gemini: satellite reading · imagery-vs-model check · pathways · advisories in English + Odia")
+            for top in (300, 900, 1500, 2300):
+                await page.evaluate(f"document.querySelector('.impact').scrollTo({{top: {top}, behavior: 'smooth'}})")
+                await page.wait_for_timeout(3200)
+            btn = page.locator("#ai-output [data-ai]").first
+            if await btn.count():
+                await btn.scroll_into_view_if_needed()
+                await btn.click()
+                await page.wait_for_timeout(2500)
+
+        # 6 — live mode
+        await scene("live")
+        await page.evaluate("document.querySelector('.impact').scrollTo({top: 0})")
+        await click('[data-tab="impact"]', 300)
+        await cap("<b>Live mode</b>: real-time 72 h forecast for every coastal town (Open-Meteo)")
+        await select("#scenario", "live", 400)
+        await click("#run", 400)
+        await page.wait_for_function("CycloneSentinel.state.result.mode === 'live' && !document.getElementById('run').disabled", timeout=60000)
+        await page.wait_for_timeout(1000)
+        await click("#l-sat", 300)
+        await cap("<b>Live mode</b>: real-time 72 h forecast for every coastal town · latest NASA VIIRS satellite pass")
+        await page.evaluate("document.getElementById('live-card').scrollIntoView({behavior: 'smooth', block: 'start'})")
+        await page.wait_for_timeout(5000)
+        await click("#l-sat", 200)
+
+        # 7 — outro
         await scene("how")
         await cap("")
-        await page.evaluate("""demoCard(`<h1 style="font-size:48px">How it works</h1>
-            <p>Holland wind model · parametric storm surge · rainfall flooding<br>
-            Monte-Carlo track ensemble · lognormal fragility curves · power-dependency cascade</p>
-            <p style="font-size:22px">Hindcast-validated on Fani, Amphan, Phailin &amp; Hudhud · zero-install web app · open source</p>`)""")
+        await page.evaluate("""demoCard(`<h1 style="font-size:46px">How it works</h1>
+            <p>Google Earth Engine exposure layers · NASA VIIRS &amp; GPM IMERG · Open-Meteo real-time<br>
+            40-member physics ensemble · surge · rainfall pathways · power &amp; road cascades<br>
+            <b>Gemini 3.7 Flash</b> multimodal analyst · CAP 1.2 auto-dispatch on <b>Cloud Run</b></p>
+            <p style="font-size:22px">Hindcast-validated on Fani, Amphan, Phailin &amp; Hudhud · open source</p>`)""")
         await page.wait_for_timeout(6000)
         await scene("outro")
         await page.evaluate("""demoCard(`<div class="big">🌀</div><h1>CycloneSentinel</h1>
-            <p>From track forecast to <b>actionable infrastructure risk</b> — in under a second.</p>
-            <p style="font-size:22px">blop77.github.io/cyclone-sentinel · github.com/Blop77/cyclone-sentinel</p>`)""")
-        await page.wait_for_timeout(4000)
-        await scene("end")  # waits for the last line to finish
+            <p>From satellite to action — before landfall.</p>
+            <p style="font-size:22px">blop77.github.io/cyclone-sentinel · github.com/Blop77/cyclone-sentinel · Team Nebula Nomads</p>`)""")
+        await page.wait_for_timeout(3500)
+        await scene("end")
         await page.wait_for_timeout(1200)
 
         video = page.video
@@ -300,6 +339,9 @@ async def main():
         mp4 = OUT / "cyclonesentinel-demo.mp4"
         mux(webm, timeline, mp4)
         print(f"Saved {mp4}")
+        srt = OUT / "cyclonesentinel-demo.srt"
+        write_srt(timeline, srt)
+        print(f"Saved {srt}")
 
 
 asyncio.run(main())
