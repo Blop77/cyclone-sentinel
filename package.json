@@ -1,0 +1,11 @@
+{
+  "name": "cyclone-sentinel",
+  "version": "1.0.0",
+  "description": "Cyclone Impact & Infrastructure Vulnerability Forecaster — browser-based ensemble hazard, fragility and cascading-failure model for India's east coast.",
+  "private": true,
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "test": "node --test tests/model.test.js"
+  },
+  "license": "MIT"
+}
