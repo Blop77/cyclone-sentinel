@@ -58,11 +58,12 @@ Run the model tests (Node 18+):
 npm test
 ```
 
-Record the captioned demo video (Playwright):
+Record the captioned, narrated demo video (Playwright + neural text-to-speech + ffmpeg):
 
 ```bash
-pip install playwright && python -m playwright install chromium
-python scripts/record_demo.py                 # -> video/cyclonesentinel-demo.webm
+pip install playwright edge-tts imageio-ffmpeg && python -m playwright install chromium
+python scripts/record_demo.py                 # -> video/cyclonesentinel-demo.mp4
+python scripts/record_demo.py --voice en-IN-PrabhatNeural   # different narrator
 ```
 
 ## Project structure
@@ -74,7 +75,7 @@ js/data.js            cyclone tracks, coastal towns, asset types + fragility par
 js/model.js           track interpolation, ensemble, wind/surge/rain, fragility, cascade, actions
 js/app.js             Leaflet map, timeline playback, KPIs, charts, popups
 tests/model.test.js   physics sanity checks + hindcast validation
-scripts/record_demo.py  automated, captioned demo-video recorder
+scripts/record_demo.py  automated demo-video recorder with synced AI voice-over
 docs/METHODOLOGY.md   equations, parameters, references, limitations
 ```
 
