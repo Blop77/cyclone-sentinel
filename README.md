@@ -7,7 +7,7 @@ break*, and what fails next when the grid goes down. CycloneSentinel turns a cyc
 asset-level damage and service-disruption probabilities, and then into a ranked list of response actions.
 Everything runs in the browser in under a second.
 
-**Live demo:** https://blop77.github.io/cyclone-sentinel/ · **Demo video:** _add link_ · **Deck:** [`docs/CycloneSentinel-deck.pdf`](docs/CycloneSentinel-deck.pdf)
+**Live demo:** https://blop77.github.io/cyclone-sentinel/ · **Demo video:** https://youtu.be/l2LTAcgFshg · **Deck:** [`docs/CycloneSentinel-deck.pdf`](docs/CycloneSentinel-deck.pdf)
 
 ![Dashboard — Cyclone Fani (2019) replayed as a 24 h forecast](docs/img/dashboard.jpg)
 
