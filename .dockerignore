@@ -1,0 +1,6 @@
+.git
+video
+node_modules
+__pycache__
+*.pdf
+docs/img

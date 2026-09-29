@@ -4,3 +4,4 @@ __pycache__/
 *.mp4
 video/
 .DS_Store
+__pycache__/

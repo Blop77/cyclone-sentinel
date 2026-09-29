@@ -142,7 +142,27 @@
     bridge:       { label: "Road bridge",            short: "Bridges",      windMedian: 320, windBeta: 0.30, floodMedian: 2.0, floodBeta: 0.4, value: 30,  power: false, backup: 0,   weight: 1.1 },
     port:         { label: "Port terminal",          short: "Ports",        windMedian: 215, windBeta: 0.30, floodMedian: 2.5, floodBeta: 0.4, value: 300, power: false, backup: 0,   weight: 1.3 },
     shelter:      { label: "Cyclone shelter",        short: "Shelters",     windMedian: 290, windBeta: 0.25, floodMedian: 2.5, floodBeta: 0.4, value: 2,   power: false, backup: 0,   weight: 1.5 },
+    // Arterial road: "damage" = impassable (tree/pole fall in wind, or > ~0.3 m of water over the carriageway).
+    road:         { label: "Arterial road",          short: "Roads",        windMedian: 175, windBeta: 0.35, floodMedian: 0.3, floodBeta: 0.5, value: 5,   power: false, backup: 0,   weight: 1.2 },
   };
+
+  // Disaster-management routing for advisories.
+  const DISTRICTS = {
+    Visakhapatnam: "Visakhapatnam", Bheemunipatnam: "Visakhapatnam", Kakinada: "Kakinada", Vizianagaram: "Vizianagaram",
+    Srikakulam: "Srikakulam", Kalingapatnam: "Srikakulam", Gopalpur: "Ganjam", Berhampur: "Ganjam", Rambha: "Ganjam",
+    Balugaon: "Khordha", Satapada: "Puri", Puri: "Puri", Konark: "Puri", Astaranga: "Puri", Bhubaneswar: "Khordha",
+    Cuttack: "Cuttack", Jagatsinghpur: "Jagatsinghpur", Paradip: "Jagatsinghpur", Kendrapara: "Kendrapara",
+    Chandbali: "Bhadrak", Dhamra: "Bhadrak", Bhadrak: "Bhadrak", Balasore: "Balasore", Chandipur: "Balasore",
+    Digha: "Purba Medinipur", Contai: "Purba Medinipur", Tamluk: "Purba Medinipur", Haldia: "Purba Medinipur",
+    "Sagar Island": "South 24 Parganas", Kakdwip: "South 24 Parganas", Namkhana: "South 24 Parganas",
+    "Diamond Harbour": "South 24 Parganas", Gosaba: "South 24 Parganas", Kolkata: "Kolkata",
+  };
+  const STATE_AUTHORITY = {
+    Odisha: "Odisha State Disaster Management Authority (OSDMA)",
+    "Andhra Pradesh": "Andhra Pradesh State Disaster Management Authority (APSDMA)",
+    "West Bengal": "West Bengal Dept. of Disaster Management & Civil Defence",
+  };
+  TOWNS.forEach((t) => (t.district = DISTRICTS[t.name]));
 
   // Seeded PRNG so the inventory is identical on every load.
   function mulberry32(seed) {
@@ -201,19 +221,60 @@
       }
     }
 
-    // Power dependency: every grid-dependent asset is fed by its nearest substation.
-    const subs = assets.filter((a) => a.type === "substation");
-    const lines = assets.filter((a) => a.type === "transmission");
     const d2 = (a, b) => (a.lat - b.lat) ** 2 + ((a.lon - b.lon) * Math.cos((a.lat * Math.PI) / 180)) ** 2;
     const nearest = (a, list) => list.reduce((best, s) => (d2(a, s) < d2(a, best) ? s : best), list[0]);
+
+    // Arterial roads: each town links to its nearest neighbour and to its nearest
+    // larger inland town (the evacuation / supply route). Hazard is evaluated at
+    // the low point of the segment, which floods first.
+    const rr = mulberry32(7331);
+    const seen = new Set();
+    for (const town of TOWNS) {
+      const others = TOWNS.filter((t) => t !== town);
+      const near = nearest(town, others);
+      const inlandCands = others.filter((t) => t.coastKm > town.coastKm + 5 && t.pop > town.pop && d2(town, t) < 1.1 ** 2); // within ~120 km
+      const inland = inlandCands.length ? nearest(town, inlandCands) : null;
+      for (const other of [near, inland]) {
+        if (!other) continue;
+        const key = [town.name, other.name].sort().join("|");
+        if (seen.has(key)) continue;
+        seen.add(key);
+        const f = 0.3 + 0.2 * rr();
+        assets.push({
+          id: `road-${key.replace(/[|\s]+/g, "-").toLowerCase()}`,
+          type: "road",
+          town: town.name,
+          state: town.state,
+          name: `${town.name}–${other.name} arterial road`,
+          lat: town.lat + f * (other.lat - town.lat),
+          lon: town.lon + f * (other.lon - town.lon),
+          path: [[town.lat, town.lon], [other.lat, other.lon]],
+          towns: [town.name, other.name],
+          coastKm: +Math.max(0.5, town.coastKm + f * (other.coastKm - town.coastKm)).toFixed(1),
+          elev: +Math.max(0.8, Math.min(town.elev, other.elev) - 1 - rr()).toFixed(1),
+          people: 0,
+        });
+      }
+    }
+
+    // Dependencies: grid-dependent assets are fed by their nearest substation;
+    // hospitals, shelters and water plants are reached via their town's nearest arterial road.
+    const subs = assets.filter((a) => a.type === "substation");
+    const lines = assets.filter((a) => a.type === "transmission");
+    const roads = assets.filter((a) => a.type === "road");
     for (const a of assets) {
       if (ASSET_TYPES[a.type].power) a.feeder = nearest(a, subs).id;
       if (a.type === "substation") a.line = nearest(a, lines).id;
+      if (["hospital", "shelter", "water"].includes(a.type)) {
+        const own = roads.filter((r) => r.towns.includes(a.town));
+        a.access = nearest(a, own.length ? own : roads).id;
+      }
+      a.district = DISTRICTS[a.town];
     }
     return assets;
   }
 
-  const API = { CYCLONES, TOWNS, ASSET_TYPES, buildAssets, mulberry32 };
+  const API = { CYCLONES, TOWNS, ASSET_TYPES, DISTRICTS, STATE_AUTHORITY, buildAssets, mulberry32 };
   if (typeof module !== "undefined" && module.exports) module.exports = API;
   else root.CIF_DATA = API;
 })(typeof globalThis !== "undefined" ? globalThis : this);

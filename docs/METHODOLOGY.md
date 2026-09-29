@@ -84,6 +84,57 @@ it was the grid, not the buildings, that failed first.
 * **Response actions** are rule-based, one per asset over 35 % disruption risk (15 % for shelters).
   They are ranked by `P_disruption × criticality × log10(10 + people served)`.
 
+## 6. Rainfall damage pathways and road access
+
+* **Arterial roads** are 36 town-to-town links: each town connects to its nearest neighbour and to its
+  nearest larger inland town within ~120 km (the evacuation and supply route). Hazard is evaluated at the
+  segment's low point, which floods first. A road is *impassable* under a lognormal fragility with a median
+  of **0.3 m of water** (β 0.5) or **175 km/h wind** (tree and pole fall).
+* Hospitals, shelters and water plants depend on their town's nearest arterial road:
+  `P(cut off) = P(road impassable)`.
+* Every asset carries an **ordered pathway**: rainfall → ponding depth → surge → wind → physical damage
+  (with the dominant driver) → grid-feed loss → access loss → service outcome. The *rainfall damage
+  pathways* panel lists the chains that end in a hospital or shelter being cut off.
+
+## 7. Real-time mode
+
+Open-Meteo's hourly 72 h forecast (ECMWF/GFS blend) is fetched for all 34 towns in one request. Each asset
+takes its town's maximum sustained wind (with inland roughness) and 72 h rainfall; roads take the worse
+of their two towns. The results then run through the same fragility, cascade, pathway and advisory chain.
+
+## 8. Early-warning advisories and dispatch
+
+* Assets are grouped by **district**. The district level follows the IMD colour code on the highest
+  disruption or cut-off probability: **RED ≥ 60 %** (take action), **ORANGE ≥ 35 %** (be prepared),
+  **YELLOW ≥ 15 %** (be updated).
+* Recipients: District Collector & DDMA, the urban local body of every affected town, the state authority
+  (OSDMA, APSDMA, WB DM&CD); the DISCOM control room if substations are at risk; and the District Health
+  Officer if hospitals are at risk or cut off.
+* Each advisory has hazards, quantified impacts and the district's ranked actions. It is exported as
+  **CAP 1.2** (`urn:oasis:names:tc:emergency:cap:1.2`; severity Extreme/Severe/Moderate; area as a circle)
+  and dispatched by webhook, e-mail or WhatsApp, or **automatically** after each run for levels at or above
+  a threshold. It is sent once per (scenario, district, level).
+
+## 9. Gemini multimodal analyst
+
+* **Input:** a NASA VIIRS true-colour image (GIBS WMS, 8° × 8° around landfall, dated to the satellite
+  pass) plus compact JSON from the model: KPIs, the 18 highest-risk assets with hazards and probabilities,
+  the rainfall pathways, and the district advisories with their local language.
+* **Output:** a strict JSON schema with a situation summary, satellite observations (eye, cloud
+  organisation, affected coast), imagery-vs-model agreement, key risks, rainfall damage pathways with
+  mitigations, and ≤ 320-character advisories in English plus **Odia / Telugu / Bengali**, confidence and
+  caveats.
+* **Reliability:** `gemini-3.7-flash` first, then other Flash models, with exponential back-off on
+  429/5xx. The key stays server-side on Cloud Run, or in the viewer's browser. Responses for the demo
+  cyclones are cached in `data/ai/` and labelled as cached.
+
+## 10. Google Earth Engine exposure pipeline
+
+`gee/exposure_pipeline.py` samples for every asset: Copernicus GLO-30 elevation, JRC Global Surface Water
+occurrence (max within 500 m), WorldPop 2020 population within 1 km, and GPM IMERG V07 rainfall accumulated
+over a chosen window. The app replaces its town-level elevation estimates with these values when
+`data/gee_exposure.json` is present.
+
 ## Validation (hindcast)
 
 The test suite (`npm test`) runs all four historical cyclones. It checks that the model's worst-hit

@@ -1,0 +1,5112 @@
+[
+ {
+  "id": "visakhapatnam-housing-1",
+  "type": "housing",
+  "name": "Visakhapatnam Kutcha housing cluster 1",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.64612,
+  "lon": 83.28009
+ },
+ {
+  "id": "visakhapatnam-housing-2",
+  "type": "housing",
+  "name": "Visakhapatnam Kutcha housing cluster 2",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.61267,
+  "lon": 83.17006
+ },
+ {
+  "id": "visakhapatnam-housing-3",
+  "type": "housing",
+  "name": "Visakhapatnam Kutcha housing cluster 3",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.72227,
+  "lon": 83.17231
+ },
+ {
+  "id": "visakhapatnam-housing-4",
+  "type": "housing",
+  "name": "Visakhapatnam Kutcha housing cluster 4",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.68024,
+  "lon": 83.25229
+ },
+ {
+  "id": "visakhapatnam-housing-5",
+  "type": "housing",
+  "name": "Visakhapatnam Kutcha housing cluster 5",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.75914,
+  "lon": 83.20307
+ },
+ {
+  "id": "visakhapatnam-housing-6",
+  "type": "housing",
+  "name": "Visakhapatnam Kutcha housing cluster 6",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.78534,
+  "lon": 83.35204
+ },
+ {
+  "id": "visakhapatnam-housing-7",
+  "type": "housing",
+  "name": "Visakhapatnam Kutcha housing cluster 7",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.72091,
+  "lon": 83.38609
+ },
+ {
+  "id": "visakhapatnam-hospital-1",
+  "type": "hospital",
+  "name": "Visakhapatnam Hospital 1",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.63291,
+  "lon": 83.25445
+ },
+ {
+  "id": "visakhapatnam-hospital-2",
+  "type": "hospital",
+  "name": "Visakhapatnam Hospital 2",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.64369,
+  "lon": 83.30696
+ },
+ {
+  "id": "visakhapatnam-hospital-3",
+  "type": "hospital",
+  "name": "Visakhapatnam Hospital 3",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.63222,
+  "lon": 83.12721
+ },
+ {
+  "id": "visakhapatnam-hospital-4",
+  "type": "hospital",
+  "name": "Visakhapatnam Hospital 4",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.66322,
+  "lon": 83.22631
+ },
+ {
+  "id": "visakhapatnam-hospital-5",
+  "type": "hospital",
+  "name": "Visakhapatnam Hospital 5",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.70959,
+  "lon": 83.30078
+ },
+ {
+  "id": "visakhapatnam-substation-1",
+  "type": "substation",
+  "name": "Visakhapatnam Substation & feeders 1",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.76024,
+  "lon": 83.18169
+ },
+ {
+  "id": "visakhapatnam-substation-2",
+  "type": "substation",
+  "name": "Visakhapatnam Substation & feeders 2",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.74243,
+  "lon": 83.18128
+ },
+ {
+  "id": "visakhapatnam-substation-3",
+  "type": "substation",
+  "name": "Visakhapatnam Substation & feeders 3",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.81337,
+  "lon": 83.26391
+ },
+ {
+  "id": "visakhapatnam-substation-4",
+  "type": "substation",
+  "name": "Visakhapatnam Substation & feeders 4",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.78155,
+  "lon": 83.29153
+ },
+ {
+  "id": "visakhapatnam-substation-5",
+  "type": "substation",
+  "name": "Visakhapatnam Substation & feeders 5",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.68408,
+  "lon": 83.23598
+ },
+ {
+  "id": "visakhapatnam-transmission-1",
+  "type": "transmission",
+  "name": "Visakhapatnam Transmission line span 1",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.78937,
+  "lon": 83.14832
+ },
+ {
+  "id": "visakhapatnam-transmission-2",
+  "type": "transmission",
+  "name": "Visakhapatnam Transmission line span 2",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.72873,
+  "lon": 83.20211
+ },
+ {
+  "id": "visakhapatnam-transmission-3",
+  "type": "transmission",
+  "name": "Visakhapatnam Transmission line span 3",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.72001,
+  "lon": 83.17185
+ },
+ {
+  "id": "visakhapatnam-transmission-4",
+  "type": "transmission",
+  "name": "Visakhapatnam Transmission line span 4",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.61991,
+  "lon": 83.1582
+ },
+ {
+  "id": "visakhapatnam-telecom-1",
+  "type": "telecom",
+  "name": "Visakhapatnam Telecom tower 1",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.87572,
+  "lon": 83.10539
+ },
+ {
+  "id": "visakhapatnam-telecom-2",
+  "type": "telecom",
+  "name": "Visakhapatnam Telecom tower 2",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.59397,
+  "lon": 83.21601
+ },
+ {
+  "id": "visakhapatnam-telecom-3",
+  "type": "telecom",
+  "name": "Visakhapatnam Telecom tower 3",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.80141,
+  "lon": 83.16983
+ },
+ {
+  "id": "visakhapatnam-telecom-4",
+  "type": "telecom",
+  "name": "Visakhapatnam Telecom tower 4",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.66516,
+  "lon": 83.3557
+ },
+ {
+  "id": "visakhapatnam-telecom-5",
+  "type": "telecom",
+  "name": "Visakhapatnam Telecom tower 5",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.74314,
+  "lon": 83.11815
+ },
+ {
+  "id": "visakhapatnam-telecom-6",
+  "type": "telecom",
+  "name": "Visakhapatnam Telecom tower 6",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.71817,
+  "lon": 83.23888
+ },
+ {
+  "id": "visakhapatnam-water-1",
+  "type": "water",
+  "name": "Visakhapatnam Water treatment plant 1",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.67381,
+  "lon": 83.25456
+ },
+ {
+  "id": "visakhapatnam-water-2",
+  "type": "water",
+  "name": "Visakhapatnam Water treatment plant 2",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.63194,
+  "lon": 83.17
+ },
+ {
+  "id": "visakhapatnam-water-3",
+  "type": "water",
+  "name": "Visakhapatnam Water treatment plant 3",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.7292,
+  "lon": 83.18764
+ },
+ {
+  "id": "visakhapatnam-bridge-1",
+  "type": "bridge",
+  "name": "Visakhapatnam Road bridge 1",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.63867,
+  "lon": 83.25346
+ },
+ {
+  "id": "visakhapatnam-bridge-2",
+  "type": "bridge",
+  "name": "Visakhapatnam Road bridge 2",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.62509,
+  "lon": 83.22314
+ },
+ {
+  "id": "visakhapatnam-bridge-3",
+  "type": "bridge",
+  "name": "Visakhapatnam Road bridge 3",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.62995,
+  "lon": 83.15084
+ },
+ {
+  "id": "visakhapatnam-port-1",
+  "type": "port",
+  "name": "Visakhapatnam Port terminal",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.69153,
+  "lon": 83.2421
+ },
+ {
+  "id": "visakhapatnam-shelter-1",
+  "type": "shelter",
+  "name": "Visakhapatnam Cyclone shelter 1",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.70616,
+  "lon": 83.23533
+ },
+ {
+  "id": "visakhapatnam-shelter-2",
+  "type": "shelter",
+  "name": "Visakhapatnam Cyclone shelter 2",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.66739,
+  "lon": 83.27782
+ },
+ {
+  "id": "visakhapatnam-shelter-3",
+  "type": "shelter",
+  "name": "Visakhapatnam Cyclone shelter 3",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.72183,
+  "lon": 83.14909
+ },
+ {
+  "id": "visakhapatnam-shelter-4",
+  "type": "shelter",
+  "name": "Visakhapatnam Cyclone shelter 4",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.66596,
+  "lon": 83.11014
+ },
+ {
+  "id": "kakinada-housing-1",
+  "type": "housing",
+  "name": "Kakinada Kutcha housing cluster 1",
+  "town": "Kakinada",
+  "district": "Kakinada",
+  "state": "Andhra Pradesh",
+  "lat": 17.00933,
+  "lon": 82.25733
+ },
+ {
+  "id": "kakinada-housing-2",
+  "type": "housing",
+  "name": "Kakinada Kutcha housing cluster 2",
+  "town": "Kakinada",
+  "district": "Kakinada",
+  "state": "Andhra Pradesh",
+  "lat": 16.98876,
+  "lon": 82.20915
+ },
+ {
+  "id": "kakinada-housing-3",
+  "type": "housing",
+  "name": "Kakinada Kutcha housing cluster 3",
+  "town": "Kakinada",
+  "district": "Kakinada",
+  "state": "Andhra Pradesh",
+  "lat": 16.93108,
+  "lon": 82.18481
+ },
+ {
+  "id": "kakinada-housing-4",
+  "type": "housing",
+  "name": "Kakinada Kutcha housing cluster 4",
+  "town": "Kakinada",
+  "district": "Kakinada",
+  "state": "Andhra Pradesh",
+  "lat": 17.00721,
+  "lon": 82.21552
+ },
+ {
+  "id": "kakinada-housing-5",
+  "type": "housing",
+  "name": "Kakinada Kutcha housing cluster 5",
+  "town": "Kakinada",
+  "district": "Kakinada",
+  "state": "Andhra Pradesh",
+  "lat": 17.01349,
+  "lon": 82.28651
+ },
+ {
+  "id": "kakinada-hospital-1",
+  "type": "hospital",
+  "name": "Kakinada Hospital 1",
+  "town": "Kakinada",
+  "district": "Kakinada",
+  "state": "Andhra Pradesh",
+  "lat": 17.06504,
+  "lon": 82.24488
+ },
+ {
+  "id": "kakinada-hospital-2",
+  "type": "hospital",
+  "name": "Kakinada Hospital 2",
+  "town": "Kakinada",
+  "district": "Kakinada",
+  "state": "Andhra Pradesh",
+  "lat": 17.00377,
+  "lon": 82.30998
+ },
+ {
+  "id": "kakinada-substation-1",
+  "type": "substation",
+  "name": "Kakinada Substation & feeders 1",
+  "town": "Kakinada",
+  "district": "Kakinada",
+  "state": "Andhra Pradesh",
+  "lat": 16.93451,
+  "lon": 82.24786
+ },
+ {
+  "id": "kakinada-substation-2",
+  "type": "substation",
+  "name": "Kakinada Substation & feeders 2",
+  "town": "Kakinada",
+  "district": "Kakinada",
+  "state": "Andhra Pradesh",
+  "lat": 16.96632,
+  "lon": 82.23242
+ },
+ {
+  "id": "kakinada-substation-3",
+  "type": "substation",
+  "name": "Kakinada Substation & feeders 3",
+  "town": "Kakinada",
+  "district": "Kakinada",
+  "state": "Andhra Pradesh",
+  "lat": 17.04337,
+  "lon": 82.24409
+ },
+ {
+  "id": "kakinada-transmission-1",
+  "type": "transmission",
+  "name": "Kakinada Transmission line span 1",
+  "town": "Kakinada",
+  "district": "Kakinada",
+  "state": "Andhra Pradesh",
+  "lat": 17.00462,
+  "lon": 82.289
+ },
+ {
+  "id": "kakinada-transmission-2",
+  "type": "transmission",
+  "name": "Kakinada Transmission line span 2",
+  "town": "Kakinada",
+  "district": "Kakinada",
+  "state": "Andhra Pradesh",
+  "lat": 17.04898,
+  "lon": 82.26034
+ },
+ {
+  "id": "kakinada-telecom-1",
+  "type": "telecom",
+  "name": "Kakinada Telecom tower 1",
+  "town": "Kakinada",
+  "district": "Kakinada",
+  "state": "Andhra Pradesh",
+  "lat": 16.96286,
+  "lon": 82.23027
+ },
+ {
+  "id": "kakinada-telecom-2",
+  "type": "telecom",
+  "name": "Kakinada Telecom tower 2",
+  "town": "Kakinada",
+  "district": "Kakinada",
+  "state": "Andhra Pradesh",
+  "lat": 16.97041,
+  "lon": 82.1614
+ },
+ {
+  "id": "kakinada-telecom-3",
+  "type": "telecom",
+  "name": "Kakinada Telecom tower 3",
+  "town": "Kakinada",
+  "district": "Kakinada",
+  "state": "Andhra Pradesh",
+  "lat": 17.04418,
+  "lon": 82.31636
+ },
+ {
+  "id": "kakinada-telecom-4",
+  "type": "telecom",
+  "name": "Kakinada Telecom tower 4",
+  "town": "Kakinada",
+  "district": "Kakinada",
+  "state": "Andhra Pradesh",
+  "lat": 16.91061,
+  "lon": 82.30594
+ },
+ {
+  "id": "kakinada-telecom-5",
+  "type": "telecom",
+  "name": "Kakinada Telecom tower 5",
+  "town": "Kakinada",
+  "district": "Kakinada",
+  "state": "Andhra Pradesh",
+  "lat": 17.02516,
+  "lon": 82.35879
+ },
+ {
+  "id": "kakinada-water-1",
+  "type": "water",
+  "name": "Kakinada Water treatment plant",
+  "town": "Kakinada",
+  "district": "Kakinada",
+  "state": "Andhra Pradesh",
+  "lat": 16.89864,
+  "lon": 82.25406
+ },
+ {
+  "id": "kakinada-bridge-1",
+  "type": "bridge",
+  "name": "Kakinada Road bridge 1",
+  "town": "Kakinada",
+  "district": "Kakinada",
+  "state": "Andhra Pradesh",
+  "lat": 17.00464,
+  "lon": 82.2526
+ },
+ {
+  "id": "kakinada-bridge-2",
+  "type": "bridge",
+  "name": "Kakinada Road bridge 2",
+  "town": "Kakinada",
+  "district": "Kakinada",
+  "state": "Andhra Pradesh",
+  "lat": 16.94319,
+  "lon": 82.16652
+ },
+ {
+  "id": "kakinada-port-1",
+  "type": "port",
+  "name": "Kakinada Port terminal",
+  "town": "Kakinada",
+  "district": "Kakinada",
+  "state": "Andhra Pradesh",
+  "lat": 16.89099,
+  "lon": 82.26136
+ },
+ {
+  "id": "kakinada-shelter-1",
+  "type": "shelter",
+  "name": "Kakinada Cyclone shelter 1",
+  "town": "Kakinada",
+  "district": "Kakinada",
+  "state": "Andhra Pradesh",
+  "lat": 16.95813,
+  "lon": 82.25165
+ },
+ {
+  "id": "kakinada-shelter-2",
+  "type": "shelter",
+  "name": "Kakinada Cyclone shelter 2",
+  "town": "Kakinada",
+  "district": "Kakinada",
+  "state": "Andhra Pradesh",
+  "lat": 16.97391,
+  "lon": 82.31758
+ },
+ {
+  "id": "bheemunipatnam-housing-1",
+  "type": "housing",
+  "name": "Bheemunipatnam Kutcha housing cluster 1",
+  "town": "Bheemunipatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.88086,
+  "lon": 83.44794
+ },
+ {
+  "id": "bheemunipatnam-housing-2",
+  "type": "housing",
+  "name": "Bheemunipatnam Kutcha housing cluster 2",
+  "town": "Bheemunipatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.90132,
+  "lon": 83.45715
+ },
+ {
+  "id": "bheemunipatnam-hospital-1",
+  "type": "hospital",
+  "name": "Bheemunipatnam Hospital",
+  "town": "Bheemunipatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.85006,
+  "lon": 83.45231
+ },
+ {
+  "id": "bheemunipatnam-substation-1",
+  "type": "substation",
+  "name": "Bheemunipatnam Substation & feeders",
+  "town": "Bheemunipatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.8958,
+  "lon": 83.49971
+ },
+ {
+  "id": "bheemunipatnam-transmission-1",
+  "type": "transmission",
+  "name": "Bheemunipatnam Transmission line span",
+  "town": "Bheemunipatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.84546,
+  "lon": 83.49905
+ },
+ {
+  "id": "bheemunipatnam-telecom-1",
+  "type": "telecom",
+  "name": "Bheemunipatnam Telecom tower 1",
+  "town": "Bheemunipatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.89874,
+  "lon": 83.43654
+ },
+ {
+  "id": "bheemunipatnam-telecom-2",
+  "type": "telecom",
+  "name": "Bheemunipatnam Telecom tower 2",
+  "town": "Bheemunipatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.93285,
+  "lon": 83.51228
+ },
+ {
+  "id": "bheemunipatnam-water-1",
+  "type": "water",
+  "name": "Bheemunipatnam Water treatment plant",
+  "town": "Bheemunipatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.9071,
+  "lon": 83.43872
+ },
+ {
+  "id": "bheemunipatnam-bridge-1",
+  "type": "bridge",
+  "name": "Bheemunipatnam Road bridge",
+  "town": "Bheemunipatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.8908,
+  "lon": 83.41109
+ },
+ {
+  "id": "bheemunipatnam-shelter-1",
+  "type": "shelter",
+  "name": "Bheemunipatnam Cyclone shelter",
+  "town": "Bheemunipatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.92296,
+  "lon": 83.46671
+ },
+ {
+  "id": "vizianagaram-housing-1",
+  "type": "housing",
+  "name": "Vizianagaram Kutcha housing cluster 1",
+  "town": "Vizianagaram",
+  "district": "Vizianagaram",
+  "state": "Andhra Pradesh",
+  "lat": 18.11436,
+  "lon": 83.40313
+ },
+ {
+  "id": "vizianagaram-housing-2",
+  "type": "housing",
+  "name": "Vizianagaram Kutcha housing cluster 2",
+  "town": "Vizianagaram",
+  "district": "Vizianagaram",
+  "state": "Andhra Pradesh",
+  "lat": 18.15286,
+  "lon": 83.36498
+ },
+ {
+  "id": "vizianagaram-housing-3",
+  "type": "housing",
+  "name": "Vizianagaram Kutcha housing cluster 3",
+  "town": "Vizianagaram",
+  "district": "Vizianagaram",
+  "state": "Andhra Pradesh",
+  "lat": 18.11014,
+  "lon": 83.40437
+ },
+ {
+  "id": "vizianagaram-housing-4",
+  "type": "housing",
+  "name": "Vizianagaram Kutcha housing cluster 4",
+  "town": "Vizianagaram",
+  "district": "Vizianagaram",
+  "state": "Andhra Pradesh",
+  "lat": 18.07241,
+  "lon": 83.38741
+ },
+ {
+  "id": "vizianagaram-hospital-1",
+  "type": "hospital",
+  "name": "Vizianagaram Hospital 1",
+  "town": "Vizianagaram",
+  "district": "Vizianagaram",
+  "state": "Andhra Pradesh",
+  "lat": 17.98331,
+  "lon": 83.38318
+ },
+ {
+  "id": "vizianagaram-hospital-2",
+  "type": "hospital",
+  "name": "Vizianagaram Hospital 2",
+  "town": "Vizianagaram",
+  "district": "Vizianagaram",
+  "state": "Andhra Pradesh",
+  "lat": 17.99219,
+  "lon": 83.39954
+ },
+ {
+  "id": "vizianagaram-substation-1",
+  "type": "substation",
+  "name": "Vizianagaram Substation & feeders 1",
+  "town": "Vizianagaram",
+  "district": "Vizianagaram",
+  "state": "Andhra Pradesh",
+  "lat": 18.05738,
+  "lon": 83.47193
+ },
+ {
+  "id": "vizianagaram-substation-2",
+  "type": "substation",
+  "name": "Vizianagaram Substation & feeders 2",
+  "town": "Vizianagaram",
+  "district": "Vizianagaram",
+  "state": "Andhra Pradesh",
+  "lat": 18.18696,
+  "lon": 83.40323
+ },
+ {
+  "id": "vizianagaram-transmission-1",
+  "type": "transmission",
+  "name": "Vizianagaram Transmission line span 1",
+  "town": "Vizianagaram",
+  "district": "Vizianagaram",
+  "state": "Andhra Pradesh",
+  "lat": 18.10949,
+  "lon": 83.3984
+ },
+ {
+  "id": "vizianagaram-transmission-2",
+  "type": "transmission",
+  "name": "Vizianagaram Transmission line span 2",
+  "town": "Vizianagaram",
+  "district": "Vizianagaram",
+  "state": "Andhra Pradesh",
+  "lat": 18.09528,
+  "lon": 83.43681
+ },
+ {
+  "id": "vizianagaram-telecom-1",
+  "type": "telecom",
+  "name": "Vizianagaram Telecom tower 1",
+  "town": "Vizianagaram",
+  "district": "Vizianagaram",
+  "state": "Andhra Pradesh",
+  "lat": 18.11017,
+  "lon": 83.39657
+ },
+ {
+  "id": "vizianagaram-telecom-2",
+  "type": "telecom",
+  "name": "Vizianagaram Telecom tower 2",
+  "town": "Vizianagaram",
+  "district": "Vizianagaram",
+  "state": "Andhra Pradesh",
+  "lat": 18.10513,
+  "lon": 83.49156
+ },
+ {
+  "id": "vizianagaram-telecom-3",
+  "type": "telecom",
+  "name": "Vizianagaram Telecom tower 3",
+  "town": "Vizianagaram",
+  "district": "Vizianagaram",
+  "state": "Andhra Pradesh",
+  "lat": 18.16578,
+  "lon": 83.48398
+ },
+ {
+  "id": "vizianagaram-telecom-4",
+  "type": "telecom",
+  "name": "Vizianagaram Telecom tower 4",
+  "town": "Vizianagaram",
+  "district": "Vizianagaram",
+  "state": "Andhra Pradesh",
+  "lat": 18.08758,
+  "lon": 83.4299
+ },
+ {
+  "id": "vizianagaram-water-1",
+  "type": "water",
+  "name": "Vizianagaram Water treatment plant",
+  "town": "Vizianagaram",
+  "district": "Vizianagaram",
+  "state": "Andhra Pradesh",
+  "lat": 18.11086,
+  "lon": 83.46222
+ },
+ {
+  "id": "vizianagaram-bridge-1",
+  "type": "bridge",
+  "name": "Vizianagaram Road bridge",
+  "town": "Vizianagaram",
+  "district": "Vizianagaram",
+  "state": "Andhra Pradesh",
+  "lat": 18.10981,
+  "lon": 83.39284
+ },
+ {
+  "id": "vizianagaram-shelter-1",
+  "type": "shelter",
+  "name": "Vizianagaram Cyclone shelter 1",
+  "town": "Vizianagaram",
+  "district": "Vizianagaram",
+  "state": "Andhra Pradesh",
+  "lat": 18.08826,
+  "lon": 83.34063
+ },
+ {
+  "id": "vizianagaram-shelter-2",
+  "type": "shelter",
+  "name": "Vizianagaram Cyclone shelter 2",
+  "town": "Vizianagaram",
+  "district": "Vizianagaram",
+  "state": "Andhra Pradesh",
+  "lat": 18.11933,
+  "lon": 83.29714
+ },
+ {
+  "id": "srikakulam-housing-1",
+  "type": "housing",
+  "name": "Srikakulam Kutcha housing cluster 1",
+  "town": "Srikakulam",
+  "district": "Srikakulam",
+  "state": "Andhra Pradesh",
+  "lat": 18.3082,
+  "lon": 83.89671
+ },
+ {
+  "id": "srikakulam-housing-2",
+  "type": "housing",
+  "name": "Srikakulam Kutcha housing cluster 2",
+  "town": "Srikakulam",
+  "district": "Srikakulam",
+  "state": "Andhra Pradesh",
+  "lat": 18.30998,
+  "lon": 83.894
+ },
+ {
+  "id": "srikakulam-housing-3",
+  "type": "housing",
+  "name": "Srikakulam Kutcha housing cluster 3",
+  "town": "Srikakulam",
+  "district": "Srikakulam",
+  "state": "Andhra Pradesh",
+  "lat": 18.35553,
+  "lon": 83.9276
+ },
+ {
+  "id": "srikakulam-hospital-1",
+  "type": "hospital",
+  "name": "Srikakulam Hospital",
+  "town": "Srikakulam",
+  "district": "Srikakulam",
+  "state": "Andhra Pradesh",
+  "lat": 18.33316,
+  "lon": 83.84808
+ },
+ {
+  "id": "srikakulam-substation-1",
+  "type": "substation",
+  "name": "Srikakulam Substation & feeders 1",
+  "town": "Srikakulam",
+  "district": "Srikakulam",
+  "state": "Andhra Pradesh",
+  "lat": 18.38163,
+  "lon": 83.86028
+ },
+ {
+  "id": "srikakulam-substation-2",
+  "type": "substation",
+  "name": "Srikakulam Substation & feeders 2",
+  "town": "Srikakulam",
+  "district": "Srikakulam",
+  "state": "Andhra Pradesh",
+  "lat": 18.35404,
+  "lon": 83.92852
+ },
+ {
+  "id": "srikakulam-transmission-1",
+  "type": "transmission",
+  "name": "Srikakulam Transmission line span",
+  "town": "Srikakulam",
+  "district": "Srikakulam",
+  "state": "Andhra Pradesh",
+  "lat": 18.22255,
+  "lon": 83.84261
+ },
+ {
+  "id": "srikakulam-telecom-1",
+  "type": "telecom",
+  "name": "Srikakulam Telecom tower 1",
+  "town": "Srikakulam",
+  "district": "Srikakulam",
+  "state": "Andhra Pradesh",
+  "lat": 18.29351,
+  "lon": 83.84854
+ },
+ {
+  "id": "srikakulam-telecom-2",
+  "type": "telecom",
+  "name": "Srikakulam Telecom tower 2",
+  "town": "Srikakulam",
+  "district": "Srikakulam",
+  "state": "Andhra Pradesh",
+  "lat": 18.23962,
+  "lon": 83.94974
+ },
+ {
+  "id": "srikakulam-telecom-3",
+  "type": "telecom",
+  "name": "Srikakulam Telecom tower 3",
+  "town": "Srikakulam",
+  "district": "Srikakulam",
+  "state": "Andhra Pradesh",
+  "lat": 18.2909,
+  "lon": 83.88898
+ },
+ {
+  "id": "srikakulam-water-1",
+  "type": "water",
+  "name": "Srikakulam Water treatment plant",
+  "town": "Srikakulam",
+  "district": "Srikakulam",
+  "state": "Andhra Pradesh",
+  "lat": 18.27147,
+  "lon": 83.8857
+ },
+ {
+  "id": "srikakulam-bridge-1",
+  "type": "bridge",
+  "name": "Srikakulam Road bridge",
+  "town": "Srikakulam",
+  "district": "Srikakulam",
+  "state": "Andhra Pradesh",
+  "lat": 18.37139,
+  "lon": 83.95629
+ },
+ {
+  "id": "srikakulam-shelter-1",
+  "type": "shelter",
+  "name": "Srikakulam Cyclone shelter",
+  "town": "Srikakulam",
+  "district": "Srikakulam",
+  "state": "Andhra Pradesh",
+  "lat": 18.31469,
+  "lon": 83.9278
+ },
+ {
+  "id": "kalingapatnam-housing-1",
+  "type": "housing",
+  "name": "Kalingapatnam Kutcha housing cluster 1",
+  "town": "Kalingapatnam",
+  "district": "Srikakulam",
+  "state": "Andhra Pradesh",
+  "lat": 18.34365,
+  "lon": 84.08301
+ },
+ {
+  "id": "kalingapatnam-housing-2",
+  "type": "housing",
+  "name": "Kalingapatnam Kutcha housing cluster 2",
+  "town": "Kalingapatnam",
+  "district": "Srikakulam",
+  "state": "Andhra Pradesh",
+  "lat": 18.34321,
+  "lon": 84.15069
+ },
+ {
+  "id": "kalingapatnam-hospital-1",
+  "type": "hospital",
+  "name": "Kalingapatnam Hospital",
+  "town": "Kalingapatnam",
+  "district": "Srikakulam",
+  "state": "Andhra Pradesh",
+  "lat": 18.38085,
+  "lon": 84.09325
+ },
+ {
+  "id": "kalingapatnam-substation-1",
+  "type": "substation",
+  "name": "Kalingapatnam Substation & feeders",
+  "town": "Kalingapatnam",
+  "district": "Srikakulam",
+  "state": "Andhra Pradesh",
+  "lat": 18.3214,
+  "lon": 84.16935
+ },
+ {
+  "id": "kalingapatnam-transmission-1",
+  "type": "transmission",
+  "name": "Kalingapatnam Transmission line span",
+  "town": "Kalingapatnam",
+  "district": "Srikakulam",
+  "state": "Andhra Pradesh",
+  "lat": 18.36862,
+  "lon": 84.11337
+ },
+ {
+  "id": "kalingapatnam-telecom-1",
+  "type": "telecom",
+  "name": "Kalingapatnam Telecom tower 1",
+  "town": "Kalingapatnam",
+  "district": "Srikakulam",
+  "state": "Andhra Pradesh",
+  "lat": 18.3523,
+  "lon": 84.12879
+ },
+ {
+  "id": "kalingapatnam-telecom-2",
+  "type": "telecom",
+  "name": "Kalingapatnam Telecom tower 2",
+  "town": "Kalingapatnam",
+  "district": "Srikakulam",
+  "state": "Andhra Pradesh",
+  "lat": 18.35611,
+  "lon": 84.11199
+ },
+ {
+  "id": "kalingapatnam-bridge-1",
+  "type": "bridge",
+  "name": "Kalingapatnam Road bridge",
+  "town": "Kalingapatnam",
+  "district": "Srikakulam",
+  "state": "Andhra Pradesh",
+  "lat": 18.35105,
+  "lon": 84.12251
+ },
+ {
+  "id": "kalingapatnam-shelter-1",
+  "type": "shelter",
+  "name": "Kalingapatnam Cyclone shelter",
+  "town": "Kalingapatnam",
+  "district": "Srikakulam",
+  "state": "Andhra Pradesh",
+  "lat": 18.31134,
+  "lon": 84.10793
+ },
+ {
+  "id": "gopalpur-housing-1",
+  "type": "housing",
+  "name": "Gopalpur Kutcha housing cluster 1",
+  "town": "Gopalpur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.21539,
+  "lon": 84.91316
+ },
+ {
+  "id": "gopalpur-housing-2",
+  "type": "housing",
+  "name": "Gopalpur Kutcha housing cluster 2",
+  "town": "Gopalpur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.23492,
+  "lon": 84.90065
+ },
+ {
+  "id": "gopalpur-hospital-1",
+  "type": "hospital",
+  "name": "Gopalpur Hospital",
+  "town": "Gopalpur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.21153,
+  "lon": 84.9273
+ },
+ {
+  "id": "gopalpur-substation-1",
+  "type": "substation",
+  "name": "Gopalpur Substation & feeders",
+  "town": "Gopalpur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.26418,
+  "lon": 84.94426
+ },
+ {
+  "id": "gopalpur-transmission-1",
+  "type": "transmission",
+  "name": "Gopalpur Transmission line span",
+  "town": "Gopalpur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.26689,
+  "lon": 84.92171
+ },
+ {
+  "id": "gopalpur-telecom-1",
+  "type": "telecom",
+  "name": "Gopalpur Telecom tower 1",
+  "town": "Gopalpur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.2915,
+  "lon": 84.90172
+ },
+ {
+  "id": "gopalpur-telecom-2",
+  "type": "telecom",
+  "name": "Gopalpur Telecom tower 2",
+  "town": "Gopalpur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.3391,
+  "lon": 84.89723
+ },
+ {
+  "id": "gopalpur-bridge-1",
+  "type": "bridge",
+  "name": "Gopalpur Road bridge",
+  "town": "Gopalpur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.27193,
+  "lon": 84.88045
+ },
+ {
+  "id": "gopalpur-port-1",
+  "type": "port",
+  "name": "Gopalpur Port terminal",
+  "town": "Gopalpur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.19578,
+  "lon": 84.94945
+ },
+ {
+  "id": "gopalpur-shelter-1",
+  "type": "shelter",
+  "name": "Gopalpur Cyclone shelter",
+  "town": "Gopalpur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.26535,
+  "lon": 84.90141
+ },
+ {
+  "id": "berhampur-housing-1",
+  "type": "housing",
+  "name": "Berhampur Kutcha housing cluster 1",
+  "town": "Berhampur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.26455,
+  "lon": 84.76714
+ },
+ {
+  "id": "berhampur-housing-2",
+  "type": "housing",
+  "name": "Berhampur Kutcha housing cluster 2",
+  "town": "Berhampur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.29856,
+  "lon": 84.80569
+ },
+ {
+  "id": "berhampur-housing-3",
+  "type": "housing",
+  "name": "Berhampur Kutcha housing cluster 3",
+  "town": "Berhampur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.23284,
+  "lon": 84.79162
+ },
+ {
+  "id": "berhampur-housing-4",
+  "type": "housing",
+  "name": "Berhampur Kutcha housing cluster 4",
+  "town": "Berhampur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.27443,
+  "lon": 84.79324
+ },
+ {
+  "id": "berhampur-housing-5",
+  "type": "housing",
+  "name": "Berhampur Kutcha housing cluster 5",
+  "town": "Berhampur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.28146,
+  "lon": 84.83555
+ },
+ {
+  "id": "berhampur-hospital-1",
+  "type": "hospital",
+  "name": "Berhampur Hospital 1",
+  "town": "Berhampur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.35425,
+  "lon": 84.72053
+ },
+ {
+  "id": "berhampur-hospital-2",
+  "type": "hospital",
+  "name": "Berhampur Hospital 2",
+  "town": "Berhampur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.21175,
+  "lon": 84.7856
+ },
+ {
+  "id": "berhampur-substation-1",
+  "type": "substation",
+  "name": "Berhampur Substation & feeders 1",
+  "town": "Berhampur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.35131,
+  "lon": 84.7746
+ },
+ {
+  "id": "berhampur-substation-2",
+  "type": "substation",
+  "name": "Berhampur Substation & feeders 2",
+  "town": "Berhampur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.28301,
+  "lon": 84.74919
+ },
+ {
+  "id": "berhampur-transmission-1",
+  "type": "transmission",
+  "name": "Berhampur Transmission line span 1",
+  "town": "Berhampur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.27015,
+  "lon": 84.83858
+ },
+ {
+  "id": "berhampur-transmission-2",
+  "type": "transmission",
+  "name": "Berhampur Transmission line span 2",
+  "town": "Berhampur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.30245,
+  "lon": 84.77232
+ },
+ {
+  "id": "berhampur-telecom-1",
+  "type": "telecom",
+  "name": "Berhampur Telecom tower 1",
+  "town": "Berhampur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.3152,
+  "lon": 84.73529
+ },
+ {
+  "id": "berhampur-telecom-2",
+  "type": "telecom",
+  "name": "Berhampur Telecom tower 2",
+  "town": "Berhampur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.26918,
+  "lon": 84.73976
+ },
+ {
+  "id": "berhampur-telecom-3",
+  "type": "telecom",
+  "name": "Berhampur Telecom tower 3",
+  "town": "Berhampur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.30258,
+  "lon": 84.84047
+ },
+ {
+  "id": "berhampur-telecom-4",
+  "type": "telecom",
+  "name": "Berhampur Telecom tower 4",
+  "town": "Berhampur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.26347,
+  "lon": 84.70452
+ },
+ {
+  "id": "berhampur-water-1",
+  "type": "water",
+  "name": "Berhampur Water treatment plant",
+  "town": "Berhampur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.20308,
+  "lon": 84.73259
+ },
+ {
+  "id": "berhampur-bridge-1",
+  "type": "bridge",
+  "name": "Berhampur Road bridge 1",
+  "town": "Berhampur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.29371,
+  "lon": 84.85948
+ },
+ {
+  "id": "berhampur-bridge-2",
+  "type": "bridge",
+  "name": "Berhampur Road bridge 2",
+  "town": "Berhampur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.39514,
+  "lon": 84.90799
+ },
+ {
+  "id": "berhampur-shelter-1",
+  "type": "shelter",
+  "name": "Berhampur Cyclone shelter 1",
+  "town": "Berhampur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.29847,
+  "lon": 84.8832
+ },
+ {
+  "id": "berhampur-shelter-2",
+  "type": "shelter",
+  "name": "Berhampur Cyclone shelter 2",
+  "town": "Berhampur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.31832,
+  "lon": 84.92336
+ },
+ {
+  "id": "rambha-housing-1",
+  "type": "housing",
+  "name": "Rambha Kutcha housing cluster 1",
+  "town": "Rambha",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.5661,
+  "lon": 85.16753
+ },
+ {
+  "id": "rambha-housing-2",
+  "type": "housing",
+  "name": "Rambha Kutcha housing cluster 2",
+  "town": "Rambha",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.49796,
+  "lon": 85.08523
+ },
+ {
+  "id": "rambha-hospital-1",
+  "type": "hospital",
+  "name": "Rambha Hospital",
+  "town": "Rambha",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.47702,
+  "lon": 85.09739
+ },
+ {
+  "id": "rambha-substation-1",
+  "type": "substation",
+  "name": "Rambha Substation & feeders",
+  "town": "Rambha",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.54056,
+  "lon": 85.11497
+ },
+ {
+  "id": "rambha-transmission-1",
+  "type": "transmission",
+  "name": "Rambha Transmission line span",
+  "town": "Rambha",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.51567,
+  "lon": 85.06226
+ },
+ {
+  "id": "rambha-telecom-1",
+  "type": "telecom",
+  "name": "Rambha Telecom tower 1",
+  "town": "Rambha",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.47008,
+  "lon": 85.13099
+ },
+ {
+  "id": "rambha-telecom-2",
+  "type": "telecom",
+  "name": "Rambha Telecom tower 2",
+  "town": "Rambha",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.5474,
+  "lon": 85.12737
+ },
+ {
+  "id": "rambha-bridge-1",
+  "type": "bridge",
+  "name": "Rambha Road bridge",
+  "town": "Rambha",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.51682,
+  "lon": 85.07421
+ },
+ {
+  "id": "rambha-shelter-1",
+  "type": "shelter",
+  "name": "Rambha Cyclone shelter",
+  "town": "Rambha",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.53666,
+  "lon": 85.07033
+ },
+ {
+  "id": "balugaon-housing-1",
+  "type": "housing",
+  "name": "Balugaon Kutcha housing cluster 1",
+  "town": "Balugaon",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 19.7901,
+  "lon": 85.21872
+ },
+ {
+  "id": "balugaon-housing-2",
+  "type": "housing",
+  "name": "Balugaon Kutcha housing cluster 2",
+  "town": "Balugaon",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 19.73975,
+  "lon": 85.21741
+ },
+ {
+  "id": "balugaon-hospital-1",
+  "type": "hospital",
+  "name": "Balugaon Hospital",
+  "town": "Balugaon",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 19.7536,
+  "lon": 85.23723
+ },
+ {
+  "id": "balugaon-substation-1",
+  "type": "substation",
+  "name": "Balugaon Substation & feeders",
+  "town": "Balugaon",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 19.74635,
+  "lon": 85.17954
+ },
+ {
+  "id": "balugaon-transmission-1",
+  "type": "transmission",
+  "name": "Balugaon Transmission line span",
+  "town": "Balugaon",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 19.74401,
+  "lon": 85.229
+ },
+ {
+  "id": "balugaon-telecom-1",
+  "type": "telecom",
+  "name": "Balugaon Telecom tower 1",
+  "town": "Balugaon",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 19.72412,
+  "lon": 85.21176
+ },
+ {
+  "id": "balugaon-telecom-2",
+  "type": "telecom",
+  "name": "Balugaon Telecom tower 2",
+  "town": "Balugaon",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 19.63795,
+  "lon": 85.21004
+ },
+ {
+  "id": "balugaon-bridge-1",
+  "type": "bridge",
+  "name": "Balugaon Road bridge",
+  "town": "Balugaon",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 19.73952,
+  "lon": 85.22571
+ },
+ {
+  "id": "balugaon-shelter-1",
+  "type": "shelter",
+  "name": "Balugaon Cyclone shelter",
+  "town": "Balugaon",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 19.75905,
+  "lon": 85.22878
+ },
+ {
+  "id": "satapada-housing-1",
+  "type": "housing",
+  "name": "Satapada Kutcha housing cluster 1",
+  "town": "Satapada",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.65341,
+  "lon": 85.45064
+ },
+ {
+  "id": "satapada-housing-2",
+  "type": "housing",
+  "name": "Satapada Kutcha housing cluster 2",
+  "town": "Satapada",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.6555,
+  "lon": 85.43676
+ },
+ {
+  "id": "satapada-hospital-1",
+  "type": "hospital",
+  "name": "Satapada Hospital",
+  "town": "Satapada",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.64436,
+  "lon": 85.48205
+ },
+ {
+  "id": "satapada-substation-1",
+  "type": "substation",
+  "name": "Satapada Substation & feeders",
+  "town": "Satapada",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.68591,
+  "lon": 85.40854
+ },
+ {
+  "id": "satapada-transmission-1",
+  "type": "transmission",
+  "name": "Satapada Transmission line span",
+  "town": "Satapada",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.68099,
+  "lon": 85.44139
+ },
+ {
+  "id": "satapada-telecom-1",
+  "type": "telecom",
+  "name": "Satapada Telecom tower 1",
+  "town": "Satapada",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.68566,
+  "lon": 85.49072
+ },
+ {
+  "id": "satapada-telecom-2",
+  "type": "telecom",
+  "name": "Satapada Telecom tower 2",
+  "town": "Satapada",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.71187,
+  "lon": 85.41177
+ },
+ {
+  "id": "satapada-bridge-1",
+  "type": "bridge",
+  "name": "Satapada Road bridge",
+  "town": "Satapada",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.63938,
+  "lon": 85.47323
+ },
+ {
+  "id": "satapada-shelter-1",
+  "type": "shelter",
+  "name": "Satapada Cyclone shelter",
+  "town": "Satapada",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.65329,
+  "lon": 85.47817
+ },
+ {
+  "id": "puri-housing-1",
+  "type": "housing",
+  "name": "Puri Kutcha housing cluster 1",
+  "town": "Puri",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.80235,
+  "lon": 85.84254
+ },
+ {
+  "id": "puri-housing-2",
+  "type": "housing",
+  "name": "Puri Kutcha housing cluster 2",
+  "town": "Puri",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.81186,
+  "lon": 85.8617
+ },
+ {
+  "id": "puri-housing-3",
+  "type": "housing",
+  "name": "Puri Kutcha housing cluster 3",
+  "town": "Puri",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.76795,
+  "lon": 85.82021
+ },
+ {
+  "id": "puri-housing-4",
+  "type": "housing",
+  "name": "Puri Kutcha housing cluster 4",
+  "town": "Puri",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.83477,
+  "lon": 85.81622
+ },
+ {
+  "id": "puri-hospital-1",
+  "type": "hospital",
+  "name": "Puri Hospital 1",
+  "town": "Puri",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.76447,
+  "lon": 85.84411
+ },
+ {
+  "id": "puri-hospital-2",
+  "type": "hospital",
+  "name": "Puri Hospital 2",
+  "town": "Puri",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.84042,
+  "lon": 85.87272
+ },
+ {
+  "id": "puri-substation-1",
+  "type": "substation",
+  "name": "Puri Substation & feeders 1",
+  "town": "Puri",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.8221,
+  "lon": 85.83382
+ },
+ {
+  "id": "puri-substation-2",
+  "type": "substation",
+  "name": "Puri Substation & feeders 2",
+  "town": "Puri",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.8004,
+  "lon": 85.92846
+ },
+ {
+  "id": "puri-transmission-1",
+  "type": "transmission",
+  "name": "Puri Transmission line span 1",
+  "town": "Puri",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.83457,
+  "lon": 85.83357
+ },
+ {
+  "id": "puri-transmission-2",
+  "type": "transmission",
+  "name": "Puri Transmission line span 2",
+  "town": "Puri",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.8111,
+  "lon": 85.83989
+ },
+ {
+  "id": "puri-telecom-1",
+  "type": "telecom",
+  "name": "Puri Telecom tower 1",
+  "town": "Puri",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.74997,
+  "lon": 85.80443
+ },
+ {
+  "id": "puri-telecom-2",
+  "type": "telecom",
+  "name": "Puri Telecom tower 2",
+  "town": "Puri",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.88131,
+  "lon": 85.82401
+ },
+ {
+  "id": "puri-telecom-3",
+  "type": "telecom",
+  "name": "Puri Telecom tower 3",
+  "town": "Puri",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.7465,
+  "lon": 85.78606
+ },
+ {
+  "id": "puri-water-1",
+  "type": "water",
+  "name": "Puri Water treatment plant",
+  "town": "Puri",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.76491,
+  "lon": 85.75744
+ },
+ {
+  "id": "puri-bridge-1",
+  "type": "bridge",
+  "name": "Puri Road bridge",
+  "town": "Puri",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.80624,
+  "lon": 85.89739
+ },
+ {
+  "id": "puri-shelter-1",
+  "type": "shelter",
+  "name": "Puri Cyclone shelter 1",
+  "town": "Puri",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.85652,
+  "lon": 85.86035
+ },
+ {
+  "id": "puri-shelter-2",
+  "type": "shelter",
+  "name": "Puri Cyclone shelter 2",
+  "town": "Puri",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.86136,
+  "lon": 85.86275
+ },
+ {
+  "id": "konark-housing-1",
+  "type": "housing",
+  "name": "Konark Kutcha housing cluster 1",
+  "town": "Konark",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.94119,
+  "lon": 86.06436
+ },
+ {
+  "id": "konark-housing-2",
+  "type": "housing",
+  "name": "Konark Kutcha housing cluster 2",
+  "town": "Konark",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.85747,
+  "lon": 86.03411
+ },
+ {
+  "id": "konark-hospital-1",
+  "type": "hospital",
+  "name": "Konark Hospital",
+  "town": "Konark",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.88765,
+  "lon": 86.07682
+ },
+ {
+  "id": "konark-substation-1",
+  "type": "substation",
+  "name": "Konark Substation & feeders",
+  "town": "Konark",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.87252,
+  "lon": 86.07765
+ },
+ {
+  "id": "konark-transmission-1",
+  "type": "transmission",
+  "name": "Konark Transmission line span",
+  "town": "Konark",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.90616,
+  "lon": 86.08822
+ },
+ {
+  "id": "konark-telecom-1",
+  "type": "telecom",
+  "name": "Konark Telecom tower 1",
+  "town": "Konark",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.88259,
+  "lon": 86.03843
+ },
+ {
+  "id": "konark-telecom-2",
+  "type": "telecom",
+  "name": "Konark Telecom tower 2",
+  "town": "Konark",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.94632,
+  "lon": 86.1017
+ },
+ {
+  "id": "konark-bridge-1",
+  "type": "bridge",
+  "name": "Konark Road bridge",
+  "town": "Konark",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.89742,
+  "lon": 86.12265
+ },
+ {
+  "id": "konark-shelter-1",
+  "type": "shelter",
+  "name": "Konark Cyclone shelter",
+  "town": "Konark",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.86183,
+  "lon": 86.13984
+ },
+ {
+  "id": "astaranga-housing-1",
+  "type": "housing",
+  "name": "Astaranga Kutcha housing cluster 1",
+  "town": "Astaranga",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.98966,
+  "lon": 86.34823
+ },
+ {
+  "id": "astaranga-housing-2",
+  "type": "housing",
+  "name": "Astaranga Kutcha housing cluster 2",
+  "town": "Astaranga",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 20.01254,
+  "lon": 86.38833
+ },
+ {
+  "id": "astaranga-hospital-1",
+  "type": "hospital",
+  "name": "Astaranga Hospital",
+  "town": "Astaranga",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 20.02794,
+  "lon": 86.4177
+ },
+ {
+  "id": "astaranga-substation-1",
+  "type": "substation",
+  "name": "Astaranga Substation & feeders",
+  "town": "Astaranga",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.98876,
+  "lon": 86.29813
+ },
+ {
+  "id": "astaranga-transmission-1",
+  "type": "transmission",
+  "name": "Astaranga Transmission line span",
+  "town": "Astaranga",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 20.02396,
+  "lon": 86.39647
+ },
+ {
+  "id": "astaranga-telecom-1",
+  "type": "telecom",
+  "name": "Astaranga Telecom tower 1",
+  "town": "Astaranga",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 20.06745,
+  "lon": 86.34681
+ },
+ {
+  "id": "astaranga-telecom-2",
+  "type": "telecom",
+  "name": "Astaranga Telecom tower 2",
+  "town": "Astaranga",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 20.01465,
+  "lon": 86.37137
+ },
+ {
+  "id": "astaranga-bridge-1",
+  "type": "bridge",
+  "name": "Astaranga Road bridge",
+  "town": "Astaranga",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 20.00173,
+  "lon": 86.34007
+ },
+ {
+  "id": "astaranga-shelter-1",
+  "type": "shelter",
+  "name": "Astaranga Cyclone shelter",
+  "town": "Astaranga",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.98031,
+  "lon": 86.40272
+ },
+ {
+  "id": "bhubaneswar-housing-1",
+  "type": "housing",
+  "name": "Bhubaneswar Kutcha housing cluster 1",
+  "town": "Bhubaneswar",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 20.36381,
+  "lon": 85.77451
+ },
+ {
+  "id": "bhubaneswar-housing-2",
+  "type": "housing",
+  "name": "Bhubaneswar Kutcha housing cluster 2",
+  "town": "Bhubaneswar",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 20.28595,
+  "lon": 85.80062
+ },
+ {
+  "id": "bhubaneswar-housing-3",
+  "type": "housing",
+  "name": "Bhubaneswar Kutcha housing cluster 3",
+  "town": "Bhubaneswar",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 20.31528,
+  "lon": 85.95167
+ },
+ {
+  "id": "bhubaneswar-housing-4",
+  "type": "housing",
+  "name": "Bhubaneswar Kutcha housing cluster 4",
+  "town": "Bhubaneswar",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 20.19724,
+  "lon": 85.94019
+ },
+ {
+  "id": "bhubaneswar-housing-5",
+  "type": "housing",
+  "name": "Bhubaneswar Kutcha housing cluster 5",
+  "town": "Bhubaneswar",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 20.26662,
+  "lon": 85.80238
+ },
+ {
+  "id": "bhubaneswar-housing-6",
+  "type": "housing",
+  "name": "Bhubaneswar Kutcha housing cluster 6",
+  "town": "Bhubaneswar",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 20.34412,
+  "lon": 85.86485
+ },
+ {
+  "id": "bhubaneswar-housing-7",
+  "type": "housing",
+  "name": "Bhubaneswar Kutcha housing cluster 7",
+  "town": "Bhubaneswar",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 20.36135,
+  "lon": 85.81617
+ },
+ {
+  "id": "bhubaneswar-hospital-1",
+  "type": "hospital",
+  "name": "Bhubaneswar Hospital 1",
+  "town": "Bhubaneswar",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 20.23193,
+  "lon": 85.77701
+ },
+ {
+  "id": "bhubaneswar-hospital-2",
+  "type": "hospital",
+  "name": "Bhubaneswar Hospital 2",
+  "town": "Bhubaneswar",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 20.38652,
+  "lon": 85.82544
+ },
+ {
+  "id": "bhubaneswar-hospital-3",
+  "type": "hospital",
+  "name": "Bhubaneswar Hospital 3",
+  "town": "Bhubaneswar",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 20.25886,
+  "lon": 85.81931
+ },
+ {
+  "id": "bhubaneswar-hospital-4",
+  "type": "hospital",
+  "name": "Bhubaneswar Hospital 4",
+  "town": "Bhubaneswar",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 20.19385,
+  "lon": 85.87159
+ },
+ {
+  "id": "bhubaneswar-substation-1",
+  "type": "substation",
+  "name": "Bhubaneswar Substation & feeders 1",
+  "town": "Bhubaneswar",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 20.2967,
+  "lon": 85.6689
+ },
+ {
+  "id": "bhubaneswar-substation-2",
+  "type": "substation",
+  "name": "Bhubaneswar Substation & feeders 2",
+  "town": "Bhubaneswar",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 20.21765,
+  "lon": 85.81935
+ },
+ {
+  "id": "bhubaneswar-substation-3",
+  "type": "substation",
+  "name": "Bhubaneswar Substation & feeders 3",
+  "town": "Bhubaneswar",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 20.26714,
+  "lon": 85.88769
+ },
+ {
+  "id": "bhubaneswar-substation-4",
+  "type": "substation",
+  "name": "Bhubaneswar Substation & feeders 4",
+  "town": "Bhubaneswar",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 20.24044,
+  "lon": 85.91215
+ },
+ {
+  "id": "bhubaneswar-substation-5",
+  "type": "substation",
+  "name": "Bhubaneswar Substation & feeders 5",
+  "town": "Bhubaneswar",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 20.27061,
+  "lon": 85.71379
+ },
+ {
+  "id": "bhubaneswar-transmission-1",
+  "type": "transmission",
+  "name": "Bhubaneswar Transmission line span 1",
+  "town": "Bhubaneswar",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 20.37364,
+  "lon": 85.83416
+ },
+ {
+  "id": "bhubaneswar-transmission-2",
+  "type": "transmission",
+  "name": "Bhubaneswar Transmission line span 2",
+  "town": "Bhubaneswar",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 20.24628,
+  "lon": 85.86461
+ },
+ {
+  "id": "bhubaneswar-transmission-3",
+  "type": "transmission",
+  "name": "Bhubaneswar Transmission line span 3",
+  "town": "Bhubaneswar",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 20.38564,
+  "lon": 85.83796
+ },
+ {
+  "id": "bhubaneswar-telecom-1",
+  "type": "telecom",
+  "name": "Bhubaneswar Telecom tower 1",
+  "town": "Bhubaneswar",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 20.30639,
+  "lon": 85.72932
+ },
+ {
+  "id": "bhubaneswar-telecom-2",
+  "type": "telecom",
+  "name": "Bhubaneswar Telecom tower 2",
+  "town": "Bhubaneswar",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 20.27432,
+  "lon": 85.7868
+ },
+ {
+  "id": "bhubaneswar-telecom-3",
+  "type": "telecom",
+  "name": "Bhubaneswar Telecom tower 3",
+  "town": "Bhubaneswar",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 20.27265,
+  "lon": 85.79412
+ },
+ {
+  "id": "bhubaneswar-telecom-4",
+  "type": "telecom",
+  "name": "Bhubaneswar Telecom tower 4",
+  "town": "Bhubaneswar",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 20.35447,
+  "lon": 85.73408
+ },
+ {
+  "id": "bhubaneswar-telecom-5",
+  "type": "telecom",
+  "name": "Bhubaneswar Telecom tower 5",
+  "town": "Bhubaneswar",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 20.23139,
+  "lon": 85.86969
+ },
+ {
+  "id": "bhubaneswar-telecom-6",
+  "type": "telecom",
+  "name": "Bhubaneswar Telecom tower 6",
+  "town": "Bhubaneswar",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 20.30619,
+  "lon": 85.88389
+ },
+ {
+  "id": "bhubaneswar-water-1",
+  "type": "water",
+  "name": "Bhubaneswar Water treatment plant 1",
+  "town": "Bhubaneswar",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 20.28642,
+  "lon": 85.7496
+ },
+ {
+  "id": "bhubaneswar-water-2",
+  "type": "water",
+  "name": "Bhubaneswar Water treatment plant 2",
+  "town": "Bhubaneswar",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 20.34305,
+  "lon": 85.77187
+ },
+ {
+  "id": "bhubaneswar-bridge-1",
+  "type": "bridge",
+  "name": "Bhubaneswar Road bridge 1",
+  "town": "Bhubaneswar",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 20.31875,
+  "lon": 85.73742
+ },
+ {
+  "id": "bhubaneswar-bridge-2",
+  "type": "bridge",
+  "name": "Bhubaneswar Road bridge 2",
+  "town": "Bhubaneswar",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 20.37661,
+  "lon": 85.92356
+ },
+ {
+  "id": "cuttack-housing-1",
+  "type": "housing",
+  "name": "Cuttack Kutcha housing cluster 1",
+  "town": "Cuttack",
+  "district": "Cuttack",
+  "state": "Odisha",
+  "lat": 20.55758,
+  "lon": 85.77318
+ },
+ {
+  "id": "cuttack-housing-2",
+  "type": "housing",
+  "name": "Cuttack Kutcha housing cluster 2",
+  "town": "Cuttack",
+  "district": "Cuttack",
+  "state": "Odisha",
+  "lat": 20.42181,
+  "lon": 85.89744
+ },
+ {
+  "id": "cuttack-housing-3",
+  "type": "housing",
+  "name": "Cuttack Kutcha housing cluster 3",
+  "town": "Cuttack",
+  "district": "Cuttack",
+  "state": "Odisha",
+  "lat": 20.56212,
+  "lon": 85.85472
+ },
+ {
+  "id": "cuttack-housing-4",
+  "type": "housing",
+  "name": "Cuttack Kutcha housing cluster 4",
+  "town": "Cuttack",
+  "district": "Cuttack",
+  "state": "Odisha",
+  "lat": 20.48636,
+  "lon": 85.87121
+ },
+ {
+  "id": "cuttack-housing-5",
+  "type": "housing",
+  "name": "Cuttack Kutcha housing cluster 5",
+  "town": "Cuttack",
+  "district": "Cuttack",
+  "state": "Odisha",
+  "lat": 20.54132,
+  "lon": 85.91491
+ },
+ {
+  "id": "cuttack-housing-6",
+  "type": "housing",
+  "name": "Cuttack Kutcha housing cluster 6",
+  "town": "Cuttack",
+  "district": "Cuttack",
+  "state": "Odisha",
+  "lat": 20.55939,
+  "lon": 85.9372
+ },
+ {
+  "id": "cuttack-housing-7",
+  "type": "housing",
+  "name": "Cuttack Kutcha housing cluster 7",
+  "town": "Cuttack",
+  "district": "Cuttack",
+  "state": "Odisha",
+  "lat": 20.43236,
+  "lon": 85.88243
+ },
+ {
+  "id": "cuttack-hospital-1",
+  "type": "hospital",
+  "name": "Cuttack Hospital 1",
+  "town": "Cuttack",
+  "district": "Cuttack",
+  "state": "Odisha",
+  "lat": 20.39034,
+  "lon": 85.86615
+ },
+ {
+  "id": "cuttack-hospital-2",
+  "type": "hospital",
+  "name": "Cuttack Hospital 2",
+  "town": "Cuttack",
+  "district": "Cuttack",
+  "state": "Odisha",
+  "lat": 20.46211,
+  "lon": 85.97946
+ },
+ {
+  "id": "cuttack-hospital-3",
+  "type": "hospital",
+  "name": "Cuttack Hospital 3",
+  "town": "Cuttack",
+  "district": "Cuttack",
+  "state": "Odisha",
+  "lat": 20.50302,
+  "lon": 85.9515
+ },
+ {
+  "id": "cuttack-substation-1",
+  "type": "substation",
+  "name": "Cuttack Substation & feeders 1",
+  "town": "Cuttack",
+  "district": "Cuttack",
+  "state": "Odisha",
+  "lat": 20.49229,
+  "lon": 85.89177
+ },
+ {
+  "id": "cuttack-substation-2",
+  "type": "substation",
+  "name": "Cuttack Substation & feeders 2",
+  "town": "Cuttack",
+  "district": "Cuttack",
+  "state": "Odisha",
+  "lat": 20.48303,
+  "lon": 85.85731
+ },
+ {
+  "id": "cuttack-substation-3",
+  "type": "substation",
+  "name": "Cuttack Substation & feeders 3",
+  "town": "Cuttack",
+  "district": "Cuttack",
+  "state": "Odisha",
+  "lat": 20.45466,
+  "lon": 85.81571
+ },
+ {
+  "id": "cuttack-transmission-1",
+  "type": "transmission",
+  "name": "Cuttack Transmission line span 1",
+  "town": "Cuttack",
+  "district": "Cuttack",
+  "state": "Odisha",
+  "lat": 20.42074,
+  "lon": 85.78864
+ },
+ {
+  "id": "cuttack-transmission-2",
+  "type": "transmission",
+  "name": "Cuttack Transmission line span 2",
+  "town": "Cuttack",
+  "district": "Cuttack",
+  "state": "Odisha",
+  "lat": 20.35341,
+  "lon": 85.89287
+ },
+ {
+  "id": "cuttack-transmission-3",
+  "type": "transmission",
+  "name": "Cuttack Transmission line span 3",
+  "town": "Cuttack",
+  "district": "Cuttack",
+  "state": "Odisha",
+  "lat": 20.44286,
+  "lon": 85.77397
+ },
+ {
+  "id": "cuttack-telecom-1",
+  "type": "telecom",
+  "name": "Cuttack Telecom tower 1",
+  "town": "Cuttack",
+  "district": "Cuttack",
+  "state": "Odisha",
+  "lat": 20.50376,
+  "lon": 85.91425
+ },
+ {
+  "id": "cuttack-telecom-2",
+  "type": "telecom",
+  "name": "Cuttack Telecom tower 2",
+  "town": "Cuttack",
+  "district": "Cuttack",
+  "state": "Odisha",
+  "lat": 20.40889,
+  "lon": 85.75045
+ },
+ {
+  "id": "cuttack-telecom-3",
+  "type": "telecom",
+  "name": "Cuttack Telecom tower 3",
+  "town": "Cuttack",
+  "district": "Cuttack",
+  "state": "Odisha",
+  "lat": 20.43997,
+  "lon": 85.90195
+ },
+ {
+  "id": "cuttack-telecom-4",
+  "type": "telecom",
+  "name": "Cuttack Telecom tower 4",
+  "town": "Cuttack",
+  "district": "Cuttack",
+  "state": "Odisha",
+  "lat": 20.40976,
+  "lon": 85.92763
+ },
+ {
+  "id": "cuttack-telecom-5",
+  "type": "telecom",
+  "name": "Cuttack Telecom tower 5",
+  "town": "Cuttack",
+  "district": "Cuttack",
+  "state": "Odisha",
+  "lat": 20.40909,
+  "lon": 85.85067
+ },
+ {
+  "id": "cuttack-telecom-6",
+  "type": "telecom",
+  "name": "Cuttack Telecom tower 6",
+  "town": "Cuttack",
+  "district": "Cuttack",
+  "state": "Odisha",
+  "lat": 20.52752,
+  "lon": 85.85104
+ },
+ {
+  "id": "cuttack-water-1",
+  "type": "water",
+  "name": "Cuttack Water treatment plant 1",
+  "town": "Cuttack",
+  "district": "Cuttack",
+  "state": "Odisha",
+  "lat": 20.42517,
+  "lon": 85.87423
+ },
+ {
+  "id": "cuttack-water-2",
+  "type": "water",
+  "name": "Cuttack Water treatment plant 2",
+  "town": "Cuttack",
+  "district": "Cuttack",
+  "state": "Odisha",
+  "lat": 20.33479,
+  "lon": 85.90934
+ },
+ {
+  "id": "cuttack-bridge-1",
+  "type": "bridge",
+  "name": "Cuttack Road bridge 1",
+  "town": "Cuttack",
+  "district": "Cuttack",
+  "state": "Odisha",
+  "lat": 20.43282,
+  "lon": 85.8617
+ },
+ {
+  "id": "cuttack-bridge-2",
+  "type": "bridge",
+  "name": "Cuttack Road bridge 2",
+  "town": "Cuttack",
+  "district": "Cuttack",
+  "state": "Odisha",
+  "lat": 20.43253,
+  "lon": 85.93557
+ },
+ {
+  "id": "jagatsinghpur-housing-1",
+  "type": "housing",
+  "name": "Jagatsinghpur Kutcha housing cluster 1",
+  "town": "Jagatsinghpur",
+  "district": "Jagatsinghpur",
+  "state": "Odisha",
+  "lat": 20.25823,
+  "lon": 86.16819
+ },
+ {
+  "id": "jagatsinghpur-housing-2",
+  "type": "housing",
+  "name": "Jagatsinghpur Kutcha housing cluster 2",
+  "town": "Jagatsinghpur",
+  "district": "Jagatsinghpur",
+  "state": "Odisha",
+  "lat": 20.25858,
+  "lon": 86.19975
+ },
+ {
+  "id": "jagatsinghpur-hospital-1",
+  "type": "hospital",
+  "name": "Jagatsinghpur Hospital",
+  "town": "Jagatsinghpur",
+  "district": "Jagatsinghpur",
+  "state": "Odisha",
+  "lat": 20.29898,
+  "lon": 86.19209
+ },
+ {
+  "id": "jagatsinghpur-substation-1",
+  "type": "substation",
+  "name": "Jagatsinghpur Substation & feeders",
+  "town": "Jagatsinghpur",
+  "district": "Jagatsinghpur",
+  "state": "Odisha",
+  "lat": 20.25655,
+  "lon": 86.1618
+ },
+ {
+  "id": "jagatsinghpur-transmission-1",
+  "type": "transmission",
+  "name": "Jagatsinghpur Transmission line span",
+  "town": "Jagatsinghpur",
+  "district": "Jagatsinghpur",
+  "state": "Odisha",
+  "lat": 20.23137,
+  "lon": 86.16871
+ },
+ {
+  "id": "jagatsinghpur-telecom-1",
+  "type": "telecom",
+  "name": "Jagatsinghpur Telecom tower 1",
+  "town": "Jagatsinghpur",
+  "district": "Jagatsinghpur",
+  "state": "Odisha",
+  "lat": 20.26731,
+  "lon": 86.15532
+ },
+ {
+  "id": "jagatsinghpur-telecom-2",
+  "type": "telecom",
+  "name": "Jagatsinghpur Telecom tower 2",
+  "town": "Jagatsinghpur",
+  "district": "Jagatsinghpur",
+  "state": "Odisha",
+  "lat": 20.29839,
+  "lon": 86.16964
+ },
+ {
+  "id": "jagatsinghpur-bridge-1",
+  "type": "bridge",
+  "name": "Jagatsinghpur Road bridge",
+  "town": "Jagatsinghpur",
+  "district": "Jagatsinghpur",
+  "state": "Odisha",
+  "lat": 20.25232,
+  "lon": 86.2267
+ },
+ {
+  "id": "paradip-housing-1",
+  "type": "housing",
+  "name": "Paradip Kutcha housing cluster 1",
+  "town": "Paradip",
+  "district": "Jagatsinghpur",
+  "state": "Odisha",
+  "lat": 20.37459,
+  "lon": 86.63074
+ },
+ {
+  "id": "paradip-housing-2",
+  "type": "housing",
+  "name": "Paradip Kutcha housing cluster 2",
+  "town": "Paradip",
+  "district": "Jagatsinghpur",
+  "state": "Odisha",
+  "lat": 20.30562,
+  "lon": 86.61816
+ },
+ {
+  "id": "paradip-housing-3",
+  "type": "housing",
+  "name": "Paradip Kutcha housing cluster 3",
+  "town": "Paradip",
+  "district": "Jagatsinghpur",
+  "state": "Odisha",
+  "lat": 20.37013,
+  "lon": 86.62545
+ },
+ {
+  "id": "paradip-hospital-1",
+  "type": "hospital",
+  "name": "Paradip Hospital",
+  "town": "Paradip",
+  "district": "Jagatsinghpur",
+  "state": "Odisha",
+  "lat": 20.32302,
+  "lon": 86.57629
+ },
+ {
+  "id": "paradip-substation-1",
+  "type": "substation",
+  "name": "Paradip Substation & feeders",
+  "town": "Paradip",
+  "district": "Jagatsinghpur",
+  "state": "Odisha",
+  "lat": 20.37714,
+  "lon": 86.63802
+ },
+ {
+  "id": "paradip-transmission-1",
+  "type": "transmission",
+  "name": "Paradip Transmission line span",
+  "town": "Paradip",
+  "district": "Jagatsinghpur",
+  "state": "Odisha",
+  "lat": 20.37979,
+  "lon": 86.62948
+ },
+ {
+  "id": "paradip-telecom-1",
+  "type": "telecom",
+  "name": "Paradip Telecom tower 1",
+  "town": "Paradip",
+  "district": "Jagatsinghpur",
+  "state": "Odisha",
+  "lat": 20.2897,
+  "lon": 86.55237
+ },
+ {
+  "id": "paradip-telecom-2",
+  "type": "telecom",
+  "name": "Paradip Telecom tower 2",
+  "town": "Paradip",
+  "district": "Jagatsinghpur",
+  "state": "Odisha",
+  "lat": 20.26882,
+  "lon": 86.59953
+ },
+ {
+  "id": "paradip-water-1",
+  "type": "water",
+  "name": "Paradip Water treatment plant",
+  "town": "Paradip",
+  "district": "Jagatsinghpur",
+  "state": "Odisha",
+  "lat": 20.29018,
+  "lon": 86.58005
+ },
+ {
+  "id": "paradip-bridge-1",
+  "type": "bridge",
+  "name": "Paradip Road bridge",
+  "town": "Paradip",
+  "district": "Jagatsinghpur",
+  "state": "Odisha",
+  "lat": 20.3061,
+  "lon": 86.57119
+ },
+ {
+  "id": "paradip-port-1",
+  "type": "port",
+  "name": "Paradip Port terminal",
+  "town": "Paradip",
+  "district": "Jagatsinghpur",
+  "state": "Odisha",
+  "lat": 20.32285,
+  "lon": 86.59221
+ },
+ {
+  "id": "paradip-shelter-1",
+  "type": "shelter",
+  "name": "Paradip Cyclone shelter",
+  "town": "Paradip",
+  "district": "Jagatsinghpur",
+  "state": "Odisha",
+  "lat": 20.28924,
+  "lon": 86.56846
+ },
+ {
+  "id": "kendrapara-housing-1",
+  "type": "housing",
+  "name": "Kendrapara Kutcha housing cluster 1",
+  "town": "Kendrapara",
+  "district": "Kendrapara",
+  "state": "Odisha",
+  "lat": 20.53172,
+  "lon": 86.41752
+ },
+ {
+  "id": "kendrapara-housing-2",
+  "type": "housing",
+  "name": "Kendrapara Kutcha housing cluster 2",
+  "town": "Kendrapara",
+  "district": "Kendrapara",
+  "state": "Odisha",
+  "lat": 20.44407,
+  "lon": 86.43435
+ },
+ {
+  "id": "kendrapara-hospital-1",
+  "type": "hospital",
+  "name": "Kendrapara Hospital",
+  "town": "Kendrapara",
+  "district": "Kendrapara",
+  "state": "Odisha",
+  "lat": 20.50778,
+  "lon": 86.35814
+ },
+ {
+  "id": "kendrapara-substation-1",
+  "type": "substation",
+  "name": "Kendrapara Substation & feeders",
+  "town": "Kendrapara",
+  "district": "Kendrapara",
+  "state": "Odisha",
+  "lat": 20.48131,
+  "lon": 86.46326
+ },
+ {
+  "id": "kendrapara-transmission-1",
+  "type": "transmission",
+  "name": "Kendrapara Transmission line span",
+  "town": "Kendrapara",
+  "district": "Kendrapara",
+  "state": "Odisha",
+  "lat": 20.48826,
+  "lon": 86.41706
+ },
+ {
+  "id": "kendrapara-telecom-1",
+  "type": "telecom",
+  "name": "Kendrapara Telecom tower 1",
+  "town": "Kendrapara",
+  "district": "Kendrapara",
+  "state": "Odisha",
+  "lat": 20.49965,
+  "lon": 86.44986
+ },
+ {
+  "id": "kendrapara-telecom-2",
+  "type": "telecom",
+  "name": "Kendrapara Telecom tower 2",
+  "town": "Kendrapara",
+  "district": "Kendrapara",
+  "state": "Odisha",
+  "lat": 20.52987,
+  "lon": 86.44151
+ },
+ {
+  "id": "kendrapara-bridge-1",
+  "type": "bridge",
+  "name": "Kendrapara Road bridge",
+  "town": "Kendrapara",
+  "district": "Kendrapara",
+  "state": "Odisha",
+  "lat": 20.47013,
+  "lon": 86.43384
+ },
+ {
+  "id": "chandbali-housing-1",
+  "type": "housing",
+  "name": "Chandbali Kutcha housing cluster 1",
+  "town": "Chandbali",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 20.84364,
+  "lon": 86.71311
+ },
+ {
+  "id": "chandbali-housing-2",
+  "type": "housing",
+  "name": "Chandbali Kutcha housing cluster 2",
+  "town": "Chandbali",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 20.81266,
+  "lon": 86.70889
+ },
+ {
+  "id": "chandbali-hospital-1",
+  "type": "hospital",
+  "name": "Chandbali Hospital",
+  "town": "Chandbali",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 20.78746,
+  "lon": 86.70919
+ },
+ {
+  "id": "chandbali-substation-1",
+  "type": "substation",
+  "name": "Chandbali Substation & feeders",
+  "town": "Chandbali",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 20.82241,
+  "lon": 86.74053
+ },
+ {
+  "id": "chandbali-transmission-1",
+  "type": "transmission",
+  "name": "Chandbali Transmission line span",
+  "town": "Chandbali",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 20.7706,
+  "lon": 86.70577
+ },
+ {
+  "id": "chandbali-telecom-1",
+  "type": "telecom",
+  "name": "Chandbali Telecom tower 1",
+  "town": "Chandbali",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 20.73679,
+  "lon": 86.73246
+ },
+ {
+  "id": "chandbali-telecom-2",
+  "type": "telecom",
+  "name": "Chandbali Telecom tower 2",
+  "town": "Chandbali",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 20.76616,
+  "lon": 86.71453
+ },
+ {
+  "id": "chandbali-bridge-1",
+  "type": "bridge",
+  "name": "Chandbali Road bridge",
+  "town": "Chandbali",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 20.77304,
+  "lon": 86.70153
+ },
+ {
+  "id": "chandbali-shelter-1",
+  "type": "shelter",
+  "name": "Chandbali Cyclone shelter",
+  "town": "Chandbali",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 20.78609,
+  "lon": 86.73666
+ },
+ {
+  "id": "dhamra-housing-1",
+  "type": "housing",
+  "name": "Dhamra Kutcha housing cluster 1",
+  "town": "Dhamra",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 20.79085,
+  "lon": 86.94498
+ },
+ {
+  "id": "dhamra-housing-2",
+  "type": "housing",
+  "name": "Dhamra Kutcha housing cluster 2",
+  "town": "Dhamra",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 20.75889,
+  "lon": 86.97877
+ },
+ {
+  "id": "dhamra-hospital-1",
+  "type": "hospital",
+  "name": "Dhamra Hospital",
+  "town": "Dhamra",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 20.79908,
+  "lon": 86.98436
+ },
+ {
+  "id": "dhamra-substation-1",
+  "type": "substation",
+  "name": "Dhamra Substation & feeders",
+  "town": "Dhamra",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 20.78768,
+  "lon": 86.99454
+ },
+ {
+  "id": "dhamra-transmission-1",
+  "type": "transmission",
+  "name": "Dhamra Transmission line span",
+  "town": "Dhamra",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 20.81817,
+  "lon": 87.00165
+ },
+ {
+  "id": "dhamra-telecom-1",
+  "type": "telecom",
+  "name": "Dhamra Telecom tower 1",
+  "town": "Dhamra",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 20.82488,
+  "lon": 86.93007
+ },
+ {
+  "id": "dhamra-telecom-2",
+  "type": "telecom",
+  "name": "Dhamra Telecom tower 2",
+  "town": "Dhamra",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 20.74249,
+  "lon": 86.9746
+ },
+ {
+  "id": "dhamra-bridge-1",
+  "type": "bridge",
+  "name": "Dhamra Road bridge",
+  "town": "Dhamra",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 20.80242,
+  "lon": 86.98464
+ },
+ {
+  "id": "dhamra-port-1",
+  "type": "port",
+  "name": "Dhamra Port terminal",
+  "town": "Dhamra",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 20.7965,
+  "lon": 86.94674
+ },
+ {
+  "id": "dhamra-shelter-1",
+  "type": "shelter",
+  "name": "Dhamra Cyclone shelter",
+  "town": "Dhamra",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 20.80417,
+  "lon": 86.98128
+ },
+ {
+  "id": "bhadrak-housing-1",
+  "type": "housing",
+  "name": "Bhadrak Kutcha housing cluster 1",
+  "town": "Bhadrak",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 21.07266,
+  "lon": 86.50252
+ },
+ {
+  "id": "bhadrak-housing-2",
+  "type": "housing",
+  "name": "Bhadrak Kutcha housing cluster 2",
+  "town": "Bhadrak",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 21.0176,
+  "lon": 86.45388
+ },
+ {
+  "id": "bhadrak-housing-3",
+  "type": "housing",
+  "name": "Bhadrak Kutcha housing cluster 3",
+  "town": "Bhadrak",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 20.99584,
+  "lon": 86.56628
+ },
+ {
+  "id": "bhadrak-hospital-1",
+  "type": "hospital",
+  "name": "Bhadrak Hospital",
+  "town": "Bhadrak",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 21.17092,
+  "lon": 86.5411
+ },
+ {
+  "id": "bhadrak-substation-1",
+  "type": "substation",
+  "name": "Bhadrak Substation & feeders",
+  "town": "Bhadrak",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 21.10585,
+  "lon": 86.45809
+ },
+ {
+  "id": "bhadrak-transmission-1",
+  "type": "transmission",
+  "name": "Bhadrak Transmission line span",
+  "town": "Bhadrak",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 21.01314,
+  "lon": 86.48031
+ },
+ {
+  "id": "bhadrak-telecom-1",
+  "type": "telecom",
+  "name": "Bhadrak Telecom tower 1",
+  "town": "Bhadrak",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 20.984,
+  "lon": 86.52987
+ },
+ {
+  "id": "bhadrak-telecom-2",
+  "type": "telecom",
+  "name": "Bhadrak Telecom tower 2",
+  "town": "Bhadrak",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 21.07415,
+  "lon": 86.47242
+ },
+ {
+  "id": "bhadrak-telecom-3",
+  "type": "telecom",
+  "name": "Bhadrak Telecom tower 3",
+  "town": "Bhadrak",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 21.06435,
+  "lon": 86.42638
+ },
+ {
+  "id": "bhadrak-water-1",
+  "type": "water",
+  "name": "Bhadrak Water treatment plant",
+  "town": "Bhadrak",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 21.13967,
+  "lon": 86.45103
+ },
+ {
+  "id": "bhadrak-bridge-1",
+  "type": "bridge",
+  "name": "Bhadrak Road bridge",
+  "town": "Bhadrak",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 21.06388,
+  "lon": 86.49513
+ },
+ {
+  "id": "balasore-housing-1",
+  "type": "housing",
+  "name": "Balasore Kutcha housing cluster 1",
+  "town": "Balasore",
+  "district": "Balasore",
+  "state": "Odisha",
+  "lat": 21.56271,
+  "lon": 86.89063
+ },
+ {
+  "id": "balasore-housing-2",
+  "type": "housing",
+  "name": "Balasore Kutcha housing cluster 2",
+  "town": "Balasore",
+  "district": "Balasore",
+  "state": "Odisha",
+  "lat": 21.46297,
+  "lon": 86.90114
+ },
+ {
+  "id": "balasore-housing-3",
+  "type": "housing",
+  "name": "Balasore Kutcha housing cluster 3",
+  "town": "Balasore",
+  "district": "Balasore",
+  "state": "Odisha",
+  "lat": 21.53229,
+  "lon": 86.89338
+ },
+ {
+  "id": "balasore-hospital-1",
+  "type": "hospital",
+  "name": "Balasore Hospital",
+  "town": "Balasore",
+  "district": "Balasore",
+  "state": "Odisha",
+  "lat": 21.49979,
+  "lon": 86.9247
+ },
+ {
+  "id": "balasore-substation-1",
+  "type": "substation",
+  "name": "Balasore Substation & feeders 1",
+  "town": "Balasore",
+  "district": "Balasore",
+  "state": "Odisha",
+  "lat": 21.44937,
+  "lon": 86.881
+ },
+ {
+  "id": "balasore-substation-2",
+  "type": "substation",
+  "name": "Balasore Substation & feeders 2",
+  "town": "Balasore",
+  "district": "Balasore",
+  "state": "Odisha",
+  "lat": 21.48245,
+  "lon": 86.97691
+ },
+ {
+  "id": "balasore-transmission-1",
+  "type": "transmission",
+  "name": "Balasore Transmission line span",
+  "town": "Balasore",
+  "district": "Balasore",
+  "state": "Odisha",
+  "lat": 21.43277,
+  "lon": 86.93767
+ },
+ {
+  "id": "balasore-telecom-1",
+  "type": "telecom",
+  "name": "Balasore Telecom tower 1",
+  "town": "Balasore",
+  "district": "Balasore",
+  "state": "Odisha",
+  "lat": 21.43237,
+  "lon": 86.88996
+ },
+ {
+  "id": "balasore-telecom-2",
+  "type": "telecom",
+  "name": "Balasore Telecom tower 2",
+  "town": "Balasore",
+  "district": "Balasore",
+  "state": "Odisha",
+  "lat": 21.42185,
+  "lon": 86.86295
+ },
+ {
+  "id": "balasore-telecom-3",
+  "type": "telecom",
+  "name": "Balasore Telecom tower 3",
+  "town": "Balasore",
+  "district": "Balasore",
+  "state": "Odisha",
+  "lat": 21.58175,
+  "lon": 86.87799
+ },
+ {
+  "id": "balasore-water-1",
+  "type": "water",
+  "name": "Balasore Water treatment plant",
+  "town": "Balasore",
+  "district": "Balasore",
+  "state": "Odisha",
+  "lat": 21.51137,
+  "lon": 86.90929
+ },
+ {
+  "id": "balasore-bridge-1",
+  "type": "bridge",
+  "name": "Balasore Road bridge",
+  "town": "Balasore",
+  "district": "Balasore",
+  "state": "Odisha",
+  "lat": 21.44326,
+  "lon": 86.85795
+ },
+ {
+  "id": "balasore-shelter-1",
+  "type": "shelter",
+  "name": "Balasore Cyclone shelter",
+  "town": "Balasore",
+  "district": "Balasore",
+  "state": "Odisha",
+  "lat": 21.47395,
+  "lon": 86.93848
+ },
+ {
+  "id": "chandipur-housing-1",
+  "type": "housing",
+  "name": "Chandipur Kutcha housing cluster 1",
+  "town": "Chandipur",
+  "district": "Balasore",
+  "state": "Odisha",
+  "lat": 21.48268,
+  "lon": 87.01492
+ },
+ {
+  "id": "chandipur-housing-2",
+  "type": "housing",
+  "name": "Chandipur Kutcha housing cluster 2",
+  "town": "Chandipur",
+  "district": "Balasore",
+  "state": "Odisha",
+  "lat": 21.46515,
+  "lon": 87.03824
+ },
+ {
+  "id": "chandipur-hospital-1",
+  "type": "hospital",
+  "name": "Chandipur Hospital",
+  "town": "Chandipur",
+  "district": "Balasore",
+  "state": "Odisha",
+  "lat": 21.41967,
+  "lon": 87.00131
+ },
+ {
+  "id": "chandipur-substation-1",
+  "type": "substation",
+  "name": "Chandipur Substation & feeders",
+  "town": "Chandipur",
+  "district": "Balasore",
+  "state": "Odisha",
+  "lat": 21.42046,
+  "lon": 87.02852
+ },
+ {
+  "id": "chandipur-transmission-1",
+  "type": "transmission",
+  "name": "Chandipur Transmission line span",
+  "town": "Chandipur",
+  "district": "Balasore",
+  "state": "Odisha",
+  "lat": 21.4672,
+  "lon": 87.06161
+ },
+ {
+  "id": "chandipur-telecom-1",
+  "type": "telecom",
+  "name": "Chandipur Telecom tower 1",
+  "town": "Chandipur",
+  "district": "Balasore",
+  "state": "Odisha",
+  "lat": 21.40526,
+  "lon": 87.03114
+ },
+ {
+  "id": "chandipur-telecom-2",
+  "type": "telecom",
+  "name": "Chandipur Telecom tower 2",
+  "town": "Chandipur",
+  "district": "Balasore",
+  "state": "Odisha",
+  "lat": 21.48043,
+  "lon": 86.99943
+ },
+ {
+  "id": "chandipur-bridge-1",
+  "type": "bridge",
+  "name": "Chandipur Road bridge",
+  "town": "Chandipur",
+  "district": "Balasore",
+  "state": "Odisha",
+  "lat": 21.42189,
+  "lon": 87.05125
+ },
+ {
+  "id": "chandipur-shelter-1",
+  "type": "shelter",
+  "name": "Chandipur Cyclone shelter",
+  "town": "Chandipur",
+  "district": "Balasore",
+  "state": "Odisha",
+  "lat": 21.40222,
+  "lon": 87.00083
+ },
+ {
+  "id": "digha-housing-1",
+  "type": "housing",
+  "name": "Digha Kutcha housing cluster 1",
+  "town": "Digha",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 21.65712,
+  "lon": 87.51382
+ },
+ {
+  "id": "digha-housing-2",
+  "type": "housing",
+  "name": "Digha Kutcha housing cluster 2",
+  "town": "Digha",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 21.64156,
+  "lon": 87.53295
+ },
+ {
+  "id": "digha-hospital-1",
+  "type": "hospital",
+  "name": "Digha Hospital",
+  "town": "Digha",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 21.65486,
+  "lon": 87.58745
+ },
+ {
+  "id": "digha-substation-1",
+  "type": "substation",
+  "name": "Digha Substation & feeders",
+  "town": "Digha",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 21.64342,
+  "lon": 87.45582
+ },
+ {
+  "id": "digha-transmission-1",
+  "type": "transmission",
+  "name": "Digha Transmission line span",
+  "town": "Digha",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 21.60256,
+  "lon": 87.49739
+ },
+ {
+  "id": "digha-telecom-1",
+  "type": "telecom",
+  "name": "Digha Telecom tower 1",
+  "town": "Digha",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 21.59663,
+  "lon": 87.52887
+ },
+ {
+  "id": "digha-telecom-2",
+  "type": "telecom",
+  "name": "Digha Telecom tower 2",
+  "town": "Digha",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 21.59476,
+  "lon": 87.50198
+ },
+ {
+  "id": "digha-bridge-1",
+  "type": "bridge",
+  "name": "Digha Road bridge",
+  "town": "Digha",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 21.59401,
+  "lon": 87.54583
+ },
+ {
+  "id": "digha-shelter-1",
+  "type": "shelter",
+  "name": "Digha Cyclone shelter",
+  "town": "Digha",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 21.6217,
+  "lon": 87.52311
+ },
+ {
+  "id": "contai-housing-1",
+  "type": "housing",
+  "name": "Contai Kutcha housing cluster 1",
+  "town": "Contai",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 21.77693,
+  "lon": 87.73433
+ },
+ {
+  "id": "contai-housing-2",
+  "type": "housing",
+  "name": "Contai Kutcha housing cluster 2",
+  "town": "Contai",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 21.81109,
+  "lon": 87.71417
+ },
+ {
+  "id": "contai-housing-3",
+  "type": "housing",
+  "name": "Contai Kutcha housing cluster 3",
+  "town": "Contai",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 21.8025,
+  "lon": 87.70207
+ },
+ {
+  "id": "contai-hospital-1",
+  "type": "hospital",
+  "name": "Contai Hospital",
+  "town": "Contai",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 21.76617,
+  "lon": 87.72254
+ },
+ {
+  "id": "contai-substation-1",
+  "type": "substation",
+  "name": "Contai Substation & feeders",
+  "town": "Contai",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 21.7624,
+  "lon": 87.75322
+ },
+ {
+  "id": "contai-transmission-1",
+  "type": "transmission",
+  "name": "Contai Transmission line span",
+  "town": "Contai",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 21.77722,
+  "lon": 87.70613
+ },
+ {
+  "id": "contai-telecom-1",
+  "type": "telecom",
+  "name": "Contai Telecom tower 1",
+  "town": "Contai",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 21.74187,
+  "lon": 87.79241
+ },
+ {
+  "id": "contai-telecom-2",
+  "type": "telecom",
+  "name": "Contai Telecom tower 2",
+  "town": "Contai",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 21.75042,
+  "lon": 87.78204
+ },
+ {
+  "id": "contai-telecom-3",
+  "type": "telecom",
+  "name": "Contai Telecom tower 3",
+  "town": "Contai",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 21.7846,
+  "lon": 87.76209
+ },
+ {
+  "id": "contai-water-1",
+  "type": "water",
+  "name": "Contai Water treatment plant",
+  "town": "Contai",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 21.79388,
+  "lon": 87.74252
+ },
+ {
+  "id": "contai-bridge-1",
+  "type": "bridge",
+  "name": "Contai Road bridge",
+  "town": "Contai",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 21.7571,
+  "lon": 87.74666
+ },
+ {
+  "id": "contai-shelter-1",
+  "type": "shelter",
+  "name": "Contai Cyclone shelter",
+  "town": "Contai",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 21.75838,
+  "lon": 87.77691
+ },
+ {
+  "id": "tamluk-housing-1",
+  "type": "housing",
+  "name": "Tamluk Kutcha housing cluster 1",
+  "town": "Tamluk",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.28857,
+  "lon": 87.89437
+ },
+ {
+  "id": "tamluk-housing-2",
+  "type": "housing",
+  "name": "Tamluk Kutcha housing cluster 2",
+  "town": "Tamluk",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.26994,
+  "lon": 87.93524
+ },
+ {
+  "id": "tamluk-housing-3",
+  "type": "housing",
+  "name": "Tamluk Kutcha housing cluster 3",
+  "town": "Tamluk",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.28862,
+  "lon": 87.93884
+ },
+ {
+  "id": "tamluk-hospital-1",
+  "type": "hospital",
+  "name": "Tamluk Hospital",
+  "town": "Tamluk",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.33514,
+  "lon": 87.92965
+ },
+ {
+  "id": "tamluk-substation-1",
+  "type": "substation",
+  "name": "Tamluk Substation & feeders",
+  "town": "Tamluk",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.31645,
+  "lon": 87.92614
+ },
+ {
+  "id": "tamluk-transmission-1",
+  "type": "transmission",
+  "name": "Tamluk Transmission line span",
+  "town": "Tamluk",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.32105,
+  "lon": 87.92111
+ },
+ {
+  "id": "tamluk-telecom-1",
+  "type": "telecom",
+  "name": "Tamluk Telecom tower 1",
+  "town": "Tamluk",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.36297,
+  "lon": 87.87379
+ },
+ {
+  "id": "tamluk-telecom-2",
+  "type": "telecom",
+  "name": "Tamluk Telecom tower 2",
+  "town": "Tamluk",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.24824,
+  "lon": 87.87284
+ },
+ {
+  "id": "tamluk-water-1",
+  "type": "water",
+  "name": "Tamluk Water treatment plant",
+  "town": "Tamluk",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.31303,
+  "lon": 87.89493
+ },
+ {
+  "id": "tamluk-bridge-1",
+  "type": "bridge",
+  "name": "Tamluk Road bridge",
+  "town": "Tamluk",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.30402,
+  "lon": 87.94371
+ },
+ {
+  "id": "haldia-housing-1",
+  "type": "housing",
+  "name": "Haldia Kutcha housing cluster 1",
+  "town": "Haldia",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.06843,
+  "lon": 88.07226
+ },
+ {
+  "id": "haldia-housing-2",
+  "type": "housing",
+  "name": "Haldia Kutcha housing cluster 2",
+  "town": "Haldia",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.0345,
+  "lon": 88.02637
+ },
+ {
+  "id": "haldia-housing-3",
+  "type": "housing",
+  "name": "Haldia Kutcha housing cluster 3",
+  "town": "Haldia",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.03509,
+  "lon": 88.06289
+ },
+ {
+  "id": "haldia-housing-4",
+  "type": "housing",
+  "name": "Haldia Kutcha housing cluster 4",
+  "town": "Haldia",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.0361,
+  "lon": 88.00374
+ },
+ {
+  "id": "haldia-hospital-1",
+  "type": "hospital",
+  "name": "Haldia Hospital 1",
+  "town": "Haldia",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.0394,
+  "lon": 88.12539
+ },
+ {
+  "id": "haldia-hospital-2",
+  "type": "hospital",
+  "name": "Haldia Hospital 2",
+  "town": "Haldia",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.03781,
+  "lon": 88.04429
+ },
+ {
+  "id": "haldia-substation-1",
+  "type": "substation",
+  "name": "Haldia Substation & feeders 1",
+  "town": "Haldia",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.03656,
+  "lon": 88.06266
+ },
+ {
+  "id": "haldia-substation-2",
+  "type": "substation",
+  "name": "Haldia Substation & feeders 2",
+  "town": "Haldia",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.11155,
+  "lon": 88.01117
+ },
+ {
+  "id": "haldia-transmission-1",
+  "type": "transmission",
+  "name": "Haldia Transmission line span 1",
+  "town": "Haldia",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.05963,
+  "lon": 88.11305
+ },
+ {
+  "id": "haldia-transmission-2",
+  "type": "transmission",
+  "name": "Haldia Transmission line span 2",
+  "town": "Haldia",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.09215,
+  "lon": 88.01984
+ },
+ {
+  "id": "haldia-telecom-1",
+  "type": "telecom",
+  "name": "Haldia Telecom tower 1",
+  "town": "Haldia",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.0952,
+  "lon": 88.10598
+ },
+ {
+  "id": "haldia-telecom-2",
+  "type": "telecom",
+  "name": "Haldia Telecom tower 2",
+  "town": "Haldia",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.00699,
+  "lon": 88.07546
+ },
+ {
+  "id": "haldia-telecom-3",
+  "type": "telecom",
+  "name": "Haldia Telecom tower 3",
+  "town": "Haldia",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.03006,
+  "lon": 88.01259
+ },
+ {
+  "id": "haldia-water-1",
+  "type": "water",
+  "name": "Haldia Water treatment plant",
+  "town": "Haldia",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.06116,
+  "lon": 88.07464
+ },
+ {
+  "id": "haldia-bridge-1",
+  "type": "bridge",
+  "name": "Haldia Road bridge",
+  "town": "Haldia",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.04401,
+  "lon": 88.16169
+ },
+ {
+  "id": "haldia-port-1",
+  "type": "port",
+  "name": "Haldia Port terminal",
+  "town": "Haldia",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.05986,
+  "lon": 88.03359
+ },
+ {
+  "id": "haldia-shelter-1",
+  "type": "shelter",
+  "name": "Haldia Cyclone shelter 1",
+  "town": "Haldia",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.01041,
+  "lon": 88.06856
+ },
+ {
+  "id": "haldia-shelter-2",
+  "type": "shelter",
+  "name": "Haldia Cyclone shelter 2",
+  "town": "Haldia",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.05262,
+  "lon": 88.10299
+ },
+ {
+  "id": "sagar-island-housing-1",
+  "type": "housing",
+  "name": "Sagar Island Kutcha housing cluster 1",
+  "town": "Sagar Island",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.58247,
+  "lon": 88.05272
+ },
+ {
+  "id": "sagar-island-housing-2",
+  "type": "housing",
+  "name": "Sagar Island Kutcha housing cluster 2",
+  "town": "Sagar Island",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.66472,
+  "lon": 88.0287
+ },
+ {
+  "id": "sagar-island-housing-3",
+  "type": "housing",
+  "name": "Sagar Island Kutcha housing cluster 3",
+  "town": "Sagar Island",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.67307,
+  "lon": 88.07896
+ },
+ {
+  "id": "sagar-island-housing-4",
+  "type": "housing",
+  "name": "Sagar Island Kutcha housing cluster 4",
+  "town": "Sagar Island",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.72607,
+  "lon": 88.10334
+ },
+ {
+  "id": "sagar-island-hospital-1",
+  "type": "hospital",
+  "name": "Sagar Island Hospital 1",
+  "town": "Sagar Island",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.6585,
+  "lon": 88.11123
+ },
+ {
+  "id": "sagar-island-hospital-2",
+  "type": "hospital",
+  "name": "Sagar Island Hospital 2",
+  "town": "Sagar Island",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.65115,
+  "lon": 88.02614
+ },
+ {
+  "id": "sagar-island-substation-1",
+  "type": "substation",
+  "name": "Sagar Island Substation & feeders 1",
+  "town": "Sagar Island",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.66737,
+  "lon": 88.09103
+ },
+ {
+  "id": "sagar-island-substation-2",
+  "type": "substation",
+  "name": "Sagar Island Substation & feeders 2",
+  "town": "Sagar Island",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.63873,
+  "lon": 88.0673
+ },
+ {
+  "id": "sagar-island-transmission-1",
+  "type": "transmission",
+  "name": "Sagar Island Transmission line span 1",
+  "town": "Sagar Island",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.64613,
+  "lon": 88.02182
+ },
+ {
+  "id": "sagar-island-transmission-2",
+  "type": "transmission",
+  "name": "Sagar Island Transmission line span 2",
+  "town": "Sagar Island",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.69537,
+  "lon": 88.07773
+ },
+ {
+  "id": "sagar-island-telecom-1",
+  "type": "telecom",
+  "name": "Sagar Island Telecom tower 1",
+  "town": "Sagar Island",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.54098,
+  "lon": 88.09583
+ },
+ {
+  "id": "sagar-island-telecom-2",
+  "type": "telecom",
+  "name": "Sagar Island Telecom tower 2",
+  "town": "Sagar Island",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.63968,
+  "lon": 88.12078
+ },
+ {
+  "id": "sagar-island-telecom-3",
+  "type": "telecom",
+  "name": "Sagar Island Telecom tower 3",
+  "town": "Sagar Island",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.66725,
+  "lon": 88.06183
+ },
+ {
+  "id": "sagar-island-water-1",
+  "type": "water",
+  "name": "Sagar Island Water treatment plant",
+  "town": "Sagar Island",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.67191,
+  "lon": 88.06965
+ },
+ {
+  "id": "sagar-island-bridge-1",
+  "type": "bridge",
+  "name": "Sagar Island Road bridge",
+  "town": "Sagar Island",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.64111,
+  "lon": 88.08841
+ },
+ {
+  "id": "sagar-island-shelter-1",
+  "type": "shelter",
+  "name": "Sagar Island Cyclone shelter 1",
+  "town": "Sagar Island",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.5715,
+  "lon": 88.07611
+ },
+ {
+  "id": "sagar-island-shelter-2",
+  "type": "shelter",
+  "name": "Sagar Island Cyclone shelter 2",
+  "town": "Sagar Island",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.58839,
+  "lon": 88.1481
+ },
+ {
+  "id": "kakdwip-housing-1",
+  "type": "housing",
+  "name": "Kakdwip Kutcha housing cluster 1",
+  "town": "Kakdwip",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.95419,
+  "lon": 88.12984
+ },
+ {
+  "id": "kakdwip-housing-2",
+  "type": "housing",
+  "name": "Kakdwip Kutcha housing cluster 2",
+  "town": "Kakdwip",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.83712,
+  "lon": 88.20466
+ },
+ {
+  "id": "kakdwip-hospital-1",
+  "type": "hospital",
+  "name": "Kakdwip Hospital",
+  "town": "Kakdwip",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.93019,
+  "lon": 88.16834
+ },
+ {
+  "id": "kakdwip-substation-1",
+  "type": "substation",
+  "name": "Kakdwip Substation & feeders",
+  "town": "Kakdwip",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.86935,
+  "lon": 88.2081
+ },
+ {
+  "id": "kakdwip-transmission-1",
+  "type": "transmission",
+  "name": "Kakdwip Transmission line span",
+  "town": "Kakdwip",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.84072,
+  "lon": 88.17934
+ },
+ {
+  "id": "kakdwip-telecom-1",
+  "type": "telecom",
+  "name": "Kakdwip Telecom tower 1",
+  "town": "Kakdwip",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.91316,
+  "lon": 88.11352
+ },
+ {
+  "id": "kakdwip-telecom-2",
+  "type": "telecom",
+  "name": "Kakdwip Telecom tower 2",
+  "town": "Kakdwip",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.87026,
+  "lon": 88.23829
+ },
+ {
+  "id": "kakdwip-water-1",
+  "type": "water",
+  "name": "Kakdwip Water treatment plant",
+  "town": "Kakdwip",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.8223,
+  "lon": 88.15195
+ },
+ {
+  "id": "kakdwip-bridge-1",
+  "type": "bridge",
+  "name": "Kakdwip Road bridge",
+  "town": "Kakdwip",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.91037,
+  "lon": 88.11912
+ },
+ {
+  "id": "kakdwip-shelter-1",
+  "type": "shelter",
+  "name": "Kakdwip Cyclone shelter",
+  "town": "Kakdwip",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.83782,
+  "lon": 88.22418
+ },
+ {
+  "id": "namkhana-housing-1",
+  "type": "housing",
+  "name": "Namkhana Kutcha housing cluster 1",
+  "town": "Namkhana",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.81835,
+  "lon": 88.2765
+ },
+ {
+  "id": "namkhana-housing-2",
+  "type": "housing",
+  "name": "Namkhana Kutcha housing cluster 2",
+  "town": "Namkhana",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.8278,
+  "lon": 88.2055
+ },
+ {
+  "id": "namkhana-hospital-1",
+  "type": "hospital",
+  "name": "Namkhana Hospital",
+  "town": "Namkhana",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.75826,
+  "lon": 88.18503
+ },
+ {
+  "id": "namkhana-substation-1",
+  "type": "substation",
+  "name": "Namkhana Substation & feeders",
+  "town": "Namkhana",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.73612,
+  "lon": 88.22172
+ },
+ {
+  "id": "namkhana-transmission-1",
+  "type": "transmission",
+  "name": "Namkhana Transmission line span",
+  "town": "Namkhana",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.7013,
+  "lon": 88.28395
+ },
+ {
+  "id": "namkhana-telecom-1",
+  "type": "telecom",
+  "name": "Namkhana Telecom tower 1",
+  "town": "Namkhana",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.79389,
+  "lon": 88.25682
+ },
+ {
+  "id": "namkhana-telecom-2",
+  "type": "telecom",
+  "name": "Namkhana Telecom tower 2",
+  "town": "Namkhana",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.81016,
+  "lon": 88.23562
+ },
+ {
+  "id": "namkhana-bridge-1",
+  "type": "bridge",
+  "name": "Namkhana Road bridge",
+  "town": "Namkhana",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.80884,
+  "lon": 88.24791
+ },
+ {
+  "id": "namkhana-shelter-1",
+  "type": "shelter",
+  "name": "Namkhana Cyclone shelter",
+  "town": "Namkhana",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.7542,
+  "lon": 88.21884
+ },
+ {
+  "id": "diamond-harbour-housing-1",
+  "type": "housing",
+  "name": "Diamond Harbour Kutcha housing cluster 1",
+  "town": "Diamond Harbour",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 22.21666,
+  "lon": 88.17211
+ },
+ {
+  "id": "diamond-harbour-housing-2",
+  "type": "housing",
+  "name": "Diamond Harbour Kutcha housing cluster 2",
+  "town": "Diamond Harbour",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 22.14225,
+  "lon": 88.17541
+ },
+ {
+  "id": "diamond-harbour-hospital-1",
+  "type": "hospital",
+  "name": "Diamond Harbour Hospital",
+  "town": "Diamond Harbour",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 22.1463,
+  "lon": 88.19229
+ },
+ {
+  "id": "diamond-harbour-substation-1",
+  "type": "substation",
+  "name": "Diamond Harbour Substation & feeders",
+  "town": "Diamond Harbour",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 22.21332,
+  "lon": 88.20791
+ },
+ {
+  "id": "diamond-harbour-transmission-1",
+  "type": "transmission",
+  "name": "Diamond Harbour Transmission line span",
+  "town": "Diamond Harbour",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 22.15719,
+  "lon": 88.19178
+ },
+ {
+  "id": "diamond-harbour-telecom-1",
+  "type": "telecom",
+  "name": "Diamond Harbour Telecom tower 1",
+  "town": "Diamond Harbour",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 22.24674,
+  "lon": 88.21167
+ },
+ {
+  "id": "diamond-harbour-telecom-2",
+  "type": "telecom",
+  "name": "Diamond Harbour Telecom tower 2",
+  "town": "Diamond Harbour",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 22.16721,
+  "lon": 88.18682
+ },
+ {
+  "id": "diamond-harbour-bridge-1",
+  "type": "bridge",
+  "name": "Diamond Harbour Road bridge",
+  "town": "Diamond Harbour",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 22.21757,
+  "lon": 88.22801
+ },
+ {
+  "id": "gosaba-housing-1",
+  "type": "housing",
+  "name": "Gosaba Kutcha housing cluster 1",
+  "town": "Gosaba",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 22.14991,
+  "lon": 88.81334
+ },
+ {
+  "id": "gosaba-housing-2",
+  "type": "housing",
+  "name": "Gosaba Kutcha housing cluster 2",
+  "town": "Gosaba",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 22.19424,
+  "lon": 88.80368
+ },
+ {
+  "id": "gosaba-hospital-1",
+  "type": "hospital",
+  "name": "Gosaba Hospital",
+  "town": "Gosaba",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 22.11422,
+  "lon": 88.79353
+ },
+ {
+  "id": "gosaba-substation-1",
+  "type": "substation",
+  "name": "Gosaba Substation & feeders",
+  "town": "Gosaba",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 22.1533,
+  "lon": 88.81076
+ },
+ {
+  "id": "gosaba-transmission-1",
+  "type": "transmission",
+  "name": "Gosaba Transmission line span",
+  "town": "Gosaba",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 22.13865,
+  "lon": 88.79962
+ },
+ {
+  "id": "gosaba-telecom-1",
+  "type": "telecom",
+  "name": "Gosaba Telecom tower 1",
+  "town": "Gosaba",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 22.21097,
+  "lon": 88.78912
+ },
+ {
+  "id": "gosaba-telecom-2",
+  "type": "telecom",
+  "name": "Gosaba Telecom tower 2",
+  "town": "Gosaba",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 22.12721,
+  "lon": 88.7497
+ },
+ {
+  "id": "gosaba-water-1",
+  "type": "water",
+  "name": "Gosaba Water treatment plant",
+  "town": "Gosaba",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 22.16757,
+  "lon": 88.87638
+ },
+ {
+  "id": "gosaba-bridge-1",
+  "type": "bridge",
+  "name": "Gosaba Road bridge",
+  "town": "Gosaba",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 22.15481,
+  "lon": 88.73506
+ },
+ {
+  "id": "gosaba-shelter-1",
+  "type": "shelter",
+  "name": "Gosaba Cyclone shelter",
+  "town": "Gosaba",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 22.13076,
+  "lon": 88.85629
+ },
+ {
+  "id": "kolkata-housing-1",
+  "type": "housing",
+  "name": "Kolkata Kutcha housing cluster 1",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.4749,
+  "lon": 88.49329
+ },
+ {
+  "id": "kolkata-housing-2",
+  "type": "housing",
+  "name": "Kolkata Kutcha housing cluster 2",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.52811,
+  "lon": 88.42229
+ },
+ {
+  "id": "kolkata-housing-3",
+  "type": "housing",
+  "name": "Kolkata Kutcha housing cluster 3",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.53699,
+  "lon": 88.38741
+ },
+ {
+  "id": "kolkata-housing-4",
+  "type": "housing",
+  "name": "Kolkata Kutcha housing cluster 4",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.63963,
+  "lon": 88.41523
+ },
+ {
+  "id": "kolkata-housing-5",
+  "type": "housing",
+  "name": "Kolkata Kutcha housing cluster 5",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.41185,
+  "lon": 88.39177
+ },
+ {
+  "id": "kolkata-housing-6",
+  "type": "housing",
+  "name": "Kolkata Kutcha housing cluster 6",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.55927,
+  "lon": 88.21239
+ },
+ {
+  "id": "kolkata-housing-7",
+  "type": "housing",
+  "name": "Kolkata Kutcha housing cluster 7",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.6986,
+  "lon": 88.37974
+ },
+ {
+  "id": "kolkata-hospital-1",
+  "type": "hospital",
+  "name": "Kolkata Hospital 1",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.63335,
+  "lon": 88.3238
+ },
+ {
+  "id": "kolkata-hospital-2",
+  "type": "hospital",
+  "name": "Kolkata Hospital 2",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.54803,
+  "lon": 88.29606
+ },
+ {
+  "id": "kolkata-hospital-3",
+  "type": "hospital",
+  "name": "Kolkata Hospital 3",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.35535,
+  "lon": 88.3376
+ },
+ {
+  "id": "kolkata-hospital-4",
+  "type": "hospital",
+  "name": "Kolkata Hospital 4",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.77251,
+  "lon": 88.36691
+ },
+ {
+  "id": "kolkata-hospital-5",
+  "type": "hospital",
+  "name": "Kolkata Hospital 5",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.52953,
+  "lon": 88.42221
+ },
+ {
+  "id": "kolkata-substation-1",
+  "type": "substation",
+  "name": "Kolkata Substation & feeders 1",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.49481,
+  "lon": 88.19205
+ },
+ {
+  "id": "kolkata-substation-2",
+  "type": "substation",
+  "name": "Kolkata Substation & feeders 2",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.62391,
+  "lon": 88.35296
+ },
+ {
+  "id": "kolkata-substation-3",
+  "type": "substation",
+  "name": "Kolkata Substation & feeders 3",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.56303,
+  "lon": 88.66337
+ },
+ {
+  "id": "kolkata-substation-4",
+  "type": "substation",
+  "name": "Kolkata Substation & feeders 4",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.53707,
+  "lon": 88.41209
+ },
+ {
+  "id": "kolkata-substation-5",
+  "type": "substation",
+  "name": "Kolkata Substation & feeders 5",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.73475,
+  "lon": 88.37658
+ },
+ {
+  "id": "kolkata-transmission-1",
+  "type": "transmission",
+  "name": "Kolkata Transmission line span 1",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.77317,
+  "lon": 88.32258
+ },
+ {
+  "id": "kolkata-transmission-2",
+  "type": "transmission",
+  "name": "Kolkata Transmission line span 2",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.48018,
+  "lon": 88.40528
+ },
+ {
+  "id": "kolkata-transmission-3",
+  "type": "transmission",
+  "name": "Kolkata Transmission line span 3",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.45162,
+  "lon": 88.28061
+ },
+ {
+  "id": "kolkata-transmission-4",
+  "type": "transmission",
+  "name": "Kolkata Transmission line span 4",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.76651,
+  "lon": 88.37418
+ },
+ {
+  "id": "kolkata-telecom-1",
+  "type": "telecom",
+  "name": "Kolkata Telecom tower 1",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.46813,
+  "lon": 88.17923
+ },
+ {
+  "id": "kolkata-telecom-2",
+  "type": "telecom",
+  "name": "Kolkata Telecom tower 2",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.38439,
+  "lon": 88.39415
+ },
+ {
+  "id": "kolkata-telecom-3",
+  "type": "telecom",
+  "name": "Kolkata Telecom tower 3",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.7046,
+  "lon": 88.15488
+ },
+ {
+  "id": "kolkata-telecom-4",
+  "type": "telecom",
+  "name": "Kolkata Telecom tower 4",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.78275,
+  "lon": 88.45672
+ },
+ {
+  "id": "kolkata-telecom-5",
+  "type": "telecom",
+  "name": "Kolkata Telecom tower 5",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.60252,
+  "lon": 88.22916
+ },
+ {
+  "id": "kolkata-telecom-6",
+  "type": "telecom",
+  "name": "Kolkata Telecom tower 6",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.59484,
+  "lon": 88.37977
+ },
+ {
+  "id": "kolkata-water-1",
+  "type": "water",
+  "name": "Kolkata Water treatment plant 1",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.64652,
+  "lon": 88.42749
+ },
+ {
+  "id": "kolkata-water-2",
+  "type": "water",
+  "name": "Kolkata Water treatment plant 2",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.46731,
+  "lon": 88.35266
+ },
+ {
+  "id": "kolkata-water-3",
+  "type": "water",
+  "name": "Kolkata Water treatment plant 3",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.53007,
+  "lon": 88.33203
+ },
+ {
+  "id": "kolkata-bridge-1",
+  "type": "bridge",
+  "name": "Kolkata Road bridge 1",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.58515,
+  "lon": 88.5536
+ },
+ {
+  "id": "kolkata-bridge-2",
+  "type": "bridge",
+  "name": "Kolkata Road bridge 2",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.58666,
+  "lon": 88.61439
+ },
+ {
+  "id": "kolkata-bridge-3",
+  "type": "bridge",
+  "name": "Kolkata Road bridge 3",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.49369,
+  "lon": 88.39657
+ },
+ {
+  "id": "kolkata-port-1",
+  "type": "port",
+  "name": "Kolkata Port terminal",
+  "town": "Kolkata",
+  "district": "Kolkata",
+  "state": "West Bengal",
+  "lat": 22.49652,
+  "lon": 88.56773
+ },
+ {
+  "id": "road-bheemunipatnam-visakhapatnam",
+  "type": "road",
+  "name": "Visakhapatnam–Bheemunipatnam arterial road",
+  "town": "Visakhapatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.78895,
+  "lon": 83.33379
+ },
+ {
+  "id": "road-kakinada-visakhapatnam",
+  "type": "road",
+  "name": "Kakinada–Visakhapatnam arterial road",
+  "town": "Kakinada",
+  "district": "Kakinada",
+  "state": "Andhra Pradesh",
+  "lat": 17.21898,
+  "lon": 82.5673
+ },
+ {
+  "id": "road-bheemunipatnam-vizianagaram",
+  "type": "road",
+  "name": "Bheemunipatnam–Vizianagaram arterial road",
+  "town": "Bheemunipatnam",
+  "district": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "lat": 17.98518,
+  "lon": 83.42837
+ },
+ {
+  "id": "road-kalingapatnam-srikakulam",
+  "type": "road",
+  "name": "Srikakulam–Kalingapatnam arterial road",
+  "town": "Srikakulam",
+  "district": "Srikakulam",
+  "state": "Andhra Pradesh",
+  "lat": 18.31897,
+  "lon": 84.00432
+ },
+ {
+  "id": "road-srikakulam-vizianagaram",
+  "type": "road",
+  "name": "Srikakulam–Vizianagaram arterial road",
+  "town": "Srikakulam",
+  "district": "Srikakulam",
+  "state": "Andhra Pradesh",
+  "lat": 18.22951,
+  "lon": 83.71451
+ },
+ {
+  "id": "road-berhampur-gopalpur",
+  "type": "road",
+  "name": "Gopalpur–Berhampur arterial road",
+  "town": "Gopalpur",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.27605,
+  "lon": 84.87149
+ },
+ {
+  "id": "road-balugaon-rambha",
+  "type": "road",
+  "name": "Rambha–Balugaon arterial road",
+  "town": "Rambha",
+  "district": "Ganjam",
+  "state": "Odisha",
+  "lat": 19.59689,
+  "lon": 85.14194
+ },
+ {
+  "id": "road-balugaon-satapada",
+  "type": "road",
+  "name": "Balugaon–Satapada arterial road",
+  "town": "Balugaon",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 19.70802,
+  "lon": 85.32509
+ },
+ {
+  "id": "road-balugaon-bhubaneswar",
+  "type": "road",
+  "name": "Balugaon–Bhubaneswar arterial road",
+  "town": "Balugaon",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 19.97392,
+  "lon": 85.47062
+ },
+ {
+  "id": "road-konark-puri",
+  "type": "road",
+  "name": "Puri–Konark arterial road",
+  "town": "Puri",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.83448,
+  "lon": 85.90957
+ },
+ {
+  "id": "road-bhubaneswar-puri",
+  "type": "road",
+  "name": "Puri–Bhubaneswar arterial road",
+  "town": "Puri",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 20.03853,
+  "lon": 85.82534
+ },
+ {
+  "id": "road-jagatsinghpur-konark",
+  "type": "road",
+  "name": "Konark–Jagatsinghpur arterial road",
+  "town": "Konark",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 20.0203,
+  "lon": 86.11817
+ },
+ {
+  "id": "road-astaranga-konark",
+  "type": "road",
+  "name": "Astaranga–Konark arterial road",
+  "town": "Astaranga",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 19.96692,
+  "lon": 86.28579
+ },
+ {
+  "id": "road-astaranga-jagatsinghpur",
+  "type": "road",
+  "name": "Astaranga–Jagatsinghpur arterial road",
+  "town": "Astaranga",
+  "district": "Puri",
+  "state": "Odisha",
+  "lat": 20.08089,
+  "lon": 86.30778
+ },
+ {
+  "id": "road-bhubaneswar-cuttack",
+  "type": "road",
+  "name": "Bhubaneswar–Cuttack arterial road",
+  "town": "Bhubaneswar",
+  "district": "Khordha",
+  "state": "Odisha",
+  "lat": 20.37554,
+  "lon": 85.84833
+ },
+ {
+  "id": "road-bhubaneswar-jagatsinghpur",
+  "type": "road",
+  "name": "Jagatsinghpur–Bhubaneswar arterial road",
+  "town": "Jagatsinghpur",
+  "district": "Jagatsinghpur",
+  "state": "Odisha",
+  "lat": 20.27752,
+  "lon": 86.01674
+ },
+ {
+  "id": "road-kendrapara-paradip",
+  "type": "road",
+  "name": "Paradip–Kendrapara arterial road",
+  "town": "Paradip",
+  "district": "Jagatsinghpur",
+  "state": "Odisha",
+  "lat": 20.40754,
+  "lon": 86.51759
+ },
+ {
+  "id": "road-cuttack-paradip",
+  "type": "road",
+  "name": "Paradip–Cuttack arterial road",
+  "town": "Paradip",
+  "district": "Jagatsinghpur",
+  "state": "Odisha",
+  "lat": 20.36467,
+  "lon": 86.37707
+ },
+ {
+  "id": "road-cuttack-kendrapara",
+  "type": "road",
+  "name": "Kendrapara–Cuttack arterial road",
+  "town": "Kendrapara",
+  "district": "Kendrapara",
+  "state": "Odisha",
+  "lat": 20.48758,
+  "lon": 86.25236
+ },
+ {
+  "id": "road-chandbali-dhamra",
+  "type": "road",
+  "name": "Chandbali–Dhamra arterial road",
+  "town": "Chandbali",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 20.78317,
+  "lon": 86.80982
+ },
+ {
+  "id": "road-bhadrak-chandbali",
+  "type": "road",
+  "name": "Chandbali–Bhadrak arterial road",
+  "town": "Chandbali",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 20.86704,
+  "lon": 86.66539
+ },
+ {
+  "id": "road-bhadrak-cuttack",
+  "type": "road",
+  "name": "Bhadrak–Cuttack arterial road",
+  "town": "Bhadrak",
+  "district": "Bhadrak",
+  "state": "Odisha",
+  "lat": 20.87362,
+  "lon": 86.30741
+ },
+ {
+  "id": "road-balasore-chandipur",
+  "type": "road",
+  "name": "Balasore–Chandipur arterial road",
+  "town": "Balasore",
+  "district": "Balasore",
+  "state": "Odisha",
+  "lat": 21.46588,
+  "lon": 86.97341
+ },
+ {
+  "id": "road-contai-digha",
+  "type": "road",
+  "name": "Digha–Contai arterial road",
+  "town": "Digha",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 21.68954,
+  "lon": 87.60527
+ },
+ {
+  "id": "road-contai-kolkata",
+  "type": "road",
+  "name": "Contai–Kolkata arterial road",
+  "town": "Contai",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.05382,
+  "lon": 87.96143
+ },
+ {
+  "id": "road-diamond-harbour-tamluk",
+  "type": "road",
+  "name": "Tamluk–Diamond Harbour arterial road",
+  "town": "Tamluk",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.2612,
+  "lon": 88.01525
+ },
+ {
+  "id": "road-kolkata-tamluk",
+  "type": "road",
+  "name": "Tamluk–Kolkata arterial road",
+  "town": "Tamluk",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.38178,
+  "lon": 88.05327
+ },
+ {
+  "id": "road-diamond-harbour-haldia",
+  "type": "road",
+  "name": "Haldia–Diamond Harbour arterial road",
+  "town": "Haldia",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.09937,
+  "lon": 88.10634
+ },
+ {
+  "id": "road-haldia-kolkata",
+  "type": "road",
+  "name": "Haldia–Kolkata arterial road",
+  "town": "Haldia",
+  "district": "Purba Medinipur",
+  "state": "West Bengal",
+  "lat": 22.3031,
+  "lon": 88.20823
+ },
+ {
+  "id": "road-namkhana-sagar-island",
+  "type": "road",
+  "name": "Sagar Island–Namkhana arterial road",
+  "town": "Sagar Island",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.69481,
+  "lon": 88.13602
+ },
+ {
+  "id": "road-kolkata-sagar-island",
+  "type": "road",
+  "name": "Sagar Island–Kolkata arterial road",
+  "town": "Sagar Island",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 22.10279,
+  "lon": 88.21781
+ },
+ {
+  "id": "road-kakdwip-namkhana",
+  "type": "road",
+  "name": "Kakdwip–Namkhana arterial road",
+  "town": "Kakdwip",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 21.83726,
+  "lon": 88.19637
+ },
+ {
+  "id": "road-kakdwip-tamluk",
+  "type": "road",
+  "name": "Kakdwip–Tamluk arterial road",
+  "town": "Kakdwip",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 22.04957,
+  "lon": 88.07142
+ },
+ {
+  "id": "road-diamond-harbour-kolkata",
+  "type": "road",
+  "name": "Diamond Harbour–Kolkata arterial road",
+  "town": "Diamond Harbour",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 22.37754,
+  "lon": 88.2739
+ },
+ {
+  "id": "road-diamond-harbour-gosaba",
+  "type": "road",
+  "name": "Gosaba–Diamond Harbour arterial road",
+  "town": "Gosaba",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 22.17002,
+  "lon": 88.59627
+ },
+ {
+  "id": "road-gosaba-kolkata",
+  "type": "road",
+  "name": "Gosaba–Kolkata arterial road",
+  "town": "Gosaba",
+  "district": "South 24 Parganas",
+  "state": "West Bengal",
+  "lat": 22.29633,
+  "lon": 88.65369
+ }
+]
