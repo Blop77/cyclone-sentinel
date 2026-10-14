@@ -1,4 +1,4 @@
-// Run with:  node --test tests/
+// Run with:  npm test
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const D = require("../js/data.js");

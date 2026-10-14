@@ -128,6 +128,13 @@ ${JSON.stringify(ctx)}`;
     return { ...out, satellite: sat ? { url: sat.url, date: sat.date } : null, generatedAt: new Date().toISOString() };
   }
 
+  /** Any JSON-schema Gemini request (used by the FAQ chatbot). Same key handling and fallbacks as analyze(). */
+  async function generate(body, onStatus) {
+    const key = store.get("cs.geminiKey") || cfg().geminiKey;
+    if (!key && !cfg().aiProxy) throw new Error("NO_KEY");
+    return callGemini(body, key, onStatus);
+  }
+
   /** Cached analysis committed to the repo (data/ai/<scenario>.json), if any. */
   async function cached(scenarioId) {
     try {
@@ -137,7 +144,7 @@ ${JSON.stringify(ctx)}`;
   }
 
   root.CIF_AI = {
-    analyze, cached, buildContext, prompt, SCHEMA, MODELS, LANG,
+    analyze, generate, cached, buildContext, prompt, SCHEMA, MODELS, LANG,
     getKey: () => store.get("cs.geminiKey") || "",
     setKey: (k) => store.set("cs.geminiKey", (k || "").trim()),
     hasAccess: () => !!(store.get("cs.geminiKey") || cfg().geminiKey || cfg().aiProxy),

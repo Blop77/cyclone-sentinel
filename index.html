@@ -23,6 +23,7 @@
       <span class="pill">Odisha · Andhra Pradesh · West Bengal</span>
       <a class="pill link" href="https://github.com/Blop77/cyclone-sentinel/blob/main/docs/METHODOLOGY.md" target="_blank" rel="noopener">Methodology</a>
       <a class="pill link" href="https://github.com/Blop77/cyclone-sentinel" target="_blank" rel="noopener">GitHub</a>
+      <button class="pill link ask" id="open-faq" type="button" aria-expanded="false" aria-controls="faq">💬 Ask about this project</button>
       <button class="pill link" id="open-settings" type="button">⚙ Settings</button>
     </div>
   </header>
@@ -241,6 +242,21 @@
     </form>
   </dialog>
 
+  <aside id="faq" class="faq" role="dialog" aria-labelledby="faq-title" hidden>
+    <header class="faq-head">
+      <div>
+        <h2 id="faq-title">💬 Ask about CycloneSentinel</h2>
+        <p class="faq-mode"></p>
+      </div>
+      <button class="faq-close" type="button" aria-label="Close">✕</button>
+    </header>
+    <div class="faq-log" aria-live="polite"></div>
+    <form class="faq-form" autocomplete="off">
+      <input type="text" maxlength="500" placeholder="Ask a question about the project…" aria-label="Your question" />
+      <button class="btn-primary" type="submit">Ask</button>
+    </form>
+  </aside>
+
   <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
@@ -249,6 +265,7 @@
   <script src="js/model.js"></script>
   <script src="js/feeds.js"></script>
   <script src="js/ai.js"></script>
+  <script src="js/faq.js"></script>
   <script src="js/dispatch.js"></script>
   <script src="js/app.js"></script>
 </body>

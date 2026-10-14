@@ -8,7 +8,7 @@ physics-based impact model. It simulates storm surge, traces **rainfall damage p
 **power grids, arterial roads and medical shelters**, and **automatically dispatches early-warning advisories**
 (CAP 1.2, the format India's SACHET platform uses) to district, municipal and state disaster-management authorities.
 
-**▶ Live demo:** https://blop77.github.io/cyclone-sentinel/ · **🎬 Video:** https://youtu.be/OTejnvAFbVE · **📑 Deck:** [`docs/CycloneSentinel-deck.pdf`](docs/CycloneSentinel-deck.pdf)
+**▶ Live demo:** https://blop77.github.io/cyclone-sentinel/ · **🎬 Video:** https://youtu.be/OTejnvAFbVE · **📑 Deck:** [`docs/CycloneSentinel-deck.pdf`](docs/CycloneSentinel-deck.pdf) · **💬 Questions?** [Ask the FAQ bot](https://blop77.github.io/cyclone-sentinel/#ask) or read the [FAQ](docs/FAQ.md)
 
 ![Dashboard — Cyclone Fani (2019) replayed as a 24 h forecast](docs/img/dashboard.jpg)
 
@@ -46,9 +46,10 @@ physics-based impact model. It simulates storm surge, traces **rainfall damage p
 | Data feeds: NASA GIBS, Open-Meteo, GEE output | `js/feeds.js`, `gee/` |
 | Gemini multimodal analyst | `js/ai.js` |
 | Advisory dispatch & CAP | `js/dispatch.js`, `js/model.js` (`buildAdvisories`, `toCAP`) |
+| FAQ chatbot: Gemini grounded in the project docs, with an offline FAQ-search fallback | `js/faq.js`, `docs/FAQ.md` |
 | UI | `index.html`, `css/style.css`, `js/app.js` |
 | Cloud Run service: Gemini proxy, dispatch relay and inbox, static hosting | `server/main.py`, `Dockerfile` |
-| Tests (physics, hindcast, cascades, advisories, CAP, live mode) | `tests/model.test.js` |
+| Tests (physics, hindcast, cascades, advisories, CAP, live mode, FAQ chatbot) | `tests/model.test.js`, `tests/faq.test.js` |
 
 ## Run it
 
