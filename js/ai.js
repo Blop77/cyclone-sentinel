@@ -83,7 +83,7 @@ MODEL OUTPUT:
 ${JSON.stringify(ctx)}`;
   }
 
-  async function callGemini(body, key, onStatus) {
+  async function callGemini(body, key, onStatus, timeoutMs = 90000) {
     let lastErr;
     for (const model of MODELS) {
       for (let attempt = 0; attempt < 3; attempt++) {
@@ -92,7 +92,13 @@ ${JSON.stringify(ctx)}`;
           ? `${cfg().aiProxy.replace(/\/$/, "")}/api/gemini/${model}`
           : `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(key)}`;
         const t0 = performance.now();
-        const res = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+        let res;
+        try {
+          res = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body), signal: AbortSignal.timeout(timeoutMs) });
+        } catch (e) { // timed out or network error: an overloaded model can hang, so move on to the next one
+          lastErr = new Error(`${model}: ${e.name === "TimeoutError" ? `no reply in ${timeoutMs / 1000} s` : e.message}`);
+          break;
+        }
         if (res.ok) {
           const data = await res.json();
           const text = data.candidates?.[0]?.content?.parts?.map((p) => p.text || "").join("") || "";
@@ -129,10 +135,10 @@ ${JSON.stringify(ctx)}`;
   }
 
   /** Any JSON-schema Gemini request (used by the FAQ chatbot). Same key handling and fallbacks as analyze(). */
-  async function generate(body, onStatus) {
+  async function generate(body, onStatus, timeoutMs) {
     const key = store.get("cs.geminiKey") || cfg().geminiKey;
     if (!key && !cfg().aiProxy) throw new Error("NO_KEY");
-    return callGemini(body, key, onStatus);
+    return callGemini(body, key, onStatus, timeoutMs);
   }
 
   /** Cached analysis committed to the repo (data/ai/<scenario>.json), if any. */

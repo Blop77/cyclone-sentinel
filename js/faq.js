@@ -177,7 +177,7 @@ ${docs.methodology}`;
       systemInstruction: { parts: [{ text: systemPrompt(docs) }] },
       contents,
       generationConfig: { temperature: 0.2, responseMimeType: "application/json", responseSchema: ANSWER_SCHEMA, thinkingConfig: { thinkingLevel: "low" } },
-    }, onStatus);
+    }, onStatus, 25000); // short questions: don't wait long on an overloaded model
     return { text: out.json.answer, model: out.model };
   }
 
