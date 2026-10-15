@@ -11,6 +11,10 @@ GEMINI_API_KEY=... uvicorn server.main:app --port 8080     # backend: Gemini pro
 python scripts/record_demo.py                              # → video/cyclonesentinel-demo.mp4 + .srt
 ```
 
+With `GEMINI_API_KEY` set on the backend, the Gemini analyst and the FAQ chatbot run **live** in the recording
+(`--cached-ai` shows the saved analysis instead). If the edge-tts service is unreachable, `--tts kokoro` uses an
+offline neural voice; see the options at the top of the script.
+
 | Scene | On screen | Narration |
 |---|---|---|
 | Title | Title card | This is CycloneSentinel: an AI-powered platform that forecasts cyclone impact on critical infrastructure, and warns the right authorities before landfall. |
@@ -27,6 +31,8 @@ python scripts/record_demo.py                              # → video/cyclonese
 | Gemini | AI Analyst tab | Now, Google's Gemini 3.7 Flash. We send it the satellite image of the storm together with the model's output. |
 | Gemini output | Analysis + Odia advisories | Gemini reads the storm's structure, checks the imagery against our hotspots, explains the rainfall damage pathways, and drafts advisories in English and Odia, ready to dispatch. |
 | Live | Live mode | It also runs in real time. Live mode pulls the latest 72-hour forecast for every coastal town and runs the same chain. |
+| FAQ chatbot | 💬 Ask panel: "How do you know the model is accurate?" | For judges and officials, there is a built-in assistant. Ask it anything about the project, and Gemini answers using only our own documentation. |
+| FAQ chatbot | "Is the infrastructure data real?" | It is honest about limitations too. Here it explains that the infrastructure inventory is still synthetic, and that replacing it with real data is the first production step. |
 | How it works | Stack card | Google Earth Engine, NASA satellite feeds, real-time weather, a physics ensemble, Gemini multimodal reasoning and automated CAP dispatch on Cloud Run, validated against four historical cyclones. |
 | Close | Closing card | CycloneSentinel. From satellite to action, before landfall. |
 

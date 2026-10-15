@@ -9,6 +9,13 @@ Options:
     --url URL        record another deployment, e.g. https://<user>.github.io/<repo>/
     --voice NAME     edge-tts voice (default en-IN-NeerjaNeural; try en-IN-PrabhatNeural, en-US-AndrewNeural)
     --silent         skip narration, write video/cyclonesentinel-demo.webm only
+    --tts kokoro     offline neural voice (Kokoro ONNX) instead of edge-tts; needs
+                     pip install kokoro-onnx soundfile and the two model files in --kokoro-dir
+    --cached-ai      show the saved Gemini analysis instead of calling Gemini live
+    --skip-faq       leave out the FAQ chatbot scene
+    --browser PATH   Chromium executable to use (default: Playwright's own)
+
+With a Gemini key on the backend (GEMINI_API_KEY) the Gemini scene and the FAQ chatbot run live.
 
 Each scene waits for its narration line to finish, so voice and visuals stay in sync.
 """
@@ -28,7 +35,15 @@ ap.add_argument("--url", default="http://localhost:8080/")
 ap.add_argument("--voice", default="en-IN-NeerjaNeural")
 ap.add_argument("--silent", action="store_true")
 ap.add_argument("--skip-ai", action="store_true", help="skip the Gemini scene (dry runs)")
+ap.add_argument("--cached-ai", action="store_true", help="show the saved Gemini analysis instead of a live call")
+ap.add_argument("--skip-faq", action="store_true", help="leave out the FAQ chatbot scene")
+ap.add_argument("--tts", choices=["edge", "kokoro"], default="edge", help="narration engine")
+ap.add_argument("--kokoro-dir", default="kokoro", help="folder with kokoro-v1.0.onnx and voices-v1.0.bin")
+ap.add_argument("--browser", help="Chromium executable (default: Playwright's bundled browser)")
 ARGS = ap.parse_args()
+if ARGS.tts == "kokoro" and ARGS.voice.startswith("en-"):
+    ARGS.voice = "af_heart"  # edge-tts voice names don't exist in Kokoro
+EXT = "wav" if ARGS.tts == "kokoro" else "mp3"
 
 URL = ARGS.url
 OUT = pathlib.Path(__file__).resolve().parent.parent / "video"
@@ -50,6 +65,8 @@ NARRATION = {
     "ai": "Now, Google Gemini. We send it the real satellite image of the storm, together with the impact model's output.",
     "ai2": "Gemini reads the storm's structure, checks the imagery against our hotspots, explains the rainfall damage pathways, and drafts advisories in English and Odia, ready to dispatch.",
     "live": "It also runs in real time. Live mode pulls the latest seventy-two hour forecast for every coastal town and runs the same chain, from hazard to advisory.",
+    "faq": "For judges and officials, there is a built-in assistant. Ask it anything about the project, and Gemini answers using only our own documentation.",
+    "faq2": "It is honest about limitations too. Here it explains that the infrastructure inventory is still synthetic, and that replacing it with real data is the first production step.",
     "how": "Google Earth Engine layers, NASA satellite feeds, real-time weather, a physics ensemble, Gemini multimodal reasoning, and automated CAP dispatch on Cloud Run, validated against four historical cyclones.",
     "outro": "CycloneSentinel. From satellite to action, before landfall.",
 }
@@ -107,13 +124,24 @@ def audio_seconds(path):
 
 
 async def synthesize():
-    import edge_tts
     vdir = OUT / "voice"
     vdir.mkdir(parents=True, exist_ok=True)
+    lines = {k: v for k, v in NARRATION.items() if not (ARGS.skip_faq and k.startswith("faq")) and not (ARGS.skip_ai and k.startswith("ai"))}
+    if ARGS.tts == "kokoro":
+        import soundfile
+        from kokoro_onnx import Kokoro
+        kdir = pathlib.Path(ARGS.kokoro_dir)
+        kokoro = Kokoro(str(kdir / "kokoro-v1.0.onnx"), str(kdir / "voices-v1.0.bin"))
+    else:
+        import edge_tts
     durations = {}
-    for key, text in NARRATION.items():
-        path = vdir / f"{key}.mp3"
-        await edge_tts.Communicate(text, ARGS.voice, rate="+4%").save(str(path))
+    for key, text in lines.items():
+        path = vdir / f"{key}.{EXT}"
+        if ARGS.tts == "kokoro":
+            samples, rate = kokoro.create(text.replace("I.M.D.", "I M D"), voice=ARGS.voice, speed=1.0, lang="en-us")
+            soundfile.write(str(path), samples, rate)
+        else:
+            await edge_tts.Communicate(text, ARGS.voice, rate="+4%").save(str(path))
         durations[key] = audio_seconds(path)
         print(f"  voice {key:8s} {durations[key]:5.1f}s")
     return durations
@@ -124,7 +152,7 @@ def mux(webm, timeline, out):
     vdir = OUT / "voice"
     cmd = [ffmpeg(), "-y", "-hide_banner", "-loglevel", "error", "-i", str(webm)]
     for key, _ in timeline:
-        cmd += ["-i", str(vdir / f"{key}.mp3")]
+        cmd += ["-i", str(vdir / f"{key}.{EXT}")]
     parts = [f"[{i + 1}:a]adelay={int(t * 1000)}:all=1[a{i}]" for i, (_, t) in enumerate(timeline)]
     mix = "".join(f"[a{i}]" for i in range(len(timeline))) + f"amix=inputs={len(timeline)}:normalize=0:dropout_transition=0[aout]"
     cmd += ["-filter_complex", ";".join(parts + [mix]), "-map", "0:v", "-map", "[aout]",
@@ -145,7 +173,7 @@ def write_srt(timeline, out):
         text = NARRATION[key]
         for a, b in fix.items():
             text = text.replace(a, b)
-        dur = audio_seconds(OUT / "voice" / f"{key}.mp3") - 0.15
+        dur = audio_seconds(OUT / "voice" / f"{key}.{EXT}") - 0.15
         parts, chunks, cur = re.split(r"(?<=[.:?!,])\s+", text), [], ""
         for p in parts:
             if cur and len(cur) + 1 + len(p) > 84:
@@ -168,7 +196,7 @@ async def main():
     timeline = []
 
     async with async_playwright() as p:
-        browser = await p.chromium.launch()
+        browser = await p.chromium.launch(**({"executable_path": ARGS.browser} if ARGS.browser else {}))
         ctx = await browser.new_context(viewport={"width": W, "height": H}, record_video_dir=str(OUT), record_video_size={"width": W, "height": H})
         page = await ctx.new_page()
         t0 = time.monotonic()  # video recording starts with the page
@@ -281,7 +309,8 @@ async def main():
             await scene("ai")
             await click('[data-tab="ai"]', 500)
             await cap("<b>Google Gemini</b> multimodal analyst · input: NASA satellite image + impact-model output")
-            if not await page.evaluate("!!(CycloneSentinel.state.ai)"):  # no saved analysis → call Gemini live
+            live = not ARGS.cached_ai and await page.evaluate("CIF_AI.hasAccess()")
+            if live or not await page.evaluate("!!(CycloneSentinel.state.ai)"):  # live Gemini call (or no saved analysis)
                 await click("#ai-run", 500)
                 await page.wait_for_function("!document.getElementById('ai-run').disabled", timeout=420000)
             await page.wait_for_timeout(2500)
@@ -312,6 +341,27 @@ async def main():
         await page.evaluate("document.getElementById('live-card').scrollIntoView({behavior: 'smooth', block: 'start'})")
         await page.wait_for_timeout(5000)
         await click("#l-sat", 200)
+
+        # 6b — FAQ chatbot (Gemini grounded in the project docs; FAQ search without a key)
+        if not ARGS.skip_faq:
+            async def ask(question, hold):
+                n = await page.locator("#faq .faq-msg.bot").count()
+                await click("#faq input", 200)
+                await page.keyboard.type(question, delay=45)
+                await page.wait_for_timeout(300)
+                await page.keyboard.press("Enter")
+                await page.wait_for_function(f"document.querySelectorAll('#faq .faq-msg.bot:not(.thinking)').length > {n} && !document.querySelector('#faq input').disabled", timeout=180000)
+                await page.wait_for_timeout(hold)
+
+            await scene("faq")
+            await page.evaluate("document.querySelector('.impact').scrollTo({top: 0})")
+            await click('[data-tab="impact"]', 300)
+            await cap("<b>💬 Ask about this project</b>: judges' questions answered from the project's own docs")
+            await click("#open-faq", 900)
+            await ask("How do you know the model is accurate?", 4500)
+            await scene("faq2")
+            await ask("Is the infrastructure data real?", 6000)
+            await click("#faq .faq-close", 300)
 
         # 7 — outro
         await scene("how")
