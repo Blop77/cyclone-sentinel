@@ -176,7 +176,7 @@
 
   // ---------------- satellite layers ----------------
   function satelliteWhen(sc, r) {
-    if (sc.live) return { date: new Date(Date.now() - 24 * 3600e3), rain: new Date(Date.now() - 6 * 3600e3) };
+    if (sc.live) return { date: new Date(Date.now() - 24 * 3600e3), rain: new Date(Date.now() - 6 * 3600e3), sat: "NOAA20" };
     if (!sc.historical) return null;
     const lf = new Date(sc.landfallTime);
     // VIIRS passes ~07–08 UTC over the Bay: use the previous day if landfall happened before the pass.
@@ -189,10 +189,10 @@
     state.satWhen = w;
     $("l-sat").disabled = $("l-imerg").disabled = !w;
     if (!w) { $("sat-date").textContent = "Satellite layers are unavailable for a hypothetical storm."; return; }
-    const s = F.satelliteLayers(L, w.date), rr = F.satelliteLayers(L, w.rain);
+    const s = F.satelliteLayers(L, w.date, w.sat), rr = F.satelliteLayers(L, w.rain);
     s.trueColor.addTo(layers.sat);
     rr.imerg.addTo(layers.imerg);
-    $("sat-date").textContent = `Satellite: VIIRS ${F.day(w.date)} · IMERG ${w.rain.toISOString().slice(0, 16).replace("T", " ")} UTC`;
+    $("sat-date").textContent = `Satellite: VIIRS${w.sat === "NOAA20" ? " NOAA-20" : ""} ${F.day(w.date)} · IMERG ${w.rain.toISOString().slice(0, 16).replace("T", " ")} UTC`;
   }
 
   // ---------------- render ----------------
@@ -477,7 +477,7 @@
     $("ai-run").disabled = true;
     const t0 = performance.now();
     try {
-      const out = await AI.analyze({ scenario: state.scenario, result: state.result, towns: TOWNS, center: state.center, when: w.date, onStatus: (s) => ($("ai-status").textContent = s) });
+      const out = await AI.analyze({ scenario: state.scenario, result: state.result, towns: TOWNS, center: state.center, when: w.date, satellite: w.sat, onStatus: (s) => ($("ai-status").textContent = s) });
       state.ai = { scenario: state.scenario.id, ...out };
       $("ai-status").textContent = `Done in ${((performance.now() - t0) / 1000).toFixed(1)} s · ${out.model}`;
       renderAI(state.ai);

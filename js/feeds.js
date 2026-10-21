@@ -15,12 +15,16 @@
     return t.toISOString().replace(".000Z", "Z");
   };
 
+  // VIIRS satellites: Suomi-NPP has imagery back to 2012 (all replays); live mode uses NOAA-20, whose
+  // latest passes are more complete (missing data in these JPEG tiles shows up as black).
+  const VIIRS = { SNPP: "VIIRS_SNPP_CorrectedReflectance_TrueColor", NOAA20: "VIIRS_NOAA20_CorrectedReflectance_TrueColor" };
+
   /** Leaflet tile layers for a given date (landfall date for replays, yesterday for live). */
-  function satelliteLayers(L, when) {
+  function satelliteLayers(L, when, sat = "SNPP") {
     return {
-      trueColor: L.tileLayer(`${GIBS}/wmts/epsg3857/best/VIIRS_SNPP_CorrectedReflectance_TrueColor/default/${day(when)}/GoogleMapsCompatible_Level9/{z}/{y}/{x}.jpg`, {
+      trueColor: L.tileLayer(`${GIBS}/wmts/epsg3857/best/${VIIRS[sat]}/default/${day(when)}/GoogleMapsCompatible_Level9/{z}/{y}/{x}.jpg`, {
         maxNativeZoom: 9, maxZoom: 12, opacity: 0.9,
-        attribution: 'Imagery: <a href="https://earthdata.nasa.gov/gibs">NASA GIBS</a> VIIRS',
+        attribution: `Imagery: <a href="https://earthdata.nasa.gov/gibs">NASA GIBS</a> VIIRS ${sat === "NOAA20" ? "NOAA-20" : "Suomi-NPP"}`,
       }),
       imerg: L.tileLayer(`${GIBS}/wmts/epsg3857/best/IMERG_Precipitation_Rate/default/${halfHour(when)}/GoogleMapsCompatible_Level6/{z}/{y}/{x}.png`, {
         maxNativeZoom: 6, maxZoom: 12, opacity: 0.75,
@@ -30,9 +34,9 @@
   }
 
   /** Single satellite image (JPEG, base64) for Gemini's multimodal analysis. */
-  async function satelliteSnapshot({ lat, lon, when, halfSpan = 4, size = 768 }) {
+  async function satelliteSnapshot({ lat, lon, when, sat = "SNPP", halfSpan = 4, size = 768 }) {
     const bbox = [lat - halfSpan, lon - halfSpan, lat + halfSpan, lon + halfSpan].map((v) => v.toFixed(3)).join(",");
-    const url = `${GIBS}/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=VIIRS_SNPP_CorrectedReflectance_TrueColor&CRS=EPSG:4326&BBOX=${bbox}&WIDTH=${size}&HEIGHT=${size}&FORMAT=image/jpeg&TIME=${day(when)}`;
+    const url = `${GIBS}/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=${VIIRS[sat]}&CRS=EPSG:4326&BBOX=${bbox}&WIDTH=${size}&HEIGHT=${size}&FORMAT=image/jpeg&TIME=${day(when)}`;
     const res = await fetch(url);
     if (!res.ok) throw new Error(`GIBS snapshot HTTP ${res.status}`);
     const buf = new Uint8Array(await res.arrayBuffer());

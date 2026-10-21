@@ -117,12 +117,12 @@ ${JSON.stringify(ctx)}`;
   }
 
   /** Run the multimodal analysis. Returns { json, model, ms, satellite }. */
-  async function analyze({ scenario, result, towns, center, when, onStatus }) {
+  async function analyze({ scenario, result, towns, center, when, satellite = "SNPP", onStatus }) {
     const key = store.get("cs.geminiKey") || cfg().geminiKey;
     if (!key && !cfg().aiProxy) throw new Error("NO_KEY");
     onStatus && onStatus("Fetching NASA VIIRS satellite image…");
     let sat = null;
-    try { sat = await root.CIF_FEEDS.satelliteSnapshot({ lat: center.lat, lon: center.lon, when }); } catch (e) { console.warn(e); }
+    try { sat = await root.CIF_FEEDS.satelliteSnapshot({ lat: center.lat, lon: center.lon, when, sat: satellite }); } catch (e) { console.warn(e); }
     const ctx = buildContext(scenario, result, towns);
     const parts = [{ text: prompt(ctx, sat) }];
     if (sat) parts.push({ inline_data: { mime_type: sat.mime, data: sat.base64 } });
