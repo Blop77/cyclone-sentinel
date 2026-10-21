@@ -137,10 +137,28 @@ is overloaded. Output follows a strict JSON schema. The saved demo analyses in `
 fallback, Gemini 3.5 Flash, because 3.7 Flash was at capacity when they were generated; they are labelled
 "cached" in the app.
 
-### Can the AI make mistakes?
-Yes, so it is constrained: Gemini gets a compact JSON of the model's numbers, is told never to invent numbers
-that are not in the data, must follow a fixed schema, and every result is shown with the model name and time.
-Advisories are marked **Exercise** in CAP by default; operational use needs IMD bulletins and human sign-off.
+### Can the AI make mistakes? How do you stop hallucinations reaching officials?
+Yes, so Gemini never decides what officials receive:
+* **The model makes every alert.** District, Red/Orange/Yellow level, hazards, numbers, recipients and the CAP
+  file are all built by our code from the physics model. Auto-dispatch only ever sends these.
+* **Every Gemini answer is fact-checked automatically** against the model run it was based on. Each advisory
+  must name a district the model issued an alert for, at the same level, and every number with a unit
+  (km/h, mm, m, %) must match a model value with that unit. It also catches unit slips: in our saved Fani
+  analysis it flagged Gemini calling the model's *residents* in kutcha housing *houses*.
+* **Failed text can't be used.** An advisory that fails the check can't be attached to an alert. One that
+  passes is attached only when a person clicks *Attach*, and it still can't change the level or numbers.
+* **Transparent input.** The AI Analyst tab shows the exact data sent to Gemini, built by our code from the model.
+* Gemini must follow a fixed JSON schema and is told never to invent numbers; local-language text is not
+  machine-checked and needs a human review. Alerts are marked **Exercise** in CAP until an official signs off.
+
+### How many Gemini tokens would it use at large scale?
+Measured, not guessed: one **AI Analyst** run uses about **4,400–5,400 tokens** (about 3,200–3,600 in,
+including about 1,100 for the satellite image, plus 1,200–1,800 out); the app shows the count on every
+analysis. One **FAQ chatbot** question sends about **9,400 tokens** of project documentation plus a short
+answer. Gemini runs **once per forecast update, not once per citizen**: people receive the warning as an
+SMS/CAP alert, which uses no tokens. Analysing about 50 coastal districts every 6 hours through a 3-day
+cyclone is about 600 calls, roughly **3 million tokens per cyclone**. The chatbot cost can be cut further
+with Gemini context caching, since the documentation part is the same for every question.
 
 ## Validation
 

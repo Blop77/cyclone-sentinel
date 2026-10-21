@@ -134,6 +134,12 @@ of their two towns. The results then run through the same fragility, cascade, pa
   429/5xx. The key stays server-side on Cloud Run, or in the viewer's browser. Responses for the demo
   cyclones are cached in `data/ai/` and labelled as cached.
 
+* **Fact check:** every Gemini answer is checked against the model run it was based on (`factCheck` in
+  `js/ai.js`). Advisories must name a district the model issued an advisory for, at the same level; every
+  number followed by a unit (km/h, mm, m, %) must match, within 10 %, a model value with that unit; and
+  counts of "houses" are flagged because the model counts residents. Failing advisories cannot be attached
+  to an alert. The tab also shows the exact data sent to Gemini and the tokens used.
+
 ## 10. Google Earth Engine exposure pipeline
 
 `gee/exposure_pipeline.py` samples for every asset: Copernicus GLO-30 elevation, JRC Global Surface Water

@@ -180,7 +180,7 @@ ${docs.methodology}`;
       contents,
       generationConfig: { temperature: 0.2, responseMimeType: "application/json", responseSchema: ANSWER_SCHEMA, thinkingConfig: { thinkingLevel: "low" } },
     }, onStatus, 25000); // short questions: don't wait long on an overloaded model
-    return { text: out.json.answer, model: out.model };
+    return { text: out.json.answer, model: out.model, tokens: out.usage && out.usage.totalTokenCount };
   }
 
   // ---------------- UI ----------------
@@ -254,7 +254,7 @@ ${docs.methodology}`;
           try {
             const out = await askGemini(question, turns, docs, (s) => { thinking.innerHTML = `<p>${esc(s)}</p>`; });
             thinking.remove();
-            bubble("bot", `${render(out.text)}<p class="faq-meta">✦ ${esc(out.model)} · from the project docs</p>`);
+            bubble("bot", `${render(out.text)}<p class="faq-meta">✦ ${esc(out.model)} · from the project docs${out.tokens ? ` · ${out.tokens.toLocaleString("en-IN")} tokens` : ""}</p>`);
             reply = out.text;
           } catch (e) {
             console.warn(e);

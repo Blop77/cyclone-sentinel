@@ -357,3 +357,14 @@ figure.sat figcaption { font-size: 11px; color: var(--text-muted); margin-top: 4
 .legend-list .ring { width: 14px; height: 14px; border-radius: 50%; border-width: 1.5px; flex: none; }
 .ring-label { background: rgba(13, 13, 13, 0.75); border: 0; box-shadow: none; color: #cde2fb; font-size: 10.5px; padding: 1px 5px; border-radius: 4px; }
 .ring-label::before { display: none; }
+
+/* ---------- Gemini fact check ---------- */
+.factcheck.pass { border-color: rgba(12, 163, 12, 0.6); }
+.factcheck.warn { border-color: rgba(250, 178, 25, 0.7); }
+.factcheck p { margin: 4px 0; }
+.verify { font-size: 11px; font-weight: 600; border-radius: 999px; padding: 1px 8px; margin-left: 6px; white-space: nowrap; }
+.verify.pass { color: #7fd67f; background: rgba(12, 163, 12, 0.15); }
+.verify.warn { color: #fab219; background: rgba(250, 178, 25, 0.15); }
+.issues { margin: 4px 0 6px; padding-left: 18px; color: #fab219; font-size: 12px; }
+.btn-small:disabled { opacity: 0.6; cursor: not-allowed; }
+pre.ctx { max-height: 260px; overflow: auto; font-size: 11px; background: var(--surface-2); padding: 8px; border-radius: 8px; white-space: pre-wrap; overflow-wrap: anywhere; }

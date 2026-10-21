@@ -19,7 +19,7 @@ test("FAQ parses into question/answer entries", () => {
 test("judges' phrasings find the right FAQ entry", () => {
   const cases = {
     "How accurate is your model?": "How accurate is it? How was it validated?",
-    "can the AI hallucinate": "Can the AI make mistakes?",
+    "can the AI hallucinate": "Can the AI make mistakes? How do you stop hallucinations reaching officials?",
     "Is the infrastructure data real or fake?": "Is the infrastructure data real?",
     "what is GEE": "How is Google Earth Engine used?",
     "How will this scale to other countries?": "How does it scale to other states or countries?",

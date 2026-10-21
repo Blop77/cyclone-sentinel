@@ -141,6 +141,88 @@ ${JSON.stringify(ctx)}`;
     return callGemini(body, key, onStatus, timeoutMs);
   }
 
+  // ---------- fact check: Gemini's text against the impact model ----------
+  const MULT = { lakh: 1e5, lakhs: 1e5, crore: 1e7, crores: 1e7, million: 1e6, mn: 1e6 };
+  const MONTH = /^(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)/i;
+
+  /** Unit right after a number: wind, rain, surge depth or percentage (null if none). */
+  function unitOf(after) {
+    const u = /^\s*(km\/h|kmph|kph|mm|cm|%|m\b|metres?\b|meters?\b)/i.exec(after);
+    if (!u) return null;
+    const k = u[1].toLowerCase();
+    return k === "kmph" || k === "kph" ? "km/h" : k.startsWith("met") ? "m" : k;
+  }
+
+  /** Numbers mentioned in text, with the words around them (Indian digit grouping and lakh/crore aware). */
+  function numbersInText(text) {
+    const out = [];
+    const re = /(\d[\d,]*(?:\.\d+)?)\s*(lakhs?|crores?|million|mn)?/gi;
+    let m;
+    while ((m = re.exec(String(text)))) {
+      const raw = m[1].replace(/,/g, "");
+      if (!/\d/.test(raw)) continue;
+      const v = parseFloat(raw);
+      const before = text.slice(Math.max(0, m.index - 12), m.index);
+      const after = text.slice(m.index + m[0].length, m.index + m[0].length + 14);
+      out.push({ v, mult: MULT[(m[2] || "").toLowerCase()] || 1, raw: m[0].trim(), before, after, unit: unitOf(after) });
+    }
+    return out;
+  }
+
+  /** Every number the model gave Gemini, with its unit where known (probabilities also as percentages). */
+  function allowedNumbers(...sources) {
+    const set = [];
+    const keyUnit = (k) => (/kmh/.test(k) ? "km/h" : /_mm$/.test(k) ? "mm" : /_m$/.test(k) ? "m" : null);
+    const walk = (x, key = "") => {
+      if (typeof x === "number") { set.push({ v: x, unit: keyUnit(key) }); if (Math.abs(x) <= 1) set.push({ v: Math.round(x * 100), unit: "%" }); }
+      else if (typeof x === "string") for (const n of numbersInText(x)) set.push({ v: n.v * n.mult, unit: n.unit }, { v: n.v, unit: n.unit });
+      else if (Array.isArray(x)) x.forEach((y) => walk(y, key));
+      else if (x && typeof x === "object") Object.entries(x).forEach(([k, y]) => walk(y, k));
+    };
+    sources.forEach((x) => walk(x));
+    return set;
+  }
+
+  /** Issues with one piece of Gemini text: numbers the model never produced, or wrong units. */
+  function checkText(text, allowed) {
+    const issues = [];
+    for (const n of numbersInText(text)) {
+      if (/^\s*(h|hr|hrs|hours?|-hour|°|th|st|nd|rd)\b/i.test(n.after) || MONTH.test(n.after.trim()) || MONTH.test(n.before.trim().split(/\s+/).pop() || "")) continue; // times, dates
+      if (n.v >= 1900 && n.v <= 2100 && n.mult === 1) continue; // years
+      const cands = [n.v * n.mult, n.v];
+      // a number with a unit must match a model number with the same unit (km/h against winds, mm against rain…)
+      const pool = n.unit && allowed.some((a) => a.unit === n.unit) ? allowed.filter((a) => a.unit === n.unit) : allowed;
+      const ok = cands.some((c) => pool.some((a) => Math.abs(c - a.v) <= Math.max(0.051, 0.1 * Math.abs(a.v))));
+      if (!ok) issues.push(`"${n.raw}" is not in the model's data`);
+    }
+    const houses = /\d[\d,.]*\s*(?:lakhs?|million)?\s+(?:kutcha\s+)?(?:houses|homes|huts|dwellings)\b/i.exec(String(text));
+    if (houses) issues.push(`"${houses[0]}": the model counts residents (people), not houses`);
+    return issues;
+  }
+
+  /**
+   * Check a Gemini analysis against the impact-model run it was based on. Advisories must name a district
+   * the model issued an advisory for, at the same colour level, and use only the model's numbers.
+   * Returns { advisories: [{ ok, issues }], other: [issues], ok }.
+   */
+  function factCheck(json, ctx, modelAdvisories) {
+    const allowed = allowedNumbers(ctx, modelAdvisories.map((a) => [a.headline, a.description, a.instructions]));
+    const advisories = (json.advisories || []).map((g) => {
+      const issues = [];
+      const m = modelAdvisories.find((a) => a.district.toLowerCase() === String(g.district).toLowerCase());
+      if (!m) issues.push(`the model issued no advisory for "${g.district}"`);
+      else if (String(g.level).toUpperCase() !== m.levelLabel) issues.push(`level ${String(g.level).toUpperCase()} differs from the model's ${m.levelLabel}`);
+      issues.push(...checkText(g.message_en, allowed));
+      return { ok: issues.length === 0, issues };
+    });
+    const other = [];
+    const scan = (label, text) => checkText(text, allowed).forEach((i) => other.push(`${label}: ${i}`));
+    scan("Situation", json.situation_summary);
+    (json.key_risks || []).forEach((k) => scan(`Key risk, ${k.location}`, `${k.risk}. ${k.why}`));
+    (json.rainfall_damage_pathways || []).forEach((k) => scan(`Pathway, ${k.location}`, k.pathway));
+    return { advisories, other, ok: advisories.every((a) => a.ok) && other.length === 0 };
+  }
+
   /** Cached analysis committed to the repo (data/ai/<scenario>.json), if any. */
   async function cached(scenarioId) {
     try {
@@ -150,7 +232,7 @@ ${JSON.stringify(ctx)}`;
   }
 
   root.CIF_AI = {
-    analyze, generate, cached, buildContext, prompt, SCHEMA, MODELS, LANG,
+    analyze, generate, cached, buildContext, prompt, factCheck, SCHEMA, MODELS, LANG,
     getKey: () => store.get("cs.geminiKey") || "",
     setKey: (k) => store.set("cs.geminiKey", (k || "").trim()),
     hasAccess: () => !!(store.get("cs.geminiKey") || cfg().geminiKey || cfg().aiProxy),

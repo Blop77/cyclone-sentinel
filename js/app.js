@@ -529,8 +529,21 @@
     if (!ai) { box.innerHTML = ""; $("ai-status").textContent = ""; return; }
     const j = ai.json;
     const when = new Date(ai.generatedAt).toLocaleString("en-IN");
+    // Fact check against the model run on screen: what Gemini says must match what the model produced.
+    const ctx = AI.buildContext(state.scenario, state.result, TOWNS);
+    const fc = AI.factCheck(j, ctx, state.result.advisories);
+    const nOk = fc.advisories.filter((a) => a.ok).length;
+    const u = ai.usage;
+    const tokens = u ? ` · ${u.totalTokenCount.toLocaleString("en-IN")} tokens (${u.promptTokenCount.toLocaleString("en-IN")} in, ${(u.candidatesTokenCount || 0).toLocaleString("en-IN")} out)` : "";
+    const issueList = (list) => list.map((i) => `<li>${esc(i)}</li>`).join("");
     box.innerHTML = `
-      <p class="ai-meta">${ai.cached ? "📦 Cached" : "⚡ Live"} response from <b>${esc(ai.model)}</b> · ${when}${ai.cached ? " · press Analyse to regenerate" : ""}</p>
+      <p class="ai-meta">${ai.cached ? "📦 Cached" : "⚡ Live"} response from <b>${esc(ai.model)}</b> · ${when}${tokens}${ai.cached ? " · press Analyse to regenerate" : ""}</p>
+      <section class="card factcheck ${fc.ok ? "pass" : "warn"}">
+        <h3>${fc.ok ? "✓" : "⚠"} Fact check against the impact model</h3>
+        <p>${nOk} of ${fc.advisories.length} Gemini advisories match the model's districts, alert levels and numbers.${fc.ok ? "" : " Advisories that fail cannot be attached to an alert."}</p>
+        ${fc.other.length ? `<p class="muted">Other statements to review:</p><ul class="issues">${issueList(fc.other)}</ul>` : ""}
+        <p class="muted">Severity levels, numbers and recipients in every alert always come from the model; local-language text is not machine-checked and needs a human review.</p>
+      </section>
       ${ai.satellite ? `<figure class="card sat"><img src="${esc(ai.satellite.url)}" alt="NASA VIIRS satellite image sent to Gemini" loading="lazy" /><figcaption>Input image: NASA VIIRS true colour, ${esc(ai.satellite.date)}</figcaption></figure>` : ""}
       <section class="card"><h3>Situation</h3><p>${esc(j.situation_summary)}</p><p class="muted">Confidence: ${esc(j.confidence)}</p></section>
       <section class="card"><h3>What the satellite shows</h3><p>${esc(j.satellite_observations)}</p></section>
@@ -538,11 +551,17 @@
       <section class="card"><h3>Key risks</h3><ul class="ai-list">${j.key_risks.map((k) => `<li><b>${esc(k.location)}</b> — ${esc(k.risk)}<br><span class="muted">${esc(k.why)}</span></li>`).join("")}</ul></section>
       <section class="card"><h3>Rainfall damage pathways</h3><ul class="ai-list">${j.rainfall_damage_pathways.map((k) => `<li><b>${esc(k.location)}</b>: ${esc(k.pathway)}<br><span class="muted">Mitigation: ${esc(k.mitigation)}</span></li>`).join("")}</ul></section>
       <section class="card"><h3>Advisories (multilingual)</h3>
-        <ul class="ai-list">${j.advisories.map((a, i) => `<li><span class="lvl-chip" style="--lvl:${LEVEL_COLOR[a.level.toLowerCase()] || "#898781"}">${esc(a.level)}</span> <b>${esc(a.district)}</b>
+        <ul class="ai-list">${j.advisories.map((a, i) => { const v = fc.advisories[i]; return `<li><span class="lvl-chip" style="--lvl:${LEVEL_COLOR[a.level.toLowerCase()] || "#898781"}">${esc(a.level)}</span> <b>${esc(a.district)}</b>
+          <span class="verify ${v.ok ? "pass" : "warn"}">${v.ok ? "✓ matches model" : `⚠ ${v.issues.length} issue${v.issues.length > 1 ? "s" : ""}`}</span>
           <p>${esc(a.message_en)}</p><p class="local">${esc(a.message_local)} <span class="muted">(${esc(a.local_language)})</span></p>
-          <button class="btn-small primary" data-ai="${i}">Attach to advisory &amp; dispatch</button></li>`).join("")}</ul></section>
-      <section class="card"><h3>Caveats</h3><p class="muted">${esc(j.caveats)}</p></section>`;
+          ${v.ok ? "" : `<ul class="issues">${issueList(v.issues)}</ul>`}
+          ${v.ok ? `<button class="btn-small primary" data-ai="${i}">Attach to advisory &amp; dispatch</button>` : `<button class="btn-small" disabled title="Failed the fact check">Can't attach: failed fact check</button>`}</li>`; }).join("")}</ul></section>
+      <section class="card"><h3>Caveats</h3><p class="muted">${esc(j.caveats)}</p></section>
+      <details class="card"><summary>Data sent to Gemini</summary>
+        <p class="hint">Built by our code from the model run above, together with the NASA satellite image. Gemini receives nothing else.</p>
+        <pre class="ctx">${esc(JSON.stringify(ctx, null, 1))}</pre></details>`;
     box.querySelectorAll("[data-ai]").forEach((b) => b.addEventListener("click", () => {
+      if (!fc.advisories[+b.dataset.ai].ok) return; // only fact-checked text can reach an alert
       const g = j.advisories[+b.dataset.ai];
       const adv = state.result.advisories.find((a) => a.district.toLowerCase() === g.district.toLowerCase());
       if (!adv) { b.textContent = "No matching district advisory"; return; }
