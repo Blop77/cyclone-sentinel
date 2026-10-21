@@ -100,6 +100,8 @@
         <h2>Legend</h2>
         <p class="legend-title">Peak wind (IMD class)</p>
         <ul id="legend-wind" class="legend-list"></ul>
+        <p class="legend-title">Wind radii around the storm 🌀</p>
+        <ul id="legend-radii" class="legend-list"></ul>
         <p class="legend-title">Service disruption risk</p>
         <ul id="legend-risk" class="legend-list"></ul>
         <p class="hint" id="exposure-source"></p>
@@ -146,6 +148,12 @@
           <div class="table-wrap"><table class="wx-table">
             <thead><tr><th>Town</th><th>Rain 72 h</th><th>Wind km/h</th><th>Gust km/h</th></tr></thead><tbody></tbody>
           </table></div>
+        </section>
+
+        <section class="card">
+          <h3>Lower-risk areas <span class="muted">· safe destinations</span></h3>
+          <p class="hint" id="safer-hint">Towns where no modelled asset is above 15 % disruption or cut-off risk: candidate evacuation destinations and relief staging points. Click to locate.</p>
+          <ol id="safer" class="safer"></ol>
         </section>
 
         <section class="card">

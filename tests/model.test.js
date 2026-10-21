@@ -127,3 +127,16 @@ test("wind asymmetry flips in the southern hemisphere (cross-border use)", () =>
   const [el, eo] = M.offset(-20, 40, 90, 40), [wl, wo] = M.offset(-20, 40, 270, 40);
   assert.ok(M.windAt(step, el, eo) > M.windAt(step, wl, wo));
 });
+
+test("lower-risk areas: only towns below 15 % risk, nearest to landfall first, never the landfall district", () => {
+  const r = run("fani-2019");
+  const sa = r.summary.saferAreas;
+  assert.equal(sa.total, D.TOWNS.length);
+  assert.ok(sa.safe.length > 0 && sa.safe.length < sa.total);
+  for (const t of sa.safe) {
+    assert.ok(t.maxRisk < 0.15, `${t.name} ${t.maxRisk}`);
+    for (const a of r.assets.filter((a) => a.town === t.name)) assert.ok(a.pDisruption < 0.15 && (a.pIsolated || 0) < 0.15, a.id);
+  }
+  for (let i = 1; i < sa.safe.length; i++) assert.ok(sa.safe[i].distKm >= sa.safe[i - 1].distKm);
+  assert.ok(!sa.safe.some((t) => t.district === "Puri"), "Puri (Fani's landfall district) is never listed as safe");
+});

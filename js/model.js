@@ -240,7 +240,7 @@
     const onset = new Date(steps[lfIdx].t).toISOString();
     return {
       mode: "cyclone", steps, ensemble, originIndex, landfallIndex: lfIdx,
-      ...consequences(results, types, towns, townSevere, { onset, title: scenario.title || "Cyclone" }),
+      ...consequences(results, types, towns, townSevere, { onset, title: scenario.title || "Cyclone", landfall: steps[lfIdx] }),
     };
   }
 
@@ -294,8 +294,36 @@
     for (const r of results) r.pathway = pathwayFor(r, types, res);
     const summary = summarise(results, types, towns, townSevere);
     summary.rainPathways = rainPathways(results, res);
+    summary.saferAreas = saferAreas(results, towns, meta.landfall);
     const actions = recommend(results, types, res);
     return { assets: results, summary, actions, advisories: buildAdvisories(results, towns, actions, meta) };
+  }
+
+  /**
+   * Lower-risk areas: towns where no modelled asset reaches 15 % disruption or cut-off
+   * risk. These are candidate evacuation destinations and relief staging points.
+   * Sorted by distance from landfall (nearest safe places first); in live mode, where
+   * there is no landfall point, by lowest risk.
+   */
+  function saferAreas(results, towns, landfall) {
+    const byTown = new Map(towns.map((t) => [t.name, []]));
+    for (const r of results) if (byTown.has(r.town)) byTown.get(r.town).push(r);
+    const ok = (r) => r.pDisruption < 0.15 && (r.pIsolated || 0) < 0.15;
+    const all = towns.map((t) => {
+      const list = byTown.get(t.name);
+      const maxRisk = Math.max(0, ...list.map((r) => Math.max(r.pDisruption, r.pIsolated || 0)));
+      return {
+        name: t.name, district: t.district, state: t.state, lat: t.lat, lon: t.lon, pop: t.pop, maxRisk,
+        peakWind: Math.max(0, ...list.map((r) => r.hazard.wind)),
+        rain: Math.max(0, ...list.map((r) => r.hazard.rain)),
+        distKm: landfall ? haversine(landfall.lat, landfall.lon, t.lat, t.lon) : null,
+        shelters: list.filter((r) => r.type === "shelter" && ok(r)).length,
+        hospitals: list.filter((r) => r.type === "hospital" && ok(r)).length,
+      };
+    });
+    const safe = all.filter((t) => t.maxRisk < 0.15)
+      .sort((a, b) => (a.distKm != null ? a.distKm - b.distKm : a.maxRisk - b.maxRisk));
+    return { safe, total: towns.length };
   }
 
   function riskTier(p) {
@@ -593,7 +621,7 @@
   const API = {
     IMD_CLASSES, imdClass, haversine, bearing, offset, normCdf, lognormCdf,
     interpolateTrack, syntheticTrack, rmwKm, buildEnsemble, windAt, surgeAtCoast, rainRate,
-    hazardForTrack, damageProb, damageParts, runForecast, runLive, riskTier, windSwath, windRadius,
+    hazardForTrack, damageProb, damageParts, runForecast, runLive, riskTier, saferAreas, windSwath, windRadius,
     buildAdvisories, toCAP, advisoryText, LEVELS,
   };
   if (typeof module !== "undefined" && module.exports) module.exports = API;

@@ -23,6 +23,12 @@
     { min: 62, code: "CS", label: "62–88 · Cyclonic storm", color: "#184f95" },
   ];
   const binFor = (w) => WIND_BINS.find((b) => w >= b.min);
+  // Wind radii drawn around the storm: where damaging winds start and end.
+  const RADII = [
+    { min: 62, label: "≥ 62 km/h · gale force (outer edge of damaging winds)", color: "#86b6ef", weight: 1, dash: "3 5" },
+    { min: 89, label: "≥ 89 km/h · severe", color: "#a9cbf3", weight: 1.3, dash: "8 4" },
+    { min: 118, label: "≥ 118 km/h · very severe", color: "#cde2fb", weight: 1.6, fill: 0.08 },
+  ];
 
   const OBSERVED = {
     "fani-2019": "About 1.2 million people were evacuated in Odisha ahead of landfall. Puri's power-distribution network was largely destroyed and Puri, Bhubaneswar and Cuttack saw prolonged outages. The model flags the same Puri–Konark–Bhubaneswar grid corridor.",
@@ -93,6 +99,8 @@
   onScenarioChange();
 
   $("legend-wind").innerHTML = WIND_BINS.map((b) => `<li><span class="swatch" style="background:${b.color}"></span>${b.label}</li>`).join("");
+  $("legend-radii").innerHTML = RADII.map((r) => `<li><span class="ring" style="border-color:${r.color};border-style:${r.dash ? "dashed" : "solid"}"></span>${r.label}</li>`).join("")
+    + `<li class="muted">Outside the dashed ring, winds stay below gale force.</li>`;
   $("legend-risk").innerHTML = TIERS.map((t) => `<li><span class="dot" style="background:${t.color}"></span>${t.label}</li>`).join("");
 
   $("type-filter").innerHTML = Object.entries(ASSET_TYPES).map(([k, t]) => `<button type="button" class="chip" data-type="${k}" aria-pressed="true">${t.short}</button>`).join("");
@@ -255,6 +263,7 @@
     $("impact-sub").textContent = live ? `Issued ${new Date().toLocaleString("en-IN")} from ${state.weather.source}.` : `${sc.sub}. Forecast issued ${state.lead} h before landfall.`;
     renderKpis(r.summary);
     renderLiveConditions(live ? state.weather : null);
+    renderSafer(r.summary.saferAreas, live);
     renderPathways(r.summary.rainPathways);
     renderTypeChart(r.summary);
     renderActions(r.actions);
@@ -295,9 +304,13 @@
     $("t-label").textContent = `${when}${rel}${i < r.originIndex ? " · observed" : " · forecast"}`;
     $("t-storm").textContent = `${M.imdClass(s.v).code} · ${Math.round(s.v)} km/h · ${s.lat.toFixed(1)}°N ${s.lon.toFixed(1)}°E`;
     layers.storm.clearLayers();
-    const r62 = M.windRadius(s, 62), r118 = M.windRadius(s, 118);
-    if (r62) L.circle([s.lat, s.lon], { radius: r62 * 1000, color: "#86b6ef", weight: 1, fill: false, dashArray: "3 5", interactive: false }).addTo(layers.storm);
-    if (r118) L.circle([s.lat, s.lon], { radius: r118 * 1000, color: "#cde2fb", weight: 1.5, fillColor: "#cde2fb", fillOpacity: 0.08, interactive: false }).addTo(layers.storm);
+    for (const ring of RADII) {
+      const km = M.windRadius(s, ring.min);
+      if (!km) continue;
+      L.circle([s.lat, s.lon], { radius: km * 1000, color: ring.color, weight: ring.weight, dashArray: ring.dash, fill: !!ring.fill, fillColor: ring.color, fillOpacity: ring.fill || 0, interactive: false }).addTo(layers.storm);
+      L.tooltip({ permanent: true, direction: "center", className: "ring-label", interactive: false })
+        .setLatLng(M.offset(s.lat, s.lon, 0, km)).setContent(`≥ ${ring.min} km/h · ${Math.round(km / 5) * 5} km`).addTo(layers.storm);
+    }
     L.marker([s.lat, s.lon], { icon: L.divIcon({ className: "storm-icon", html: "<span>🌀</span>", iconSize: [30, 30] }), interactive: false }).addTo(layers.storm);
     styleAssets();
   }
@@ -346,6 +359,27 @@
     const rows = Object.entries(wx.weather).sort((a, b) => b[1].rain72 + b[1].gustMax / 4 - (a[1].rain72 + a[1].gustMax / 4)).slice(0, 10);
     card.querySelector("tbody").innerHTML = rows.map(([t, w]) => `<tr><td>${esc(t)}</td><td>${w.rain72.toFixed(1)} mm</td><td>${Math.round(w.windMax)}</td><td>${Math.round(w.gustMax)}</td></tr>`).join("");
     card.querySelector(".hint").textContent = `${wx.source}, next 72 h from ${wx.weather[TOWNS[0].name].issued.replace("T", " ")} IST. Top 10 of ${TOWNS.length} towns by rain + gusts.`;
+  }
+
+  function renderSafer(sa, live) {
+    $("safer-hint").textContent = `${sa.safe.length} of ${sa.total} towns have no modelled asset above 15 % disruption or cut-off risk: candidate evacuation destinations and relief staging points. ${live ? "Lowest risk first." : "Nearest to landfall first."} Click to locate.`;
+    const facilities = (t) => [t.shelters && `${t.shelters} shelter${t.shelters > 1 ? "s" : ""}`, t.hospitals && `${t.hospitals} hospital${t.hospitals > 1 ? "s" : ""}`].filter(Boolean).join(", ");
+    $("safer").innerHTML = sa.safe.length
+      ? sa.safe.slice(0, 8).map((t) => `<li data-town="${esc(t.name)}" tabindex="0">
+          <span class="badge good"><i></i>&lt; ${Math.floor(t.maxRisk * 100) + 1} % risk</span>
+          <div><b>${esc(t.name)}</b> <span class="muted">· ${esc(t.district)}, ${esc(t.state)}</span></div>
+          <div class="muted">${t.distKm != null ? `${Math.round(t.distKm)} km from landfall · ` : ""}peak wind ${Math.round(t.peakWind)} km/h · ${Math.round(t.rain)} mm rain${facilities(t) ? ` · ${facilities(t)} operational` : ""}</div></li>`).join("")
+      : `<li class="muted">No town in the region stays below 15 % risk.</li>`;
+    $("safer").querySelectorAll("li[data-town]").forEach((li) => {
+      const go = () => {
+        const t = sa.safe.find((x) => x.name === li.dataset.town);
+        map.flyTo([t.lat, t.lon], 9, { duration: 0.8 });
+        const mark = L.circle([t.lat, t.lon], { radius: 9000, color: "#0ca30c", weight: 2, fillOpacity: 0.12, interactive: false }).addTo(map);
+        setTimeout(() => mark.remove(), 4000);
+      };
+      li.addEventListener("click", go);
+      li.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
+    });
   }
 
   function renderPathways(list) {

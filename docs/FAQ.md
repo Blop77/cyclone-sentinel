@@ -70,6 +70,18 @@ and ports 1.3, telecom and arterial roads 1.2, power lines and bridges 1.1, kutc
 are ranked by **probability of disruption × criticality weight × log10(10 + people served)**. The weights are
 the team's judgement and would be tuned with disaster-management authorities.
 
+### Does it show safer areas, less likely to be damaged, for evacuation?
+Yes. The **Lower-risk areas** panel lists towns where no modelled asset is above 15 % disruption or cut-off
+risk, nearest to landfall first, with their peak wind, rain and how many shelters and hospitals stay
+operational. These are candidate **evacuation destinations and relief staging points**. On the map, three
+labelled **wind radii** around the storm show how far gale-force (62 km/h), severe (89 km/h) and very severe
+(118 km/h) winds reach; outside the dashed outer ring, winds stay below gale force.
+
+### How far do the cyclone's winds reach?
+The map draws three labelled rings around the storm at every time step: how far **gale-force (≥ 62 km/h)**,
+**severe (≥ 89 km/h)** and **very severe (≥ 118 km/h)** winds reach. For Fani at landfall they are about 165,
+110 and 75 km. Outside the dashed outer ring, winds stay below gale force.
+
 ### What do Red, Orange and Yellow mean?
 They follow the **IMD colour code**, applied per district on the highest disruption or cut-off probability:
 **Red ≥ 60 %** (take action), **Orange ≥ 35 %** (be prepared), **Yellow ≥ 15 %** (be updated). On the map,

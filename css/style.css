@@ -348,3 +348,12 @@ figure.sat figcaption { font-size: 11px; color: var(--text-muted); margin-top: 4
 @media (max-width: 720px) {
   .faq { right: 16px; left: 16px; bottom: 16px; width: auto; height: min(560px, calc(100vh - 32px)); }
 }
+
+/* ---------- lower-risk areas + wind radii ---------- */
+.safer { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.safer li { background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; cursor: pointer; font-size: 12px; display: grid; gap: 2px; }
+.safer li:hover, .safer li:focus-visible { border-color: var(--good); outline: none; }
+.safer .badge { justify-self: start; margin-bottom: 2px; }
+.legend-list .ring { width: 14px; height: 14px; border-radius: 50%; border-width: 1.5px; flex: none; }
+.ring-label { background: rgba(13, 13, 13, 0.75); border: 0; box-shadow: none; color: #cde2fb; font-size: 10.5px; padding: 1px 5px; border-radius: 4px; }
+.ring-label::before { display: none; }

@@ -84,6 +84,12 @@ it was the grid, not the buildings, that failed first.
 * **Response actions** are rule-based, one per asset over 35 % disruption risk (15 % for shelters).
   They are ranked by `P_disruption × criticality × log10(10 + people served)`.
 
+* **Lower-risk areas** are towns where every modelled asset stays below 15 % disruption and cut-off risk.
+  They are listed nearest to landfall first (in live mode, lowest risk first) as candidate evacuation
+  destinations, with peak wind, rain and the shelters and hospitals that stay operational.
+* **Wind radii** on the map are the distances at which the storm's symmetric wind falls below 62, 89 and
+  118 km/h (`windRadius`), updated at every time step of the animation.
+
 ## 6. Rainfall damage pathways and road access
 
 * **Arterial roads** are 36 town-to-town links: each town connects to its nearest neighbour and to its
