@@ -124,7 +124,12 @@
   })(statement);
   const words = $$(".w", statement);
 
-  const set = (el, op, tf) => { if (!el) return; if (op != null) el.style.opacity = op; if (tf != null) el.style.transform = tf; };
+  // fully transparent layers are also hidden, so the browser stops compositing (and we stop drawing) them
+  const set = (el, op, tf) => {
+    if (!el) return;
+    if (op != null) { el.style.opacity = op; el.style.visibility = op > 0.001 ? "" : "hidden"; }
+    if (tf != null) el.style.transform = tf;
+  };
 
   const UPDATE = {
     hero(p, el) {
@@ -239,7 +244,7 @@
   function render() {
     update();
     const hero = scenes[0].el.getBoundingClientRect();
-    if (hero.bottom > 0) drawStorm();
+    if (hero.bottom > 0 && cvs.style.visibility !== "hidden") drawStorm();
   }
   function loop() { render(); if (!reduced) requestAnimationFrame(loop); }
 
