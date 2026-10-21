@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CycloneSentinel: before landfall</title>
+  <meta name="description" content="CycloneSentinel predicts which hospitals, substations and roads a cyclone will break 24 hours before landfall, shows where it is safe, and warns district officials automatically." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌀</text></svg>" />
+  <link rel="stylesheet" href="story/story.css" />
+</head>
+<body>
+  <div class="progress" aria-hidden="true"><i></i></div>
+  <nav class="nav">
+    <a class="brand" href="#top">🌀 CycloneSentinel</a>
+    <div class="links">
+      <a href="#how">How it works</a>
+      <a href="#gemini">Gemini</a>
+      <a href="#proof">Validation</a>
+      <a class="cta" href="./">Open the live demo</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <!-- 1. Hero: a living cyclone that becomes the headline -->
+    <section class="scene hero" data-scene="hero" style="--h:420vh">
+      <div class="sticky">
+        <canvas id="storm" aria-hidden="true"></canvas>
+        <div class="hero-intro">
+          <p class="eyebrow">Build with AI · Code for Communities · Track 5</p>
+          <h1>CycloneSentinel</h1>
+          <p class="scroll-hint">Scroll</p>
+        </div>
+        <div class="mask" aria-hidden="true"><span>Before<br />landfall.</span></div>
+        <div class="hero-final">
+          <h2 class="grad">Before landfall.</h2>
+          <p>Predict what a cyclone will break, a day before it hits.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. The problem, word by word -->
+    <section class="scene statement" data-scene="statement" style="--h:260vh">
+      <div class="sticky center">
+        <p class="reveal" id="statement">Cyclone warnings tell us where a storm will go. They don't tell us which <em>hospitals lose power</em>, which <em>roads flood</em>, or <em>who must be warned</em>. CycloneSentinel does, a full day before landfall.</p>
+      </div>
+    </section>
+
+    <!-- 3. Numbers -->
+    <section class="scene numbers" data-scene="numbers" style="--h:220vh">
+      <div class="sticky center">
+        <p class="eyebrow">By the numbers</p>
+        <h2 class="title">Forty storms.<br /><span class="dim">One answer in under a second.</span></h2>
+        <div class="stats">
+          <div><b data-count="40">0</b><span>possible storm tracks simulated together</span></div>
+          <div><b data-count="511">0</b><span>hospitals, substations, roads and shelters scored</span></div>
+          <div><b data-count="34">0</b><span>coastal towns across Odisha, Andhra Pradesh and West Bengal</span></div>
+          <div><b data-count="1" data-prefix="&lt; " data-suffix=" s">0</b><span>for the whole forecast, in the browser</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Product reveal -->
+    <section class="scene product" data-scene="product" id="how" style="--h:380vh">
+      <div class="sticky">
+        <div class="product-head">
+          <p class="eyebrow">How it works</p>
+          <h2 class="title">One map.<br /><span class="dim">Every failure, explained.</span></h2>
+        </div>
+        <div class="device">
+          <div class="screen"><img src="docs/img/dashboard.jpg" alt="CycloneSentinel dashboard replaying Cyclone Fani 24 hours before landfall" /></div>
+          <div class="base"></div>
+        </div>
+        <ul class="callouts">
+          <li style="--x:28%;--y:30%"><b>40-member ensemble</b>Forecast uncertainty as faint tracks</li>
+          <li style="--x:52%;--y:58%"><b>Wind, surge and rain</b>Physics at every asset, hour by hour</li>
+          <li style="--x:78%;--y:24%"><b>Impact in numbers</b>Power, people, hospitals, roads</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 5. Pathway -->
+    <section class="scene pathway" data-scene="pathway" style="--h:300vh">
+      <div class="sticky center">
+        <p class="eyebrow">Cascading failure</p>
+        <h2 class="title">Every failure has a reason.</h2>
+        <ol class="chain">
+          <li><span class="ico">🌧️</span><b>301 mm</b> of rain over Puri</li>
+          <li><span class="ico">🌊</span><b>0.46 m</b> of water on the Puri–Konark road</li>
+          <li><span class="ico">🚧</span>Road <b>impassable</b>: 81 % likely</li>
+          <li class="end"><span class="ico">🏥</span>Puri Hospital <b>cut off</b></li>
+        </ol>
+        <p class="caption">Even though the hospital building itself survives.</p>
+      </div>
+    </section>
+
+    <!-- 6. Wind radii + safe areas -->
+    <section class="scene radii" data-scene="radii" style="--h:300vh">
+      <div class="sticky">
+        <div class="radar" aria-hidden="true">
+          <div class="ring r3"><span>≥ 62 km/h · 165 km</span></div>
+          <div class="ring r2"><span>≥ 89 km/h · 110 km</span></div>
+          <div class="ring r1"><span>≥ 118 km/h · 75 km</span></div>
+          <div class="eye">🌀</div>
+        </div>
+        <div class="radii-text">
+          <p class="eyebrow">Wind radii and lower-risk areas</p>
+          <h2 class="title">Where it's dangerous.<br /><span class="grad">And where it's safe.</span></h2>
+          <ul class="safe">
+            <li><b>Kalingapatnam</b> 259 km from landfall · 1 shelter, 1 hospital operational</li>
+            <li><b>Srikakulam</b> 279 km · peak wind 66 km/h</li>
+            <li><b>13 of 34 towns</b> stay below 15 % risk: evacuation destinations</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Gemini -->
+    <section class="scene gemini" data-scene="gemini" id="gemini" style="--h:360vh">
+      <div class="sticky">
+        <div class="gem-head">
+          <p class="eyebrow">✦ Google Gemini</p>
+          <h2 class="title">Gemini reads the sky.<br /><span class="grad">Physics keeps it honest.</span></h2>
+        </div>
+        <div class="gem-grid">
+          <figure class="sat">
+            <img src="docs/img/fani-viirs.jpg" alt="NASA VIIRS true-colour image of Cyclone Fani, 2 May 2019" />
+            <i class="scan"></i>
+            <figcaption>NASA VIIRS · Fani · 2 May 2019</figcaption>
+          </figure>
+          <div class="cards">
+            <article class="card c1"><h3>What the satellite shows</h3><p>A well-defined, clear eye in the Bay of Bengal, moving towards the Odisha coast, with tight spiral bands over Puri.</p></article>
+            <article class="card c2"><h3>RED · Puri · Odia</h3><p lang="or">ଲାଲ୍ ଚେତାବନୀ: ମେ ୩ ରେ ପୁରୀ ନିକଟରେ ବାତ୍ୟା ଫଣିର ଲ୍ୟାଣ୍ଡଫଲ୍। ପବନ ୧୮୩ କିମି/ଘଣ୍ଟା, ବର୍ଷା ୩୧୫ ମିମି। କୁଚା ଘରୁ ବାତ୍ୟା ଆଶ୍ରୟସ୍ଥଳୀକୁ ତୁରନ୍ତ ଯାଆନ୍ତୁ।</p></article>
+            <article class="card c3 check"><h3>Fact check against the model</h3><p><span class="ok">✓ 183 km/h · 315 mm</span> match the model.</p><p><span class="bad">⚠ "44,000 kutcha houses"</span>: the model counts <i>people</i>. Blocked from the alert.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Dispatch -->
+    <section class="scene dispatch" data-scene="dispatch" style="--h:280vh">
+      <div class="sticky">
+        <div class="disp-head">
+          <p class="eyebrow">Early warning</p>
+          <h2 class="title">From model to control room.<br /><span class="dim">Automatically.</span></h2>
+        </div>
+        <div class="frames">
+          <figure class="f1"><img src="docs/img/advisories.jpg" alt="District advisories on the IMD colour code" /><figcaption>District advisories · IMD colour code</figcaption></figure>
+          <figure class="f2"><img src="docs/img/inbox.jpg" alt="District control-room inbox receiving CAP alerts" /><figcaption>Control-room inbox · Google Cloud Run</figcaption></figure>
+        </div>
+        <p class="chips"><span>Collector &amp; DDMA</span><span>State authority</span><span>Power utility</span><span>Health officer</span><span>CAP 1.2 · SACHET</span></p>
+      </div>
+    </section>
+
+    <!-- 9. Validation: horizontal -->
+    <section class="scene proof" data-scene="proof" id="proof" style="--h:340vh">
+      <div class="sticky">
+        <div class="proof-head">
+          <p class="eyebrow">Validation</p>
+          <h2 class="title">Four real cyclones.<br /><span class="grad">Four right answers.</span></h2>
+          <p class="sub">Each replayed as a forecast issued 24 hours before landfall. Each time, the highest risk landed in the district that was actually hit hardest.</p>
+        </div>
+        <div class="track">
+          <article><h3>Fani <small>2019</small></h3><p>Landfall <b>Puri, Odisha</b></p><p>Model's worst hit: Puri, Bhubaneswar, Cuttack</p><p class="ok">✓ 9.0 lakh likely without power</p></article>
+          <article><h3>Amphan <small>2020</small></h3><p>Landfall <b>Sundarbans, West Bengal</b></p><p>Model's worst hit: Sagar Island, Haldia, Kolkata</p><p class="ok">✓ 7.5 lakh likely without power</p></article>
+          <article><h3>Phailin <small>2013</small></h3><p>Landfall <b>Gopalpur, Odisha</b></p><p>Model's worst hit: Berhampur, Gopalpur, Rambha</p><p class="ok">✓ 3.6 lakh likely without power</p></article>
+          <article><h3>Hudhud <small>2014</small></h3><p>Landfall <b>Visakhapatnam, AP</b></p><p>Model's worst hit: Visakhapatnam, Vizianagaram, Bheemunipatnam</p><p class="ok">✓ 15.3 lakh likely without power</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Close -->
+    <section class="scene close" data-scene="close" style="--h:200vh">
+      <div class="sticky center">
+        <h2 class="grad big">From satellite to action.</h2>
+        <p class="sub">Before landfall.</p>
+        <p class="buttons">
+          <a class="btn primary" href="./">Open the live demo</a>
+          <a class="btn" href="https://youtu.be/OTejnvAFbVE">Watch the video</a>
+          <a class="btn" href="https://github.com/Blop77/cyclone-sentinel">View on GitHub</a>
+        </p>
+        <p class="foot">Team Nebula Nomads · Prototype: the infrastructure inventory is synthetic, generated around 34 real towns.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="story/story.js"></script>
+</body>
+</html>
